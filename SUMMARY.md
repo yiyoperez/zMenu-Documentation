@@ -1,0 +1,33 @@
+# Table of contents
+
+* [Getting started](README.md)
+* [Supported Plugins](supported-plugins.md)
+
+## Configurations
+
+* [Informations](configurations/informations.md)
+* [Commands and Permissions](configurations/commands-and-permissions.md)
+* [PlaceHolder](configurations/placeholder.md)
+* [How to create an inventory step by step](configurations/how-to-create-an-inventory-step-by-step.md)
+* [Inventories](configurations/inventories.md)
+* [Buttons](configurations/buttons/README.md)
+  * [Requirements](configurations/buttons/requirements.md)
+  * [Actions](configurations/buttons/actions.md)
+* [Items](configurations/items.md)
+* [Patterns](configurations/patterns.md)
+* [Commands](configurations/commands.md)
+* [Player data](configurations/player-data.md)
+* [Config.json](configurations/config.json.md)
+
+## API
+
+* [Informations](api/informations.md)
+* [Create button](api/create-button.md)
+* [Create inventory](api/create-inventory.md)
+* [Create material loader](api/create-material-loader.md)
+* [Fast Events](api/fast-events.md)
+
+***
+
+* [Plugin's files](plugins-files.md)
+* [Example GUI menus](example-gui-menus.md)

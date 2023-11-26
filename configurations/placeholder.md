@@ -1,0 +1,5 @@
+# PlaceHolder
+
+
+
+<table><thead><tr><th width="385.23821068506163">Placeholder</th><th>Description</th></tr></thead><tbody><tr><td><code>%zmenu_argument_&#x3C;argument name>%</code></td><td>Gets the value of the argument for a command. More information <a href="commands.md#arguments">here</a>.</td></tr><tr><td><code>%zmenu_player_value_&#x3C;key>%</code></td><td>Returns the value contained in a key.  More information <a href="player-data.md">here</a>.</td></tr><tr><td><code>%zmenu_player_expire_format_&#x3C;key>%</code></td><td>Returns the expiration time formatted according to a key. More information <a href="player-data.md">here</a>.</td></tr><tr><td><code>%zmenu_player_expire_&#x3C;key>%</code></td><td>Returns the expiration time according to a key. More information <a href="player-data.md">here</a>.</td></tr><tr><td><code>%zmenu_player_key_exist_&#x3C;key>%</code></td><td>Returns true or false. Allows to know if a key exists. More information <a href="player-data.md">here</a>.</td></tr></tbody></table>
