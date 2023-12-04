@@ -79,4 +79,6 @@ success_actions:
   value: &#x3C;data value>
   seconds: &#x3C;expire seconds> # 0 by default
 </code></pre></td><td>Update <a href="../player-data.md">player data</a>.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: refresh  
-</code></pre></td><td>Refresh current button. Work only in click requirement</td></tr></tbody></table>
+</code></pre><p></p></td><td>Refresh current button. Work only in click requirement</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: back
+</code></pre></td><td>Revenir à l'inventaire précédent.</td></tr></tbody></table>
+
