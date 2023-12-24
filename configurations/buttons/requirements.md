@@ -87,6 +87,15 @@ In the example if below, you have a check of the item in the player’s hand. If
 
 Define multiple requirements to click on the button. You need to define several requirements and specify clicks.
 
+You can directly use all the clicks by doing this:
+
+```yaml
+clicks:
+  - ALL # or ANY
+```
+
+You can put `ALL` or `ANY` in the type of clicks to directly put all the clicks. You can manage the list of clicks that will be added in the config.json file
+
 #### Example:
 
 ```yaml
