@@ -385,7 +385,18 @@ Sets the requirements the player should have to see the button. More information
 
 Sets the requirements the player should have to click on the button. More information [here](requirements.md#click-requirement).
 
+***
 
+### Actions
+
+You can define a list of actions to perform when clicking. More information [here](actions.md).
+
+```yaml
+actions:
+  - type: message
+    messages:
+      - "example"
+```
 
 ***
 
