@@ -80,5 +80,7 @@ success_actions:
   seconds: &#x3C;expire seconds> # 0 by default
 </code></pre></td><td>Update <a href="../player-data.md">player data</a>.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: refresh  
 </code></pre><p></p></td><td>Refresh current button. Work only in click requirement</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: back
-</code></pre></td><td>Return to previous inventory.</td></tr></tbody></table>
+</code></pre></td><td>Return to previous inventory.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: shopkeeper
+  name: &#x3C;shopkeeper name>
+</code></pre></td><td>Open a <a href="https://www.spigotmc.org/threads/shopkeepers.447969/">Shopkeeper</a> trading inventory</td></tr></tbody></table>
 
