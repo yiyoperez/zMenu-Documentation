@@ -19,25 +19,40 @@ view_requirement:
   requirements:
     - type: permission
       permission: "example.permission"
+      deny:
+        - type: message
+          messages:
+            - "&cYou don't have permission !"
     - type: placeholder
       placeholder: "%player_gamemode%" # need PAPI ecloud Player
-      value: "CREATIVE"
+      value: "CREATIVE"    
       action: equals_string
+      # Specific deny actions
+      deny:
+        - type: message
+          messages:
+            - "&cYou mus be in creative"      
     - type: regex
       input: "%player_item_in_hand%" # need PAPI ecloud Player
       regex: "(NETHERITE_|DIAMOND_|IRON_|GOLDEN_|STONE_|WOODEN_|LEATHER_|BOW|CROSSBOW|FISHING_ROD|SHEARS|SHIELD|TRIDENT|TURTLE_HELMET|ELYTRA|FLINT_AND_STEEL)"      
+      deny:
+        - type: message
+          messages:
+            - "&cYou dont have items in your hand !"
   
-  # Success actions
+  # Global Success actions
   success:
     - type: sound
       sound: ENTITY_PLAYER_LEVELUP
       
-  # Deny
+  # Global Deny actions
   deny:    
     - type: message
       messages:
         - "&cYou doesn't have an item in your hand."
 ```
+
+In addition to deny and global success actions, you can define deny and success actions for each requirement.
 
 ### View Requirement
 
