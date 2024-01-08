@@ -108,6 +108,37 @@ List of buttons, all information [here](https://zmenu.groupez.dev/configurations
 
 ***
 
+### OpenWithItem
+
+Opens the inventory with the interaction of an item. You must define the information of the item that will be used, the actions to be performed (full list [here](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/block/Action.html)) and the type of verification.
+
+```yaml
+# Open this menu by clicking a specific item
+# You can use /zm giveopenitem <inventory> <player> to retrieve the item to use
+#
+openWithItem:
+  # Define the item that will be clicked
+  item:
+    material: compass
+    name: "&eOpen Basic Inventory"
+    lore:
+      - "&7Click on me !"
+  # Look at https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/block/Action.html
+  actions:
+    - RIGHT_CLICK_BLOCK
+    - RIGHT_CLICK_AIR
+  # Define the type of verification.
+  # Depending on your configuration and need you will define a certain type of verification. Here are all the types that exist:
+  # - full -> Allows to check the itemStack in full, will use the ItemStack#isSimilar method.
+  # - material -> Allows to check only the material
+  # - name -> Allows to check only the display name
+  # - lore -> Allows to check only the lore
+  # - modelid -> Allows to check only the Custom Model Id
+  type: full
+```
+
+***
+
 ### Open Requirement
 
 More information [here](buttons/requirements.md#open-requirement).
