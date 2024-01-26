@@ -468,3 +468,13 @@ next:
 ## MAINMENU
 
 The `MAINMENU` allows you to returns to the main inventory you chose in the config.json
+
+## JUMP
+
+The `JUMP` type allows to change page, to a predefined page.
+
+```yaml
+jumpButton:
+  type: JUMP
+  page: 5
+```
