@@ -2,7 +2,7 @@
 description: The plugin's configuration files
 ---
 
-# 插件文件
+# Plugin's files
 
 ### Config.json
 
@@ -25,7 +25,6 @@ description: The plugin's configuration files
 ```
 
 ### Messages.yml
-> 目前无汉化
 
 ```yaml
 messages:
@@ -200,8 +199,7 @@ messages:
 
 ```
 
-## 物品栏
-> 无汉化
+## Inventories
 
 ### Basic\_Inventory.yml
 
@@ -872,7 +870,7 @@ items:
 
 ```
 
-## 自定义指令
+## Commands
 
 ### Commands.yml
 
@@ -980,7 +978,7 @@ commands:
       - reason
 ```
 
-## 样板
+## Patterns
 
 ### Pattern\_example
 
