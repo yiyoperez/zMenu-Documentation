@@ -4,15 +4,15 @@ description: API Information
 
 # Informations
 
-The zMenu API will allow you to create your own inventory and button. You can have the same configuration system for all your plugins.
+L'API zMenu vous permettra de créer votre propre inventaire et vos propres boutons. Vous pouvez avoir le même système de configuration pour tous vos plugins.
 
 Javadocs: [https://javadocs.groupez.dev/zmenu/index.html](https://javadocs.groupez.dev/zmenu/index.html)
 
-Example: [https://github.com/Maxlego08/zMenuExample](https://github.com/Maxlego08/zMenuExample)
+Exemple: [https://github.com/Maxlego08/zMenuExample](https://github.com/Maxlego08/zMenuExample)
 
 
 
-Last version here: [https://github.com/Maxlego08/zMenu-API/tags](https://github.com/Maxlego08/zMenu-API/tags)
+Dernière version ici : [https://github.com/Maxlego08/zMenu-API/tags](https://github.com/Maxlego08/zMenu-API/tags)
 
 ## Maven
 
@@ -48,9 +48,9 @@ dependencies {
 }
 ```
 
-## First step
+## Première étape
 
-The first step is to get the [InventoryManager](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/InventoryManager.html) and [ButtonManager](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/ButtonManager.html) interface with the spigot service provider system.
+La première étape consiste à obtenir le [InventoryManager](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/InventoryManager.html) et [ButtonManager](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/ButtonManager.html) l'interface avec le système du fournisseur de services du spigot.
 
 ```java
 @Override

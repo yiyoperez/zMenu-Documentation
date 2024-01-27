@@ -1,0 +1,9 @@
+---
+description: Plugins supportés par zMenu
+---
+
+# Plugins supportés
+
+<table data-full-width="true"><thead><tr><th width="170">Plugin</th><th width="87">Prix</th><th width="321">Lien</th><th>Description</th></tr></thead><tbody><tr><td>zShop</td><td>9.99€</td><td><a href="https://www.spigotmc.org/resources/74073/">spigotmc.org/resources/74073</a></td><td>A zMenu addon for easy shop creation</td></tr><tr><td>zAuctionHouse</td><td>12.99€</td><td><a href="https://www.spigotmc.org/resources/63010">spigotmc.org/resources/63010</a></td><td>An auction house plugin</td></tr><tr><td>zVoteParty</td><td>Free</td><td><a href="https://www.spigotmc.org/resources/95603">spigotmc.org/resources/95603</a></td><td>Reward your players with the VoteParty system.</td></tr></tbody></table>
+
+Vous voulez ajouter votre plugin ici ? Contactez nous sur discord.

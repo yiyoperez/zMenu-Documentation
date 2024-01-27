@@ -1,22 +1,22 @@
 ---
-description: All the information to configure the plugin
+description: Toutes les informations pour configurer le plugin
 ---
 
 # Informations
 
-### Links
+### Liens
 
-Before you start configuring the plugin, please check that you are using the material name for your version.&#x20;
+Avant de commencer à configurer le plugin, veuillez vérifier que vous utilisez le nom du matériau pour votre version.
 
-\-> We invite you to check the names of the materials with the following links:
+\-> Nous vous invitons à vérifier les noms des documents à l’aide des liens suivants :
 
 * [1.8.8](https://helpch.at/docs/1.8.8/org/bukkit/Material.html)
 * [1.12.2](https://helpch.at/docs/1.12.2/org/bukkit/Material.html)
 * [1.13.2](https://helpch.at/docs/1.13.2/org/bukkit/Material.html)
 * [1.14.4](https://helpch.at/docs/1.14.4/org/bukkit/Material.html)
-* [Latest](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) (1.20)
+* [Dernière](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) (1.20)
 
-\-> For the configuration of the sounds you must use the values of [XSound](https://github.com/CryptoMorin/XSeries/blob/master/src/main/java/com/cryptomorin/xseries/XSound.java).
+\-> Pour la configuration des sons, vous devez utiliser les valeurs de [XSound](https://github.com/CryptoMorin/XSeries/blob/master/src/main/java/com/cryptomorin/xseries/XSound.java).
 
 \-> [Enchanments](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/enchantments/Enchantment.html)
 
@@ -24,16 +24,16 @@ Before you start configuring the plugin, please check that you are using the mat
 
 \-> [ItemFlag](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/inventory/ItemFlag.html)
 
-\-> [Minecraft-heads](https://minecraft-heads.com/) (Minecraft head will allow you to get the base64 value to display a head)
+\-> [Minecraft-heads](https://minecraft-heads.com/) (Minecraft head vous permettra d’obtenir la valeur base64 pour afficher une tête)
 
-\-> For the colors you can use the code of minecraft with a `&<code>`. For versions higher than 1.16 you can use [hexadecimal colors](https://www.google.com/search?q=hex+color) like this `#<color>` (`#ff55ff` for example).
+\-> Pour les couleurs, vous pouvez utiliser le code de minecraft avec un `&<code>`. Pour les versions supérieures à 1.16, vous pouvez utiliser les [couleurs hexadécimal](https://www.google.com/search?q=hex+color) comme ceci`#<color>` (`#ff55ff` par exemple).
 
 {% hint style="info" %}
-If your server has Kyori Adventure, you can use the [mini message format](https://docs.adventure.kyori.net/minimessage/format.html).
+Si votre serveur dispose de Kyori Adventure (Paper, Purpur, PurfferFish, etc), vous pouvez utiliser le [mini message format](https://docs.adventure.kyori.net/minimessage/format.html).
 {% endhint %}
 
 ### Informations
 
-The plugin will work differently from other menu plugins. Here we have a "Button" system that will allow to perform some action. This system allows other developers to easily add features to the plugin configurations. We will see together what are the different types of default buttons and their configuration elements.
+Le plugin fonctionnera différemment des autres plugins de menu. Ici, nous avons un système "Button" qui permettra d’effectuer certaines actions. Ce système permet aux autres développeurs d’ajouter facilement des fonctionnalités aux configurations du plugin. Nous verrons ensemble quels sont les différents types de boutons par défaut et leurs éléments de configuration.&#x20;
 
-But first let's see the structure of an inventory file.
+Mais voyons d’abord la structure d’un fichier d’inventaire.

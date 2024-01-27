@@ -1,18 +1,18 @@
 # Table of contents
 
-* [Getting started](README.md)
-* [Supported Plugins](supported-plugins.md)
+* [Commencer](README.md)
+* [Plugins supportés](plugins-supportes.md)
 
 ## Configurations
 
 * [Informations](configurations/informations.md)
-* [Commands and Permissions](configurations/commands-and-permissions.md)
+* [Commandes et permissions](configurations/commandes-et-permissions.md)
 * [PlaceHolder](configurations/placeholder.md)
-* [How to create an inventory step by step](configurations/how-to-create-an-inventory-step-by-step.md)
-* [Inventories](configurations/inventories.md)
-* [Buttons](configurations/buttons/README.md)
-  * [Requirements](configurations/buttons/requirements.md)
-  * [Actions](configurations/buttons/actions.md)
+* [Comment créer un inventaire étape par étape](configurations/comment-creer-un-inventaire-etape-par-etape.md)
+* [Inventaires](configurations/inventaires.md)
+* [Boutons](configurations/boutons/README.md)
+  * [Requirements](configurations/boutons/requirements.md)
+  * [Action](configurations/boutons/action.md)
 * [Items](configurations/items.md)
 * [Patterns](configurations/patterns.md)
 * [Commands](configurations/commands.md)

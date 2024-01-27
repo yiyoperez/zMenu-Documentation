@@ -1,6 +1,6 @@
 # Fast Events
 
-In the default configuration, you have FastEvents enabled by default. Instead of using the bukkit API for events, you can save an interface named FastEvent with methods for each plugin event. Or you can disable this option in config.json and use bukkit events normally.
+Dans la configuration par défaut, les FastEvents sont activés par défaut. Au lieu d'utiliser l'API bukkit pour les événements, vous pouvez enregistrer une interface nommée FastEvent avec des méthodes pour chaque événement du plugin. Ou vous pouvez désactiver cette option dans config.json et utiliser les événements bukkit normalement.
 
 
 

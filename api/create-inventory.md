@@ -2,20 +2,20 @@
 
 ## Informations
 
-With zMenu you will be able to use the inventory system for your plugins. So your users will have only one inventory system to know for many plugins. You can load an inventory simply or with a specific implementation.
+Avec zMenu vous pourrez utiliser le système d'inventaire pour vos plugins. Ainsi vos utilisateurs n'auront qu'un seul système d'inventaire à connaître pour plusieurs plugins. Vous pouvez charger un inventaire simplement ou avec une implémentation spécifique.
 
 ## Inventory
 
-### Load inventory
+### Chargement de l'inventaire
 
-To load an inventory you must use the [InventoryManager](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/InventoryManager.html) provider. You must then use the [loadInventory](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/InventoryManager.html#loadInventory\(org.bukkit.plugin.Plugin,java.io.File\)) method. Before you start saving your inventories, it is recommended to delete all inventories from your plugin with the method [deleteInventories](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/InventoryManager.html#deleteInventories\(org.bukkit.plugin.Plugin\)).
+Pour charger un inventaire, vous devez utiliser la fonction [InventoryManager](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/InventoryManager.html). Vous devez ensuite utiliser la méthode loadInventory. Avant de commencer à enregistrer vos inventaires, il est recommandé de supprimer tous les inventaires de votre plugin avec la méthode [deleteInventories](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/InventoryManager.html#deleteInventories\(org.bukkit.plugin.Plugin\)).
 
 ```java
 @Override
 public void onEnable() {
     ButtonManager buttonManager = this.getProvider(ButtonManager.class);
     
-    // Allows to save the default configuration if it does not exist.
+    // Permet d'enregistrer la configuration par défaut si elle n'existe pas.
     File fileComplexe = new File(this.getDataFolder(), "complex_actions.yml");
     if (!fileComplexe.exists()) {
         this.saveResource("complex_actions.yml", false);
@@ -26,9 +26,9 @@ public void onEnable() {
 }
 ```
 
-### Load custom inventory&#x20;
+### Chargement de l'inventaire personnalisé&#x20;
 
-Here is the next example for the button complex. You can create an inventory that will be extended from [ZInventory](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/ZInventory.html).
+Voici l'exemple suivant pour le bouton complexe. Vous pouvez créer un inventaire qui sera étendu à partir de [ZInventory](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/ZInventory.html).
 
 ```java
 package fr.zmenu.example;
@@ -77,16 +77,16 @@ public class PaginationInventory extends ZInventory {
 }
 ```
 
-For an inventory with pagination you have to define the number of pages that your inventory will have. Here we will retrieve the button of type [PaginationButton](create-button.md#create-a-complexe-button), we will then retrieve the elements that will be displayed, you just have to apply the calculation as in the example.
+Pour un inventaire avec pagination, vous devez définir le nombre de pages que votre inventaire aura. Ici, nous allons récupérer le bouton de type [PaginationButton](create-button.md#create-a-complexe-button), nous récupérons alors les éléments qui seront affichés, il vous suffit d'appliquer le calcul comme dans l'exemple.&#x20;
 
-All you have to do is register the button along with the inventory.
+Il ne vous reste plus qu'à enregistrer le bouton ainsi que l'inventaire.
 
 ```java
 @Override
 public void onEnable() {
     ButtonManager buttonManager = this.getProvider(ButtonManager.class);
     
-    // Allows to save the default configuration if it does not exist.
+    // Permet d'enregistrer la configuration par défaut si elle n'existe pas.
     File filePagination = new File(this.getDataFolder(), "examples/paginate_inventory.yml");
     if (!filePagination.exists()) {
 	this.saveResource("examples/paginate_inventory.yml", false);
@@ -99,4 +99,4 @@ public void onEnable() {
 
 ### Open Inventory
 
-Now that you have saved your inventory, you can open it. You have many methods [openInventory](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/InventoryManager.html#openInventory\(org.bukkit.entity.Player,fr.maxlego08.menu.api.Inventory\)) to open the inventory, so you have the choice to open an inventory. The simplest method is this one: [openInventory](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/InventoryManager.html#openInventory\(org.bukkit.entity.Player,org.bukkit.plugin.Plugin,java.lang.String\))(player, plugin, inventoryName)
+Maintenant que vous avez enregistré votre inventaire, vous pouvez l'ouvrir. Vous disposez de plusieurs méthodes [openInventory](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/InventoryManager.html#openInventory\(org.bukkit.entity.Player,fr.maxlego08.menu.api.Inventory\)) pour ouvrir l'inventaire, vous avez donc le choix d'ouvrir un inventaire. La méthode la plus simple est celle-ci : [openInventory](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/InventoryManager.html#openInventory\(org.bukkit.entity.Player,org.bukkit.plugin.Plugin,java.lang.String\))(player, plugin, inventoryName)

@@ -1,5 +1,5 @@
 ---
-description: Information about the values in the config.json file
+description: Informations sur les valeurs du fichier config.json
 ---
 
 # Config.json
@@ -8,7 +8,7 @@ description: Information about the values in the config.json file
 enableDebug: true/false
 ```
 
-Enable debug, allows you to display errors in the console that would normally be hidden.
+Activer le débogage, permet d'afficher dans la console des erreurs qui seraient normalement cachées.
 
 
 
@@ -16,7 +16,7 @@ Enable debug, allows you to display errors in the console that would normally be
 enableDebugTime: true/false
 ```
 
-Enable debug time, allows you to display the code execution time in nano second, perfect for testing the effectiveness of the plugin.
+Activer le temps de débogage, vous permet d'afficher le temps d'exécution du code en nano seconde, parfait pour tester l'efficacité du plugin.
 
 
 
@@ -24,7 +24,7 @@ Enable debug time, allows you to display the code execution time in nano second,
 enableLogStorageFile: true/false
 ```
 
-Enable save or load file log in console
+Activer l'enregistrement ou le chargement de fichiers dans la console
 
 
 
@@ -32,7 +32,7 @@ Enable save or load file log in console
 enableInformationMessage: true/false
 ```
 
-Enable information message, allows you to view messages that tell you about an inventory or that an order has been successfully loaded.
+Activer le message d'information, vous permet d'afficher des messages qui vous informent sur un inventaire ou sur le fait qu'une commande a été chargée avec succès.
 
 
 
@@ -40,7 +40,7 @@ Enable information message, allows you to view messages that tell you about an i
 enableOpenMessage: true/false
 ```
 
-Enable open message, default value for the command `/zm open <inventory name> <player> <display message>`
+Activer le message ouvert, valeur par défaut de la commande `/zm open <inventory name> <player> <display message>`
 
 
 
@@ -48,7 +48,7 @@ Enable open message, default value for the command `/zm open <inventory name> <p
 enableMiniMessageFormat: true/false
 ```
 
-Enable mini message format, allows you to activate the mini message format, available from 1.17 onwards, more information here: [https://docs.advntr.dev/minimessage/index.html](https://docs.advntr.dev/minimessage/index.html)
+Activer le format mini message, permet d'activer le format mini message, disponible à partir de la version 1.17, plus d'informations ici : [https://docs.advntr.dev/minimessage/index.html](https://docs.advntr.dev/minimessage/index.html)
 
 
 
@@ -56,7 +56,7 @@ Enable mini message format, allows you to activate the mini message format, avai
 enablePlayerCommandInChat: true/false
 ```
 
-Enable player command in chat, Allows you to ensure that when a player executes a command, they execute it from the chat and not from the console. If you have "fake" command, which are not saved in spigot you need to enable this option.
+Activer les commandes du joueur dans le chat, vous permet de vous assurer que lorsqu'un joueur exécute une commande, il l'exécute depuis le chat et non depuis la console. Si vous avez de "fausses" commandes, qui ne sont pas sauvegardées dans le spigot, vous devez activer cette option.
 
 
 
@@ -64,7 +64,7 @@ Enable player command in chat, Allows you to ensure that when a player executes 
 secondsSavePlayerData: Int
 ```
 
-Seconds save player data: The time in seconds for automatic backup of player data.
+Sauvegarde des données du joueur en quelques secondes: Temps en secondes pour la sauvegarde automatique des données du lecteur.
 
 
 
@@ -72,7 +72,7 @@ Seconds save player data: The time in seconds for automatic backup of player dat
 secondsSavePlayerInventories: Int
 ```
 
-Seconds save player data: The time in seconds for automatic backup of inventories data.
+Sauvegarde des données du joueur en quelques secondes : Le temps en secondes pour la sauvegarde automatique des données de l'inventaire.
 
 
 
@@ -80,7 +80,7 @@ Seconds save player data: The time in seconds for automatic backup of inventorie
 autoSaveFileInventoryOnUpdate: true/false
 ```
 
-Auto save file inventory on update: allows you to save the file of jouueurs inventories automatically.
+Sauvegarde automatique du fichier d'inventaire lors de la mise à jour : permet de sauvegarder automatiquement le fichier des inventaires des joueurs.
 
 
 
@@ -88,7 +88,7 @@ Auto save file inventory on update: allows you to save the file of jouueurs inve
 mainMenu: "example"
 ```
 
-Default menu name
+Nom du menu par défaut
 
 
 
@@ -96,7 +96,7 @@ Default menu name
 useSwapItemOffHandKeyToOpenMainMenu: true
 ```
 
-Open main menu when f key is press
+Ouvrir le menu principal en appuyant sur la touche f
 
 
 
@@ -104,7 +104,7 @@ Open main menu when f key is press
 useSwapItemOffHandKeyToOpenMainMenuNeedsShift: true
 ```
 
-Open main menu when swap item offhand key is press and sneak key
+Ouvrir le menu principal lorsque l'on appuie sur la touche de substitution et sur la touche d'effacement.
 
 
 
@@ -114,7 +114,7 @@ specifyPathMenus: [
 ]
 ```
 
-Load specific inventories
+Inventaires spécifiques au chargement
 
 
 
@@ -122,4 +122,4 @@ Load specific inventories
 generateDefaultFile: true/false
 ```
 
-Generate default configuration
+Générer une configuration par défaut

@@ -1,8 +1,8 @@
 # Create material loader
 
-You can create your own [MaterialLoader](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/loader/MaterialLoader.html). A material loader will allow you to create an ItemStack from the configuration.
+Vous pouvez créer votre propre [MaterialLoader](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/loader/MaterialLoader.html). Un chargeur de matériaux vous permettra de créer un ItemStack à partir de la configuration.
 
-Example with HeadDatabase:
+Exemple avec HeadDatabase :
 
 ```java
 package fr.maxlego08.menu.loader.materials;
@@ -22,9 +22,7 @@ public class HeadDatabaseLoader implements MaterialLoader{
 
 	@Override
 	public ItemStack load(YamlConfiguration configuration, String path, String materialString) {
-		
 		try {
-
 			HeadDatabaseAPI api = new HeadDatabaseAPI();
 			return api.getItemHead(materialString);
 			

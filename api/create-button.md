@@ -6,42 +6,32 @@ description: How to create a button
 
 ## Informations
 
-One of the great features of zMenu is its button customization. You will be able to create buttons for your plugins, which will allow users to have only one inventory plugin for the whole server. The goal of zMenu is to make as many plugins as possible use its API, so that users have only one type of inventory configuration for their entire server.
+L'une des grandes caractéristiques de zMenu est la personnalisation des boutons. Vous pourrez créer des boutons pour vos plugins, ce qui permettra aux utilisateurs de n'avoir qu'un seul plugin d'inventaire pour l'ensemble du serveur. L'objectif de zMenu est de faire en sorte que le plus grand nombre possible de plugins utilisent son API, afin que les utilisateurs n'aient qu'un seul type de configuration d'inventaire pour l'ensemble de leur serveur.
 
-To create a button you will need at least two classes. A first one for the button and a second one to change the button. You can also create an interface to implement your button, but this is not mandatory.
+Pour créer un bouton, vous aurez besoin d'au moins deux classes. Une première pour le bouton et une seconde pour le modifier. Vous pouvez également créer une interface pour implémenter votre bouton, mais ce n'est pas obligatoire.
 
-The final code is available here: [https://github.com/Maxlego08/zMenuExample](https://github.com/Maxlego08/zMenuExample)
+Le code final est disponible ici : [https://github.com/Maxlego08/zMenuExample](https://github.com/Maxlego08/zMenuExample)
 
-## Button&#x20;
+## Création d'un bouton classique
 
-The mandatory implementation for a button will be [ZPlaceholderButton](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/button/ZPlaceholderButton.html). You then have the choice to implement your buttons with one of the types available [here](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/button/buttons/package-summary.html). If your plugin has an API you can create an interface and implement it as a [PlaceholderButton](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/button/PlaceholderButton.html), but it is not mandatory.
+Nous allons créer un simple bouton avec une action qui sera exécutée lorsqu'il sera cliqué.
 
+#### 1. Créer une classe de boutons
 
-
-Here is the heirarchy of buttons: [PlaceholderButton](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/button/PlaceholderButton.html) extend [PermissibleButton](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/button/PermissibleButton.html) who extend [Button](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/button/Button.html).
-
-If you have a question don't hesitate to ask on [discord](https://discord.groupez.dev/).
-
-### Creating a classic button
-
-We will create a simple button with an action that will be performed when clicked.
-
-#### 1. Create button class
-
-First you need to create a class that will be extended from `ZButton`:
+Il faut d'abord créer une classe qui sera étendue à partir de `ZButton` :
 
 ```java
-public class SpecialButton extends ZButton{
+public class SpecialButton extends ZButton {
 }
 ```
 
-You have just created a button, you just have to implement the methods and register it.
+Vous venez de créer un bouton, il ne vous reste plus qu'à implémenter les méthodes et à l'enregistrer.
 
 #### 2. Implementation
 
-For the example we will make sure that when the player clicks, the inventory will be closed, a message will be sent to him and he will be sent into the sky.
+Pour l'exemple, nous ferons en sorte que lorsque le joueur clique, l'inventaire se ferme, un message lui est envoyé et il est envoyé dans le ciel.
 
-To detect the click of a player you have to implement the [onClick](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/button/Button.html#onClick\(org.bukkit.entity.Player,org.bukkit.event.inventory.InventoryClickEvent,fr.maxlego08.menu.inventory.inventories.InventoryDefault,int\)) method.
+Pour détecter le clic d'un joueur, vous devez implémenter la méthode [onClick](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/button/Button.html#onClick\(org.bukkit.entity.Player,org.bukkit.event.inventory.InventoryClickEvent,fr.maxlego08.menu.inventory.inventories.InventoryDefault,int\)).
 
 ```java
 @Override
@@ -49,9 +39,9 @@ public void onClick(Player player, InventoryClickEvent event, InventoryDefault i
 }
 ```
 
-In this method we have the player, the click event and the InventoryDefault object. This object allows to manage all the actions of the inventory. It will allow you to retrieve information about the page, about the Inventory object of spigot and many other things.
+Dans cette méthode, nous avons le lecteur, l'événement click et l'objet InventoryDefault. Cet objet permet de gérer toutes les actions de l'inventaire. Il vous permettra de récupérer des informations sur la page, sur l'objet Inventory du spigot et bien d'autres choses.&#x20;
 
-We can now implement this method:
+Nous pouvons maintenant implémenter cette méthode :
 
 ```java
 @Override
@@ -67,9 +57,9 @@ public void onClick(Player player, InventoryClickEvent event, InventoryDefault i
 }
 ```
 
-You can see that in this example we refer to this.plugin. It is important to know that the constructor of your Button can have an empty constructor or a constructor with the [Plugin](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/plugin/Plugin.html) interface. You can then cast the plugin interface into your plugin. (Cf #3 Register button)
+Vous pouvez voir que dans cet exemple, nous faisons référence à this.plugin. Il est important de savoir que le constructeur de votre bouton peut avoir un constructeur vide ou un constructeur avec l'attribut [Plugin](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/plugin/Plugin.html). Vous pouvez ensuite intégrer l'interface du plugin dans votre plugin. (Cf #3 Register button)
 
-Here is the class with all the implementations:
+Voici la classe avec toutes les implémentations :
 
 ```java
 package fr.zmenu.example.button.special;
@@ -107,13 +97,13 @@ public class SpecialButton extends ZButton {
 }
 ```
 
-#### 3. Register button
+#### 3. Bouton d'enregistrement
 
-Now you have to register the button. To register a button you need a [ButtonLoader](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/loader/ButtonLoader.html). In this example we don't need a complex loader. So we can use the [NoneLoader](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/button/loader/NoneLoader.html). This loader will allow you to load a button very simply. As said in the second part, the [NoneLoader](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/button/loader/NoneLoader.html) will allow you to load your class with or without the [Plugin](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/plugin/Plugin.html).
+Vous devez maintenant enregistrer le bouton. Pour enregistrer un bouton, vous avez besoin d'un [ButtonLoader](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/loader/ButtonLoader.html). Dans cet exemple, nous n'avons pas besoin d'un chargeur complexe. Nous pouvons donc utiliser la fonction [NoneLoader](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/button/loader/NoneLoader.html). Ce loader vous permettra de charger un bouton très simplement. Comme nous l'avons dit dans la deuxième partie, la fonction [NoneLoader](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/button/loader/NoneLoader.html) vous permettra de charger votre classe avec ou sans l'élément [Plugin](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/plugin/Plugin.html).
 
-Go to your main class. You will need to get the [ButtonManager](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/ButtonManager.html) provider and use the register method to [register](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/ButtonManager.html#register\(fr.maxlego08.menu.api.loader.ButtonLoader\)) a button.
+Allez dans votre classe principale. Vous devrez obtenir le fichier [ButtonManager](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/ButtonManager.html) et utiliser la méthode d'enregistrement pour [register](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/ButtonManager.html#register\(fr.maxlego08.menu.api.loader.ButtonLoader\)) un bouton.
 
-To recover the provider here is a very useful method:
+Pour récupérer le fournisseur, voici une méthode très utile :
 
 ```java
 private <T> T getProvider(Class<T> classz) {
@@ -122,7 +112,7 @@ private <T> T getProvider(Class<T> classz) {
 }
 ```
 
-You just have to use the methods to register a button. It is advised before registering your buttons to remove all buttons from your plugin with the [unregisters](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/ButtonManager.html#unregister\(fr.maxlego08.menu.api.loader.ButtonLoader\)) method.
+Il suffit d'utiliser les méthodes pour enregistrer un bouton. Avant d'enregistrer vos boutons, il est conseillé de supprimer tous les boutons de votre plugin à l'aide de la méthode [unregisters](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/ButtonManager.html#unregister\(fr.maxlego08.menu.api.loader.ButtonLoader\)).
 
 ```java
 @Override
@@ -133,13 +123,13 @@ public void onEnable() {
 }
 ```
 
-With the NoneLoader you have to specify the name of your button. We advise you to put the `<name of your plugin>_<the name of the button>`
+Avec le NoneLoader, vous devez spécifier le nom de votre bouton. Nous vous conseillons de mettre le `<nom de votre plugin>_<le nom du bouton>`
 
-### Create a complexe button
+## Créer un bouton complexe
 
-#### 1. Create button class
+#### 1. Créer une classe de boutons
 
-We are going to create a button to do pagination. The button will display items on several slots depending on the page. So we have to create a button that will be extended from `ZButton`. We will also create a PaginationButton interface which will be extended from [SlotButton](file:///D:/Users/Maxence/Desktop/docs/fr/maxlego08/menu/api/button/buttons/SlotButton.html).
+Nous allons créer un bouton pour faire de la pagination. Le bouton affichera les éléments sur plusieurs emplacements en fonction de la page. Nous devons donc créer un bouton qui sera étendu à partir de ZButton. Nous allons également créer une interface PaginationButton qui sera étendue à partir de [SlotButton](file:///D:/Users/Maxence/Desktop/docs/fr/maxlego08/menu/api/button/buttons/SlotButton.html).
 
 ```java
 public interface PaginationButton extends ZButton {
@@ -153,9 +143,9 @@ public class ZPaginationButton extends ZButton implements PaginationButton {
 
 #### 2. Implementation
 
-zMenu uses the TemplatePlugin. So the plugin has many utility classes. Here we will use the [Pagination](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/zcore/utils/inventory/Pagination.html) class. This class will allow to sort a list according to a number of elements and a page.
+zMenu utilise le TemplatePlugin. Ce plugin possède donc de nombreuses classes utilitaires. Ici, nous utiliserons la classe [Pagination](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/zcore/utils/inventory/Pagination.html). Cette classe permet de trier une liste en fonction d'un nombre d'éléments et d'une page.
 
-Here is the complete class:
+Voici la classe complète :
 
 ```java
 package fr.zmenu.example.button.pagination;
@@ -204,18 +194,18 @@ public class ZPaginationButton extends ZButton implements PaginationButton {
 }
 ```
 
-An inventory that will be extended from slotButton will have a special render with the [onRender](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/button/Button.html#onRender\(org.bukkit.entity.Player,fr.maxlego08.menu.inventory.inventories.InventoryDefault\)) method. You can activate the special rendering with the method [hasSpecialRender](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/button/Button.html#hasSpecialRender\(\)).
+Un inventaire qui sera étendu à partir de slotButton aura un rendu spécial avec la méthode [onRender](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/button/Button.html#onRender\(org.bukkit.entity.Player,fr.maxlego08.menu.inventory.inventories.InventoryDefault\)). Vous pouvez activer le rendu spécial à l'aide de la méthode [hasSpecialRender](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/button/Button.html#hasSpecialRender\(\)).
 
-#### 3. Register button
+#### 3. Bouton d'enregistrement
 
-To register this button we will have to create a [ButtonLoader](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/loader/ButtonLoader.html).
+Pour enregistrer ce bouton, nous devons créer une class [ButtonLoader](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/loader/ButtonLoader.html).
 
 ```java
 public class PaginationLoader implements ButtonLoader {
 }
 ```
 
-You must then implement the 4 methods. The method [getButton](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/loader/ButtonLoader.html#getButton\(\)) you have to return the button, here you have to return the PaginationButton.class
+Vous devez ensuite mettre en œuvre les 4 méthodes. La méthode [getButton](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/loader/ButtonLoader.html#getButton\(\)) vous devez retourner le bouton, ici vous devez retourner le PaginationButton.class
 
 ```java
 package fr.zmenu.example.button.pagination;
@@ -262,11 +252,11 @@ public class PaginationLoader implements ButtonLoader {
 }
 ```
 
-We advise you to put the `<name of your plugin>_<the name of the button>`
+Nous vous conseillons de mettre le `<nom de votre plugin>_<le nom du bouton>`
 
-For the [load](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/loader/ButtonLoader.html#load\(org.bukkit.configuration.file.YamlConfiguration,java.lang.String\)) method the plugin will provide you with a YamlConfiguration and the path into the configuration. Then you have to return the implementation of your button. To be able to load a list of slot you have the method [loadeSlot](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/loader/ButtonLoader.html#loadSlot\(java.util.List\)) which from a list of string will return a list of interger.
+Pour la méthode [load](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/loader/ButtonLoader.html#load\(org.bukkit.configuration.file.YamlConfiguration,java.lang.String\)) le plugin vous fournira une YamlConfiguration et le chemin d'accès à la configuration. Vous devez ensuite renvoyer l'implémentation de votre bouton. Pour pouvoir charger une liste de slots, vous disposez de la méthode [loadeSlot](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/loader/ButtonLoader.html#loadSlot\(java.util.List\)) qui, à partir d'une liste de chaînes de caractères, renvoie une liste d'entiers.
 
-Then, as in the first example, you must save the button.
+Ensuite, comme dans le premier exemple, vous devez enregistrer le bouton.
 
 ```java
 buttonManager.register(new PaginationLoader(this));
@@ -274,4 +264,4 @@ buttonManager.register(new PaginationLoader(this));
 
 4\. Inventory
 
-Now you have to create an inventory to be able to manage the pagination.
+Vous devez maintenant créer un inventaire pour pouvoir gérer la pagination.

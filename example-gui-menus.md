@@ -6,22 +6,22 @@ description: Several examples of menu.
 
 ## [Kit](https://github.com/Maxlego08/zMenuExample/blob/master/kits.yml)
 
-An example of a gui converted from [DeluxeMenu](https://wiki.helpch.at/clips-plugins/deluxemenus/example-gui-menus#kits) to zMenu. The menu contains all the elements proposed by [DelexeMenu](https://wiki.helpch.at/clips-plugins/deluxemenus/example-gui-menus#kits).
+Un exemple d'interface utilisateur convertie à partir de [DeluxeMenu](https://wiki.helpch.at/clips-plugins/deluxemenus/example-gui-menus#kits) à zMenu. Le menu contient tous les éléments proposés par [DelexeMenu](https://wiki.helpch.at/clips-plugins/deluxemenus/example-gui-menus#kits).
 
-Here you have an example of a menu using placeholders to display a set of essentials. If the kit exists, and you have the permission, you will be able to retrieve the kit, then another item will show you the remaining time before retrieving the kit. Otherwise, an item will tell you that the kit does not exist.
+Voici un exemple de menu utilisant des espaces réservés pour afficher un ensemble d'éléments essentiels. Si le kit existe et que vous en avez l'autorisation, vous pourrez le récupérer, puis un autre élément vous indiquera le temps restant avant de récupérer le kit. Dans le cas contraire, un élément vous indiquera que le kit n'existe pas.
 
-You must install the following papi extensions:
+Vous devez installer les extensions papi suivantes :
 
 > /papi ecloud download Essentials\
 > /papi reload
 
 ## [Complexe action](https://github.com/Maxlego08/zMenuExample/blob/master/complex\_actions.yml)
 
-An example of a gui converted from [DeluxeMenu](https://wiki.helpch.at/clips-plugins/deluxemenus/files#requirements-menu) to zMenu. The menu contains all the elements proposed by [DelexeMenu](https://wiki.helpch.at/clips-plugins/deluxemenus/files#requirements-menu).
+Un exemple d'interface utilisateur convertie à partir de [DeluxeMenu](https://wiki.helpch.at/clips-plugins/deluxemenus/files#requirements-menu) à zMenu. Le menu contient tous les éléments proposés par [DelexeMenu](https://wiki.helpch.at/clips-plugins/deluxemenus/files#requirements-menu).
 
-Here you have an example of a menu that will use a button of type `PERFORM_COMMAND` with [actions](configurations/buttons/#actions). You have an example of a shop that can be created with the plugin. To create a more complete and simple shop you have the [zShop](https://groupez.dev/resources/zshop.2) addon.
+Voici un exemple de menu qui utilisera un bouton de type `PERFORM_COMMAND` avec [actions](configurations/boutons/#actions). Vous avez un exemple de boutique qui peut être créée avec le plugin. Pour créer une boutique plus complète et plus simple, vous disposez de la fonction [zShop](https://groupez.dev/resources/zshop.2) addon.
 
-You must install the following papi extensions:
+Vous devez installer les extensions papi suivantes :
 
 > /papi ecloud download Vault\
 > /papi reload

@@ -2,33 +2,30 @@
 description: A complete plugin for GUI menu with an advanced API.
 ---
 
-# Getting started
+# Commencer
 
 ## Description
 
-**zMenus** is a complete inventory plugin.\
-You can create your inventories and link them to custom commands. With the button system you will be able to push to the maximum the customization of your inventories.\
-You need to create an inventory per file, and you can sort your files into folders.\
-The plugin has an advanced API to allow other developers to use the same inventory configuration system. You can link inventories of several plugins together without any worries! The goal of this API is to have a uniform configuration for a better user experience.
+**zMenu** est un plugin d’inventaire complet. Vous pouvez créer vos inventaires et les lier à des commandes personnalisées. Avec le système de boutons vous pourrez pousser au maximum la personnalisation de vos inventaires. Vous devez créer un inventaire par fichier, et vous pouvez trier vos fichiers dans des dossiers. Le plugin dispose d’une **API avancé**e pour permettre aux autres développeurs d’utiliser le même système de configuration d’inventaire. Vous pouvez lier les inventaires de plusieurs plugins ensemble sans aucun souci! Le but de cette API est d’avoir une configuration uniforme pour une meilleure expérience utilisateur.
 
 
 
-Download here: [https://www.spigotmc.org/resources/zmenu.110402/](https://www.spigotmc.org/resources/zmenu.110402/)
+Téléchargement ici: [https://www.spigotmc.org/resources/zmenu.110402/](https://www.spigotmc.org/resources/zmenu.110402/)
 
-## Features
+## Fonctionnalités:
 
-* Ability to create an infinite number of GUI Menu and commands.
-* Possibility to create several pages in the same inventory.
-* Arguments for your commands.
-* A marketplace to download configurations (WIP)
-* An online inventory editor (WIP)
+* Possibilité de créer un nombre infini de menus et commandes.
+* Possibilité de créer plusieurs pages dans un même inventaire.
+* Arguments pour vos commandes.
+* Une marketplace pour télécharger des configurations (WIP)
+* Un éditeur d’inventaire en ligne (WIP)
 * Open Source: [https://github.com/Maxlego08/zMenu](https://github.com/Maxlego08/zMenu).
-* Advanced API.
-* Ability to create an infinite number of buttons for each of your actions.
-* Highly customizable.
-* [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/) support.
-* Kyori Adventure [Mini Message Format](https://docs.adventure.kyori.net/minimessage/format.html) support.
-* [Folia](https://papermc.io/software/folia) support.
-* Convert from other plugins (DeluxeMenu)
-* Patterns, finished copying pasted several times the same configuration
-* Anti duplication system. With the plugin the duplication will be completely impossible.
+* API avancée.
+* Possibilité de créer un nombre infini de boutons pour chacune de vos actions.
+* Hautement personnalisable.
+* Support de [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/)
+* Support de Kyori Adventure [Mini Message Format](https://docs.adventure.kyori.net/minimessage/format.html)
+* Support de [Folia](https://papermc.io/software/folia)
+* Convertir à partir d’autres plugins (DeluxeMenu)
+* Paternes, fini de devoir copier collée plusieurs fois la même configuration
+* Système anti duplication. Il sera impossible de dupliquer des items avec le plugin

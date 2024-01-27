@@ -1,14 +1,10 @@
 # Patterns
 
-The patterns allow you to have a list of buttons that can be used in several inventories. Perfect to manage the decoraction of your inventories without having to copy the same thing dozens of times.
+Les paternes vous permettent d'avoir une liste de boutons qui peuvent être utilisés dans plusieurs inventaires. Parfait pour gérer la décoraction de vos inventaires sans avoir à recopier des dizaines de fois la même chose.
 
+Les paternes se trouvent dans le dossier des motifs et vous pouvez en créer autant que vous le souhaitez.
 
-
-The patterns can be found in the patterns folder and you can create as many as you want.
-
-
-
-[Example](../plugins-files.md#pattern1):
+[Exemple](../plugins-files.md#pattern1) :
 
 ```yaml
 name: "pattern1"
@@ -17,8 +13,8 @@ items:
     ...
 ```
 
-A pattern must contain a `name`, its name will be used in inventories to identify the pattern.&#x20;
+Un motif doit contenir un `name`, qui sera utilisé dans les inventaires pour identifier le motif.
 
-You then have a `size`, which is that of the inventory, you have to put patterns of the same size with the inventories, a pattern of size 18 cannot go with an inventory of cut 27 for example.
+Vous avez ensuite une `size`, qui est celle de l'inventaire, vous devez mettre des patrons de la même taille avec les inventaires, un patron de taille 18 ne peut pas aller avec un inventaire de taille 27 par exemple.
 
-You then have a list of items, it’s the same as for [inventories](inventories.md#items).
+Vous avez alors une liste d'éléments, c'est la même chose que pour [inventories](inventaires.md#items).
