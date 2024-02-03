@@ -476,5 +476,5 @@ The `JUMP` type allows to change page, to a predefined page.
 ```yaml
 jumpButton:
   type: JUMP
-  page: 5
+  toPage: 5
 ```
