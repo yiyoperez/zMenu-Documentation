@@ -293,6 +293,18 @@ else: <else button>
 
 Allows to display an else button if the player doesn't have permission. You can put several else button in a row without problem. You have an example of use in the default configuration.
 
+Example:
+
+```yaml
+items:
+  |mybutton:
+  |  <item configuration>
+  |--|else:
+  |  |  <first else configuration>
+  |  |--|else:
+  |  |--|  <second else configuration>
+```
+
 ***
 
 ### Placeholder
