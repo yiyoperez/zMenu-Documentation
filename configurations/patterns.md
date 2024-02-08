@@ -13,6 +13,8 @@ The patterns can be found in the patterns folder and you can create as many as y
 ```yaml
 name: "pattern1"
 size: 54
+# Displays the pattern on multiple pages, false by default
+enableMultiPage: <true/false>
 items:
     ...
 ```
