@@ -35,13 +35,16 @@ Le matériau de l'article. Vous pouvez utiliser un placeholder pour afficher un 
 
 > **Valeurs matérielles prises en charge :**
 >
-> * [Material](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html) - Exemple: `material: STONE`
-> * [Placeholder](https://www.spigotmc.org/resources/placeholderapi.6245/) value - Exemple: `material: %your_placeholder_material%`
-> * [HeadDatabase](https://www.spigotmc.org/resources/head-database.14280/) (hdb:\<ID>) Exemple: `material: hdb:<ID>`
-> * [Oraxen](https://www.spigotmc.org/resources/%E2%98%84%EF%B8%8F-oraxen-add-items-blocks-armors-hats-food-furnitures-plants-and-gui-1-18-1-20-1.72448/) (oraxen:\<nom de l'item>) Exemple: `material: oraxen:<nom de l'item>`
-> * [ItemAdder](https://www.spigotmc.org/resources/%E2%9C%A8itemsadder%E2%AD%90emotes-mobs-items-armors-hud-gui-emojis-blocks-wings-hats-liquids.73355/) (itemsadder:\<nom de l'item>) Exemple: `material:` itemsadder`:<nom de l'item>`
-> * [SlimeFun](https://github.com/Slimefun/Slimefun4) (slimefun:\<nom de l'item>) Exemple: `material:` slimefun`:<nom de l'item>`
-> * [Nova](https://github.com/xenondevs/Nova) (nova:\<nom de l'item/bloc>) Exemple: `material: nova:<`nom de l'item/bloc`>`
+> * [Material](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html) - Example: `material: STONE`
+> * [Placeholder](https://www.spigotmc.org/resources/placeholderapi.6245/) value - Example: `material: %your_placeholder_material%`
+> * [HeadDatabase](https://www.spigotmc.org/resources/head-database.14280/) (hdb:\<ID>) Example: `material: hdb:<ID>`
+> * [Oraxen](https://www.spigotmc.org/resources/%E2%98%84%EF%B8%8F-oraxen-add-items-blocks-armors-hats-food-furnitures-plants-and-gui-1-18-1-20-1.72448/) (oraxen:\<item name>) Example: `material: oraxen:<item name>`
+> * [ItemAdder](https://www.spigotmc.org/resources/%E2%9C%A8itemsadder%E2%AD%90emotes-mobs-items-armors-hud-gui-emojis-blocks-wings-hats-liquids.73355/) (itemsadder:\<item name>) Example: `material:` itemsadder`:<item name>`
+> * [SlimeFun](https://github.com/Slimefun/Slimefun4) (slimefun:\<item name>) Example: `material:` slimefun`:<item name>`
+> * [Nova](https://github.com/xenondevs/Nova) (nova:\<item/block name>) Example: `material: nova:<item/block name>`
+> * Base64 (base64:\<item in base64) Retrieve this value in base64 with the command `/zm save <item name> base64`
+
+***
 
 ## Amount
 

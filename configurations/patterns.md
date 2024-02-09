@@ -9,6 +9,8 @@ Les paternes se trouvent dans le dossier des motifs et vous pouvez en créer aut
 ```yaml
 name: "pattern1"
 size: 54
+# Displays the pattern on multiple pages, false by default
+enableMultiPage: <true/false>
 items:
     ...
 ```
