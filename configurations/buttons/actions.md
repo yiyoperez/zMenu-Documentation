@@ -63,6 +63,8 @@ success_actions:
 </code></pre></td><td>Closes the player’s inventory.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: inventory
   inventory: &#x3C;inventory name>
   plugin: &#x3C;plugin name>
+  page: &#x3C;page>
+  arguments: &#x3C;argument list>
 </code></pre></td><td>Opens an inventory of zMenu.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: connect
   server: &#x3C;server name>
 </code></pre></td><td>Allows sending the player to another server, only works with BungeeCord and Velocity.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: sound
