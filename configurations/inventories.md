@@ -84,7 +84,7 @@ Allows to fill all the slots of the same itemstack. See item information [here](
 updateInterval: <update interval>
 ```
 
-Allows you to define the time in seconds for the refresh of the buttons in the inventory. For the buttons to be updated you must have the update option enabled. More information [here](https://zmenu.groupez.dev/configurations/buttons).
+Allows you to define the time in milliseconds for the refresh of the buttons in the inventory. For the buttons to be updated you must have the update option enabled. More information [here](https://zmenu.groupez.dev/configurations/buttons).
 
 ***
 
