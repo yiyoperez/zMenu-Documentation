@@ -423,7 +423,19 @@ The `INVENTORY` type allows the player to open a new inventory.
 ```yaml
 inventory: <inventory file name>
 plugin: <plugin name>
+toPage: <page>
+arguments:
+  - <argument 1>
+  - <argument 2>
 ```
+
+`inventory` is the name of the inventory you want to open. The name of the inventory will be the name of the inventory file.
+
+`plugin` is the name of the plugin from where the inventory comes from. It is advisable to specify the plugin name to avoid opening another inventory with the same name.
+
+`toPage` is the number of the page you want to open. Default will be 1.
+
+`arguments` is the list of arguments you can add. An argument can contain a name in the following format: `<name>:<value>`
 
 You must specify the name of the inventory. The name of the inventory will be the name of the file where the inventory is located. We also advise you to specify the name of the plugin where the inventory comes from to avoid confusion if two inventories have the same name.
 
