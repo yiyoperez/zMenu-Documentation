@@ -98,6 +98,28 @@ Allows you to delete the player's inventory on opening and restore it on closing
 
 ***
 
+### Matrix
+
+The matrix configuration in a YAML file allows for intuitive organization of items within a Minecraft inventory by providing a visual representation of slot arrangements. In the given example, a 54-slot inventory named "&8Test" uses a matrix of characters, where 'A' represents slots filled with diamonds, to create a bordered layout. This method enhances clarity and design efficiency, as each character in the matrix corresponds to an item defined under the `items` section, allowing for easy customization of inventory layouts. The use of a matrix simplifies the creation of complex inventory designs by visually mapping out item placements.
+
+```yaml
+name: "&8Test"
+size: 54
+matrix:
+  - "AAAAAAAAA"
+  - "A       A"
+  - "A       A"
+  - "A       A"
+  - "A       A"
+  - "AAAAAAAAA"
+items:
+  A:
+    item:
+      material: DIAMOND
+```
+
+***
+
 ### Items
 
 ```yaml

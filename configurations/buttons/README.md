@@ -158,7 +158,7 @@ Allows you to specify if the button should be displayed on all pages of the inve
 
 ***
 
-## useCache
+### useCache
 
 ```yaml
 useCache: <true of false>
