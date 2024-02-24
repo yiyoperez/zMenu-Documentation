@@ -158,6 +158,16 @@ Allows you to specify if the button should be displayed on all pages of the inve
 
 ***
 
+## useCache
+
+```yaml
+useCache: <true of false>
+```
+
+Allows to enable or not the cache on the item, by default it will always be used if the button item does not contain a placeholder.
+
+***
+
 ### Item
 
 ```yaml
