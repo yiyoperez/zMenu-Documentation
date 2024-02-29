@@ -472,9 +472,6 @@ next:
     material: ARROW
     name: "&fNext"
   else: #Displays another button if there is no next page.
-    slot: 50
-    type: NONE
-    isPermanent: true
     item:
       material: BLACK_STAINED_GLASS_PANE
 ```
@@ -484,17 +481,14 @@ next:
 The `PREVIOUS` type allows you to go to the previous page if it exists. You can use the `else` element to display another button if there is no previous page.
 
 ```yaml
-next:
+previous:
   type: PREVIOUS
   isPermanent: true
-  slot: 50
+  slot: 48
   item:
     material: ARROW
-    name: "&fNext"
+    name: "&fPrevious"
   else: #Displays another button if there is no next page.
-    slot: 50
-    type: NONE
-    isPermanent: true
     item:
       material: BLACK_STAINED_GLASS_PANE
 ```
