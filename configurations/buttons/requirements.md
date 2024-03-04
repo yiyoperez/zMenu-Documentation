@@ -161,7 +161,8 @@ click_requirement:
   placeholder: &#x3C;placeholder>
   value: &#x3C;placeholder value>
   action: &#x3C;placeholder action>
-</code></pre></td><td>Allows you to define a permission using a placeholder. You must specify the placeholder, the action to be performed with the value, and the value that will be checked. More information <a href="./#placeholder">here</a>.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: regex
+  target: &#x3C;player / placeholder with player name>
+</code></pre></td><td>Allows you to define a permission using a placeholder. You must specify the placeholder, the action to be performed with the value, and the value that will be checked. More information <a href="./#placeholder">here</a>.<br>You can specify a player, otherwise the player who opens the inventory will be used.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: regex
   regex: &#x3C;regex>
   input: &#x3C;placeholder>
 </code></pre></td><td><p>Checks if the regex matches the input. The input can be a placeholder.</p><p>Visit <a href="https://regexr.com/">regexr.com</a> for create your regex.</p></td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: item

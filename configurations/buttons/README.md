@@ -422,11 +422,41 @@ actions:
 
 ***
 
+### Error item ([zMenu+](https://minecraft-inventory-builder.com/resources/zmenu.4))
+
+Example of inventory with Fail Item. In this example, if the player is not creative a barrier with the name error will be displayed for 10 ticks
+
+```yaml
+name: "&8Test"
+size: 54
+items:
+  example:
+    item:
+      material: DIAMOND
+    slot: 22
+    error_item:
+      duration: 10 # Duration of item display
+      item: # Item to display
+        material: BARRIER
+        name: "&cError"
+    click_requirement:
+      left_click:
+        clicks:
+          - ALL
+        requirements:
+          - type: placeholder
+            placeholder: "%player_gamemode%"
+            value: "CREATIVE"
+            action: equals_string
+```
+
+***
+
 ## NONE
 
 The `NONE` type is the default type, it allows to display a button. You don't have to specify it, it will be automatically chosen if the plugin doesn't find a type.
 
-## Inventory
+## INVENTORY
 
 The `INVENTORY` type allows the player to open a new inventory.
 
@@ -449,7 +479,7 @@ arguments:
 
 You must specify the name of the inventory. The name of the inventory will be the name of the file where the inventory is located. We also advise you to specify the name of the plugin where the inventory comes from to avoid confusion if two inventories have the same name.
 
-## Back
+## BACK
 
 The `BACK` type allows you to return to the previous inventory.
 
@@ -505,4 +535,61 @@ The `JUMP` type allows to change page, to a predefined page.
 jumpButton:
   type: JUMP
   toPage: 5
+```
+
+## PAGINATION ([zMenu+](https://minecraft-inventory-builder.com/resources/zmenu.4))
+
+Example of inventory with the Pagination button. In this example the items will be displayed on slot 21, 22 and 23 and on several pages.\
+The list of items contains the material and the name. You can put anything you want in the list. To use the value you must use the placeholder key. In this example the keys will be `%material%` and `%name%`.\
+You can also apply changes to the value like this:
+
+* `%lower_<key>%` - Displays the value in lower case.
+* `%upper_<key>%` - Displays the value in upper case.
+* `%capitalize_<key>%` - Display the value in capital You can use placeholders everywhere. For your requirements, commands, placeholders etc.
+
+```yaml
+name: "&8&lPagination &r&7%page%&8/&7%maxPage%"
+size: 54
+items:
+  example:
+    type: PAGINATION
+    elements:
+      - material: DIAMOND
+        name: "diaMond"
+      - material: IRON_INGOT
+        name: "iron_INGOT"
+      - material: EMERALD
+        name: "emeRald"
+      - material: COAL
+        name: "cOAl"
+      - material: GOLD_INGOT
+        name: "gold_INGOT"
+    slots:
+      - 21-23
+    item:
+      material: "%material%"
+      name: "&e%index% &7- &b%current%"
+      lore:
+        - "&8&m-----------------------"
+        - ""
+        - "&f%name% &8- &7Normal"
+        - "&f%upper_name% &8- &fUpper case"
+        - "&f%lower_name% &8- &7lower case"
+        - "&f%capitalize_name% &8- &7Capitalized"
+        - ""
+        - "&8&m-----------------------"
+  next:
+    type: NEXT
+    isPermanent: true
+    slot: 50
+    item:
+      material: ARROW
+      name: "&fNext"
+  previous:
+    type: PREVIOUS
+    isPermanent: true
+    slot: 48
+    item:
+      material: ARROW
+      name: "&fPrevious"
 ```
