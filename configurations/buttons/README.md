@@ -597,3 +597,61 @@ items:
 ```
 
 <figure><img src="../../.gitbook/assets/pagination.gif" alt=""><figcaption></figcaption></figure>
+
+## DYNAMIC PAGINATION ([zMenu+](https://minecraft-inventory-builder.com/resources/zmenu.4))
+
+Lets you create a dynamic inventory with placeholders. You can use this to create a ranking for example. The only limit is your imagination.
+
+In the example if below you have placeholders generates by zMenu+ as an example.
+
+`%zmenu+_pagination_size%` Returns the size of your list. This value will change when loading the plugin.
+
+`%zmenu+_pagination_name_<index>%` Returns text based on the index. The text is generated automatically when loading the plugin.
+
+You must then specify the start and end of the pagination. For this you have the `start` and `end`, which works with PlaceholderAPI.&#x20;
+
+Then have 3 internal placeholders to help you get the button number that is displayed.
+
+`%index%` - Returns the index of the button, starts at 0.
+
+`%current%` - Returns the index of the button + 1, starts at 1.
+
+`%value%` - Returns the value of the button. If your pagination does not start with 0 you must use se placeholder to retrieve the index of the button.
+
+```yaml
+name: "&8Dynamic Pagination &7%page%/%maxPage%"
+size: 54
+items:
+  pagination:
+    type: DYNAMIC_PAGINATION
+    start: 10 # You need to specify the beginning, here 10. But the easiest way is to start at 0
+    end: "%zmenu+_pagination_size%" # The number or pagination must stop
+    slots:
+      - 20-24
+      - 29-33
+    item:
+      material: IRON_INGOT
+      name: "&fHey its &e%zmenu+_pagination_name_%value%% &8- &f%index%"
+      lore:
+        - "&7Index&8: &f%index%"
+        - "&7Current&8: &f%current%"
+        - "&7Value&8: &f%value%"
+
+  next:
+    type: NEXT
+    isPermanent: true
+    slot: 50
+    item:
+      material: ARROW
+      name: "&fNext"
+
+  previous:
+    type: PREVIOUS
+    isPermanent: true
+    slot: 48
+    item:
+      material: ARROW
+      name: "&fPrevious"
+```
+
+<figure><img src="../../.gitbook/assets/dynamic_pagination.gif" alt=""><figcaption></figcaption></figure>
