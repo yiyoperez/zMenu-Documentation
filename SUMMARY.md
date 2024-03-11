@@ -22,9 +22,10 @@
 ## API
 
 * [Informations](api/informations.md)
-* [Create button](api/create-button.md)
-* [Create inventory](api/create-inventory.md)
-* [Create material loader](api/create-material-loader.md)
+* [Create Button](api/create-button.md)
+* [Create Material Loader](api/create-material-loader.md)
+* [Create ButtonOption](api/create-buttonoption.md)
+* [Load Inventory](api/load-inventory.md)
 * [Fast Events](api/fast-events.md)
 
 ***

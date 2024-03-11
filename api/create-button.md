@@ -2,276 +2,355 @@
 description: How to create a button
 ---
 
-# Create button
+# Create Button
 
-## Informations
+The code for this example can be found here: [https://github.com/Maxlego08/zMenuExample/tree/master](https://github.com/Maxlego08/zMenuExample/tree/master)
 
-One of the great features of zMenu is its button customization. You will be able to create buttons for your plugins, which will allow users to have only one inventory plugin for the whole server. The goal of zMenu is to make as many plugins as possible use its API, so that users have only one type of inventory configuration for their entire server.
+If you need a more concrete example you can look at the zShop source: [https://github.com/Maxlego08/zShop/tree/master](https://github.com/Maxlego08/zShop/tree/master)
 
-To create a button you will need at least two classes. A first one for the button and a second one to change the button. You can also create an interface to implement your button, but this is not mandatory.
+## Button
 
-The final code is available here: [https://github.com/Maxlego08/zMenuExample](https://github.com/Maxlego08/zMenuExample)
+This documentation guides you through creating a `SpecialButton` for use in your plugin, utilizing the `SpecialButton.java` class to implement custom click actions. This example is the typical case of a very simple button.
 
-## Button&#x20;
+### Overview
 
-The mandatory implementation for a button will be [ZPlaceholderButton](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/button/ZPlaceholderButton.html). You then have the choice to implement your buttons with one of the types available [here](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/button/buttons/package-summary.html). If your plugin has an API you can create an interface and implement it as a [PlaceholderButton](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/button/PlaceholderButton.html), but it is not mandatory.
+`SpecialButton` extends `ZButton` from the `fr.maxlego08.menu` API to customize the button's behavior on click events. It's designed to close the player's inventory interface, send a custom message, and apply a "jump" or "boost" effect to the player's velocity.
 
+### Prerequisites
 
+Ensure you have the `fr.maxlego08.menu` API included in your project to use `ZButton` and other required classes.
 
-Here is the heirarchy of buttons: [PlaceholderButton](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/button/PlaceholderButton.html) extend [PermissibleButton](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/button/PermissibleButton.html) who extend [Button](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/button/Button.html).
+### Implementation Steps
 
-If you have a question don't hesitate to ask on [discord](https://discord.groupez.dev/).
+#### Step 1: Define the SpecialButton Class
 
-### Creating a classic button
-
-We will create a simple button with an action that will be performed when clicked.
-
-#### 1. Create button class
-
-First you need to create a class that will be extended from `ZButton`:
+Create a class named `SpecialButton` that extends `ZButton`. This class will override the `onClick` method to define the button's behavior.
 
 ```java
-public class SpecialButton extends ZButton{
+public class SpecialButton extends ZButton {
+    // Method implementation
 }
 ```
 
-You have just created a button, you just have to implement the methods and register it.
+#### Step 2: Override the onClick Method
 
-#### 2. Implementation
-
-For the example we will make sure that when the player clicks, the inventory will be closed, a message will be sent to him and he will be sent into the sky.
-
-To detect the click of a player you have to implement the [onClick](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/button/Button.html#onClick\(org.bukkit.entity.Player,org.bukkit.event.inventory.InventoryClickEvent,fr.maxlego08.menu.inventory.inventories.InventoryDefault,int\)) method.
+In the `SpecialButton` class, override the `onClick` method to specify the actions that occur when the button is clicked. This includes closing the player's inventory, sending a custom message, and applying a velocity change to simulate a jump.
 
 ```java
 @Override
-public void onClick(Player player, InventoryClickEvent event, InventoryDefault inventory, int slot) {
+public void onClick(Player player, InventoryClickEvent event, InventoryDefault inventory, int slot, Placeholders placeholders) {
+    // Custom actions here
 }
 ```
 
-In this method we have the player, the click event and the InventoryDefault object. This object allows to manage all the actions of the inventory. It will allow you to retrieve information about the page, about the Inventory object of spigot and many other things.
+Step 3: Implement Custom Actions
 
-We can now implement this method:
+Within the `onClick` method, add the logic for the custom actions:
+
+1. **Close the Inventory Interface:** Use `player.closeInventory()` to close the inventory interface.
+2. **Send a Custom Message to the Player:** Use `player.sendMessage("§fWhoosshh")` to send a custom message.
+3. **Modify the Player's Velocity:**
+   * Retrieve the current velocity: `Vector vector = player.getVelocity()`.
+   * Modify the velocity to add an upward motion: `vector.add(new Vector(0, 2, 0))`.
+   * Apply the new velocity: `player.setVelocity(vector)`.
 
 ```java
 @Override
-public void onClick(Player player, InventoryClickEvent event, InventoryDefault inventory, int slot) {
+public void onClick(Player player, InventoryClickEvent event, InventoryDefault inventory, int slot, Placeholders placeholders) {
+    player.closeInventory(); // Close the player's current inventory
+    player.sendMessage("§fWhoosshh"); // Send a custom message to the player
 
-	player.closeInventory();
-	player.sendMessage("§fWhoosshh §5" + this.plugin.getItemstacks().size());
-	
-	Vector vector = player.getVelocity();
-	vector.add(new Vector(0, 2, 0));
-	player.setVelocity(vector);
-
+    Vector vector = player.getVelocity(); // Get the current velocity of the player
+    vector.add(new Vector(0, 2, 0)); // Modify the Y-axis to make the player "jump"
+    player.setVelocity(vector); // Apply the new velocity to the player
 }
 ```
 
-You can see that in this example we refer to this.plugin. It is important to know that the constructor of your Button can have an empty constructor or a constructor with the [Plugin](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/plugin/Plugin.html) interface. You can then cast the plugin interface into your plugin. (Cf #3 Register button)
+#### Step 4: Regitser the SpecialButton
 
-Here is the class with all the implementations:
+To register the `SpecialButton` in your plugin, instantiate it and add it to your inventory layout where needed. Ensure that the inventory system you're using supports custom button actions.
 
 ```java
-package fr.zmenu.example.button.special;
+public class MyPlugin extends JavaPlugin {
+    @Override
+    public void onEnable() {
+        // Plugin startup logic
+        // Assume buttonManager is your instance of a class managing buttons
+        buttonManager.register(new NoneLoader(this, SpecialButton.class, "zmenuexample_special"));
+    }
+}
+
+```
+
+This method allows to save a button very quickly without having to create a new loader. You must specify the plugin from where the plugin comes from, the button class and the name. For the name of the button it is advisable to prefix the name of your plugin.
+
+### Result
+
+```java
+package fr.maxlego08.example;
+
+import fr.maxlego08.menu.api.utils.Placeholders;
+import fr.maxlego08.menu.button.ZButton;
+import fr.maxlego08.menu.inventory.inventories.InventoryDefault;
+import org.bukkit.entity.Player;
+import org.bukkit.event.inventory.InventoryClickEvent;
+import org.bukkit.util.Vector;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.inventory.InventoryClickEvent;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.util.Vector;
-
 import fr.maxlego08.menu.button.ZButton;
 import fr.maxlego08.menu.inventory.inventories.InventoryDefault;
-import fr.zmenu.example.ExamplePlugin;
 
+/**
+ * SpecialButton extends ZButton to implement a custom click action.
+ */
 public class SpecialButton extends ZButton {
 
-	private final ExamplePlugin plugin;
+    /**
+     * Handles the click event on this special button.
+     *
+     * @param player The player who clicked the button.
+     * @param event The inventory click event details.
+     * @param inventory The inventory where the click occurred.
+     * @param slot The slot number where the click happened.
+     * @param placeholders Placeholders for dynamic text replacement, not used in this method.
+     */
+    @Override
+    public void onClick(Player player, InventoryClickEvent event, InventoryDefault inventory, int slot, Placeholders placeholders) {
+        // Close the inventory interface for the player.
+        player.closeInventory();
 
-	public SpecialButton(Plugin plugin) {
-		super();
-		this.plugin = (ExamplePlugin) plugin;
-	}
+        // Send a message to the player.
+        player.sendMessage("§fWhoosshh");
 
-	@Override
-	public void onClick(Player player, InventoryClickEvent event, InventoryDefault inventory, int slot) {
+        // Get the current velocity of the player.
+        Vector vector = player.getVelocity();
 
-		player.closeInventory();
-		player.sendMessage("§fWhoosshh §5" + this.plugin.getItemstacks().size());
-		
-		Vector vector = player.getVelocity();
-		vector.add(new Vector(0, 2, 0));
-		player.setVelocity(vector);
+        // Add to the player's current velocity to make them move upwards.
+        // Here, 'new Vector(0, 2, 0)' adds no motion on the X and Z axes, but adds upward motion on the Y axis.
+        vector.add(new Vector(0, 2, 0));
 
-	}
+        // Apply the new velocity to the player, effectively causing a "jump" or "boost" effect.
+        player.setVelocity(vector);
 
+        // Call the superclass method if necessary. This call might be redundant if the superclass does not implement further action.
+        super.onClick(player, event, inventory, slot, placeholders);
+    }
 }
 ```
 
-#### 3. Register button
+## Paginate Button
 
-Now you have to register the button. To register a button you need a [ButtonLoader](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/loader/ButtonLoader.html). In this example we don't need a complex loader. So we can use the [NoneLoader](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/button/loader/NoneLoader.html). This loader will allow you to load a button very simply. As said in the second part, the [NoneLoader](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/button/loader/NoneLoader.html) will allow you to load your class with or without the [Plugin](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/plugin/Plugin.html).
+This documentation outlines how to implement a `ExamplePaginateButton` for creating a paginated inventory interface in your plugin, using the provided `ExamplePaginateButton.java` class as a basis.
 
-Go to your main class. You will need to get the [ButtonManager](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/ButtonManager.html) provider and use the register method to [register](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/ButtonManager.html#register\(fr.maxlego08.menu.api.loader.ButtonLoader\)) a button.
+### Overview
 
-To recover the provider here is a very useful method:
+`ExamplePaginateButton` leverages the `PaginateButton` interface from the `fr.maxlego08.menu.api` to offer pagination functionality, allowing items to be displayed across multiple inventory pages.
+
+### Prerequisites
+
+* Include the `fr.maxlego08.menu` API in your project.
+* Understand basic concepts of inventory manipulation in Bukkit/Spigot plugins.
+
+### Implementation Steps
+
+#### Step 1: Extend ZButton and Implement PaginateButton
+
+Your `ExamplePaginateButton` should extend `ZButton` and implement `PaginateButton`, enabling special render behavior and pagination:
 
 ```java
-private <T> T getProvider(Class<T> classz) {
-    RegisteredServiceProvider<T> provider = getServer().getServicesManager().getRegistration(classz);
-    return provider == null ? null : provider.getProvider() != null ? (T) provider.getProvider() : null;
+public class ExamplePaginateButton extends ZButton implements PaginateButton {
+    private final ExamplePlugin plugin;
+    
+    public ExamplePaginateButton(Plugin plugin) {
+        this.plugin = (ExamplePlugin) plugin;
+    }
 }
 ```
 
-You just have to use the methods to register a button. It is advised before registering your buttons to remove all buttons from your plugin with the [unregisters](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/ButtonManager.html#unregister\(fr.maxlego08.menu.api.loader.ButtonLoader\)) method.
+We use `Plugin` instead of `ExamplePlugin` because the `NoneLoader` class, which is responsible for button registration, requires a constructor parameter of the plugin. Since `NoneLoader` is designed to work with the general `Plugin` interface from Spigot, it ensures compatibility with any Spigot plugin. Casting to the specific `ExamplePlugin` class is then performed to access its unique functionalities. This approach maintains flexibility and adherence to Spigot's plugin architecture.
+
+Step 2: Override `hasSpecialRender`
+
+Indicate that your button uses custom rendering logic for pagination:
 
 ```java
 @Override
-public void onEnable() {
-    ButtonManager buttonManager = this.getProvider(ButtonManager.class);
-    buttonManager.unregisters(this);
-    buttonManager.register(new NoneLoader(this, SpecialButton.class, "ZMENUEXAMPLE_SPECIAL"));
+public boolean hasSpecialRender() {
+    return true;
 }
 ```
 
-With the NoneLoader you have to specify the name of your button. We advise you to put the `<name of your plugin>_<the name of the button>`
+#### Step 3: Implement Custom Rendering Logic
 
-### Create a complexe button
-
-#### 1. Create button class
-
-We are going to create a button to do pagination. The button will display items on several slots depending on the page. So we have to create a button that will be extended from `ZButton`. We will also create a PaginationButton interface which will be extended from [SlotButton](file:///D:/Users/Maxence/Desktop/docs/fr/maxlego08/menu/api/button/buttons/SlotButton.html).
+Override the `onRender` method to define how items are displayed based on the current page:
 
 ```java
-public interface PaginationButton extends ZButton {
+@Override
+public void onRender(Player player, InventoryDefault inventory) {
+    Pagination<ItemStack> pagination = new Pagination<>();
+    List<ItemStack> itemStacks = pagination.paginate(this.plugin.getItemStacks(), this.slots.size(), inventory.getPage());
+    // Loop and add items to the inventory
 }
 ```
 
+#### Step 4: Define Pagination Size
+
+Implement `getPaginationSize` to specify the total number of items for pagination. This directly influences the number of pages within the inventory, allowing for dynamic list management. Changes in the list size will automatically adjust the pagination, making this method a key component in handling variable amounts of data efficiently in the inventory UI.
+
 ```java
-public class ZPaginationButton extends ZButton implements PaginationButton {
+@Override
+public int getPaginationSize(Player player) {
+    return this.plugin.getItemStacks().size();
 }
 ```
 
-#### 2. Implementation
+#### Step 5: Regitser the SpecialButton
 
-zMenu uses the TemplatePlugin. So the plugin has many utility classes. Here we will use the [Pagination](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/zcore/utils/inventory/Pagination.html) class. This class will allow to sort a list according to a number of elements and a page.
-
-Here is the complete class:
+To register the `ExamplePaginateButton` in your plugin, instantiate it and add it to your inventory layout where needed. Ensure that the inventory system you're using supports custom button actions.
 
 ```java
-package fr.zmenu.example.button.pagination;
+public class MyPlugin extends JavaPlugin {
+    @Override
+    public void onEnable() {
+        // Plugin startup logic
+        // Assume buttonManager is your instance of a class managing buttons
+        buttonManager.register(new NoneLoader(plugin, ExamplePaginateButton.class, "zmenuexample_pagination"));
+    }
+}
 
-import java.util.ArrayList;
-import java.util.List;
+```
 
-import org.bukkit.entity.Player;
-import org.bukkit.inventory.ItemStack;
+This method allows to save a button very quickly without having to create a new loader. You must specify the plugin from where the plugin comes from, the button class and the name. For the name of the button it is advisable to prefix the name of your plugin.
 
+### Result
+
+```java
+package fr.maxlego08.example;
+
+import fr.maxlego08.menu.api.button.PaginateButton;
 import fr.maxlego08.menu.button.ZButton;
 import fr.maxlego08.menu.inventory.inventories.InventoryDefault;
 import fr.maxlego08.menu.zcore.utils.inventory.Pagination;
-import fr.zmenu.example.ExamplePlugin;
-
-public class ZPaginationButton extends ZButton implements PaginationButton {
-
-	private final ExamplePlugin plugin;
-
-	/**
-	 * @param slots
-	 * @param plugin
-	 */
-	public ZPaginationButton(List<Integer> slots, ExamplePlugin plugin) {
-		super.slots = slots
-		this.plugin = plugin;
-	}
-
-	@Override
-	public void onRender(Player player, InventoryDefault inventory) {
-
-		Pagination<ItemStack> pagination = new Pagination<>();
-		List<Integer> slots = new ArrayList<Integer>(this.getSlots());
-		List<ItemStack> itemStacks = pagination.paginate(this.plugin.getItemstacks(), slots.size(),
-				inventory.getPage());
-
-		for (int i = 0; i != Math.min(itemStacks.size(), slots.size()); i++) {
-
-			int slot = slots.get(i);
-			ItemStack itemStack = itemStacks.get(i);
-			inventory.addItem(slot, itemStack).setClick(event -> {
-				player.sendMessage("§fClick !");
-			});
-		}
-	}
-}
-```
-
-An inventory that will be extended from slotButton will have a special render with the [onRender](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/button/Button.html#onRender\(org.bukkit.entity.Player,fr.maxlego08.menu.inventory.inventories.InventoryDefault\)) method. You can activate the special rendering with the method [hasSpecialRender](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/button/Button.html#hasSpecialRender\(\)).
-
-#### 3. Register button
-
-To register this button we will have to create a [ButtonLoader](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/loader/ButtonLoader.html).
-
-```java
-public class PaginationLoader implements ButtonLoader {
-}
-```
-
-You must then implement the 4 methods. The method [getButton](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/loader/ButtonLoader.html#getButton\(\)) you have to return the button, here you have to return the PaginationButton.class
-
-```java
-package fr.zmenu.example.button.pagination;
+import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
+import org.bukkit.plugin.Plugin;
 
 import java.util.List;
-import org.bukkit.configuration.file.YamlConfiguration;
-import org.bukkit.plugin.Plugin;
-import fr.maxlego08.menu.api.button.Button;
-import fr.maxlego08.menu.api.loader.ButtonLoader;
-import fr.zmenu.example.ExamplePlugin;
 
-public class PaginationLoader implements ButtonLoader {
+/**
+ * ExamplePaginateButton extends ZButton and implements PaginateButton to provide
+ * pagination functionality for a custom inventory within a zMenu.
+ */
+public class ExamplePaginateButton extends ZButton implements PaginateButton {
 
-	private final ExamplePlugin plugin;
+    // Reference to the main plugin instance for accessing its functionalities.
+    private final ExamplePlugin plugin;
 
-	/**
-	 * @param plugin
-	 */
-	public PaginationLoader(ExamplePlugin plugin) {
-		super();
-		this.plugin = plugin;
-	}
+    /**
+     * Constructor that casts the generic Plugin type to the specific ExamplePlugin type.
+     * @param plugin The plugin instance, passed in as a generic Plugin type.
+     */
+    public ExamplePaginateButton(Plugin plugin) {
+        this.plugin = (ExamplePlugin) plugin;
+    }
 
-	@Override
-	public Class<? extends Button> getButton() {
-		return PaginationButton.class;
-	}
+    /**
+     * Indicates that this button has a special render behavior, enabling pagination.
+     * @return true to signify that custom rendering logic is used.
+     */
+    @Override
+    public boolean hasSpecialRender() {
+        return true;
+    }
 
-	@Override
-	public String getName() {
-		return "ZMENUEXAMPLE_PAGINATION";
-	}
+    /**
+     * Custom rendering method for paginated items. It populates the inventory with items
+     * based on the current page and available slots.
+     * @param player The player viewing the inventory.
+     * @param inventory The inventory being rendered.
+     */
+    @Override
+    public void onRender(Player player, InventoryDefault inventory) {
+        // Utilize Pagination utility to split itemStacks into pages.
+        Pagination<ItemStack> pagination = new Pagination<>();
 
-	@Override
-	public Plugin getPlugin() {
-		return this.plugin;
-	}
+        // Get paginated list of ItemStacks for the current page.
+        List<ItemStack> itemStacks = pagination.paginate(this.plugin.getItemStacks(), this.slots.size(), inventory.getPage());
 
-	@Override
-	public Button load(YamlConfiguration configuration, String path, DefaultButtonValue defaultButtonValue) {
-		List<Integer> slots = ButtonLoader.loadSlot(configuration.getStringList(path + "slots"));
-		return new ZPaginationButton(slots, this.plugin);
-	}
+        // Loop through the paginated items and add them to the inventory.
+        for (int i = 0; i != Math.min(itemStacks.size(), this.slots.size()); i++) {
+            int slot = slots.get(i); // Get the slot number.
+            ItemStack itemStack = itemStacks.get(i); // Get the ItemStack.
+            // Add the item to the inventory at the specified slot and set a click listener.
+            inventory.addItem(slot, itemStack).setClick(event -> player.sendMessage("§fClick !"));
+        }
+    }
+
+    /**
+     * Determines the total size of pagination based on the total number of items.
+     * @param player The player for whom the pagination size is calculated.
+     * @return The total number of items to paginate.
+     */
+    @Override
+    public int getPaginationSize(Player player) {
+        // Return the total size of itemStacks to determine how many pages are needed.
+        return this.plugin.getItemStacks().size();
+    }
 }
+
 ```
 
-We advise you to put the `<name of your plugin>_<the name of the button>`
+## Custom Button Loader
 
-For the [load](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/loader/ButtonLoader.html#load\(org.bukkit.configuration.file.YamlConfiguration,java.lang.String\)) method the plugin will provide you with a YamlConfiguration and the path into the configuration. Then you have to return the implementation of your button. To be able to load a list of slot you have the method [loadeSlot](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/loader/ButtonLoader.html#loadSlot\(java.util.List\)) which from a list of string will return a list of interger.
-
-Then, as in the first example, you must save the button.
+You can create your own button loader if your button needs more settings. Just create a class that will implement ButtonLoader. All you have to do is implement the methods, here is an example from zShop.
 
 ```java
-buttonManager.register(new PaginationLoader(this));
+package fr.maxlego08.zshop.loader;
+
+import fr.maxlego08.menu.api.button.Button;
+import fr.maxlego08.menu.api.button.DefaultButtonValue;
+import fr.maxlego08.menu.api.loader.ButtonLoader;
+import fr.maxlego08.zshop.ShopPlugin;
+import fr.maxlego08.zshop.api.buttons.AddButton;
+import fr.maxlego08.zshop.buttons.ZAddButton;
+import org.bukkit.configuration.file.YamlConfiguration;
+import org.bukkit.plugin.Plugin;
+
+public class AddButtonLoader implements ButtonLoader {
+
+    private final ShopPlugin plugin;
+
+    public AddButtonLoader(ShopPlugin plugin) {
+        this.plugin = plugin;
+    }
+
+    @Override
+    public Class<? extends Button> getButton() {
+        return AddButton.class;
+    }
+
+    @Override
+    public String getName() {
+        return "zshop_add";
+    }
+
+    @Override
+    public Plugin getPlugin() {
+        return this.plugin;
+    }
+
+    @Override
+    public Button load(YamlConfiguration configuration, String path, DefaultButtonValue defaultButtonValue) {
+
+        String amount = configuration.getString(path + "amount", "1");
+
+        return new ZAddButton(this.plugin, amount);
+    }
+}
+
 ```
 
-4\. Inventory
 
-Now you have to create an inventory to be able to manage the pagination.
+
