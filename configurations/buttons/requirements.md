@@ -170,5 +170,7 @@ click_requirement:
   amount: &#x3C;amount of item>
 </code></pre></td><td>Check if the player has an item in his inventory.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: job
   job: &#x3C;job name>
-</code></pre></td><td>Allows to check if the player has the job. Works with <a href="https://www.spigotmc.org/resources/jobs-reborn.4216/">JobReborn</a> plugin.</td></tr></tbody></table>
+</code></pre></td><td>Allows to check if the player has the job. Works with <a href="https://www.spigotmc.org/resources/jobs-reborn.4216/">JobReborn</a> plugin.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: luckperm
+  group: &#x3C;group name>
+</code></pre></td><td>Allows to check if the player is in a group. Works with <a href="https://www.spigotmc.org/resources/luckperms.28140/">LuckPerms</a> plugin.</td></tr></tbody></table>
 
