@@ -76,7 +76,7 @@ success_actions:
   pitch: &#x3C;sound pitch> # 1.0f by default
   volume: &#x3C;sound volume> # 1.0f by default
 </code></pre></td><td>Send a sound to the online players, you must use <a href="https://github.com/CryptoMorin/XSeries/blob/master/src/main/java/com/cryptomorin/xseries/XSound.java">XSound</a> for sound.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: data
-  action: &#x3C;SET/REMOVE>
+  action: &#x3C;SET/REMOVE/ADD/SUBTRACT>
   key: &#x3C;data key>
   value: &#x3C;data value>
   seconds: &#x3C;expire seconds> # 0 by default
