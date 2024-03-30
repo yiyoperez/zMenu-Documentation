@@ -172,5 +172,7 @@ click_requirement:
   job: &#x3C;job name>
 </code></pre></td><td>Allows to check if the player has the job. Works with <a href="https://www.spigotmc.org/resources/jobs-reborn.4216/">JobReborn</a> plugin.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: luckperm
   group: &#x3C;group name>
-</code></pre></td><td>Allows to check if the player is in a group. Works with <a href="https://www.spigotmc.org/resources/luckperms.28140/">LuckPerms</a> plugin.</td></tr></tbody></table>
+</code></pre></td><td>Allows to check if the player is in a group. Works with <a href="https://www.spigotmc.org/resources/luckperms.28140/">LuckPerms</a> plugin.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: playername
+  playerName: &#x3C;placeholder>
+</code></pre></td><td>Allows to check if a placeholder returns a text that can be a player nickname.</td></tr></tbody></table>
 
