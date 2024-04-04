@@ -84,5 +84,14 @@ success_actions:
 </code></pre><p></p></td><td>Refresh current button. Work only in click requirement</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: back
 </code></pre></td><td>Return to previous inventory.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: shopkeeper
   name: &#x3C;shopkeeper name>
-</code></pre></td><td>Open a <a href="https://www.spigotmc.org/threads/shopkeepers.447969/">Shopkeeper</a> trading inventory</td></tr></tbody></table>
+</code></pre></td><td>Open a <a href="https://www.spigotmc.org/threads/shopkeepers.447969/">Shopkeeper</a> trading inventory</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: book
+  author: "Maxlego08" # Book author
+  title: "&#x26;cTest" # Book title
+  lines: # Book pages
+    1: # First page
+      - '     #34ebe8zMenu'
+      - ''
+      - ''
+      - '&#x3C;hover:show_text:"#34eba8Open an url !">&#x3C;click:open_url:"https://www.spigotmc.org/resources/45604/">#f0af24Open URL&#x3C;reset>'
+</code></pre></td><td>Open a book</td></tr></tbody></table>
 
