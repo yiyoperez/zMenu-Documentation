@@ -92,6 +92,6 @@ success_actions:
       - '     #34ebe8zMenu'
       - ''
       - ''
-      - '&#x3C;hover:show_text:"#34eba8Open an url !">&#x3C;click:open_url:"https://www.spigotmc.org/resources/45604/">#f0af24Open URL&#x3C;reset>'
+      - '&#x3C;hover:show_text:"#34eba8Open an url !">&#x3C;click:open_url:"https://minecraft-inventory-builder.com/">#f0af24Open URL&#x3C;reset>'
 </code></pre></td><td>Open a book</td></tr></tbody></table>
 
