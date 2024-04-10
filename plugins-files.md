@@ -924,6 +924,18 @@ commands:
   pro_command:
     command: pro_command
     inventory: pro_inventory
+  openbook:
+    command: openbook
+    actions:
+      - type: book
+        author: "Maxlego08" # Book author
+        title: "&cTest" # Book title
+        lines: # Book pages
+          1: # First page
+            - '     #34ebe8zMenu'
+            - ''
+            - ''
+            - '<hover:show_text:"#34eba8Open an url !"><click:open_url:"https://minecraft-inventory-builder.com/">#f0af24Open URL<reset>'
 
 ```
 
@@ -974,8 +986,17 @@ commands:
       - sanction
     inventory: example_punish
     arguments:
-      - target
-      - reason
+      - name: target
+      - name: reason
+        auto-completion:
+          - cheat
+          - chat
+          - skin
+          - other
+        actions:
+          - type: message
+            messages:
+              - "&7You will put a punishment to the player &f&n%target%&r &7with the reason&8: &f%reason%"
 ```
 
 ## Patterns
