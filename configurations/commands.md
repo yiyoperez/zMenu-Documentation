@@ -18,31 +18,48 @@ You can put several commands per file and create an unlimited number of files.
 
 ```yaml
 commands:
-  example1:
-    command: examplea
-    aliases:
-      - exampleb
-    inventory: example
-  example2:
-    command: exampled
+  basic_command:
+    command: basic_command
+    inventory: basic_inventory
+  advanced_command:
+    command: advanced_command
     permission: "admin.use"
     aliases:
-      - examplec
-      - examplee
-    inventory: example2
+      - zai
+    inventory: advanced_inventory
+  pro_command:
+    command: pro_command
+    inventory: pro_inventory
+  openbook:
+    command: openbook
+    actions:
+      - type: book
+        author: "Maxlego08" # Book author
+        title: "&cTest" # Book title
+        lines: # Book pages
+          1: # First page
+            - '     #34ebe8zMenu'
+            - ''
+            - ''
+            - '<hover:show_text:"#34eba8Open an url !"><click:open_url:"https://minecraft-inventory-builder.com/">#f0af24Open URL<reset>'
   punish:
     command: punish
+    permission: "admin.punish"
     aliases:
       - sanction
     inventory: example_punish
     arguments:
-      - target
-      - reason    
-  example3:
-    command: openfiles
-    inventory: example3
-    arguments: # argument name, true or false, plugin name : inventory name
-      - name,false,zmenu:example2      
+      - name: target
+      - name: reason
+        auto-completion:
+          - cheat
+          - chat
+          - skin
+          - other
+        actions:
+          - type: message
+            messages:
+              - "&7You will put a punishment to the player &f&n%target%&r &7with the reason&8: &f%reason%"            
 ```
 
 ***
@@ -67,6 +84,17 @@ aliases:
 ```
 
 The aliases of the command.
+
+***
+
+### Action
+
+```yaml
+actions:
+  - ...  
+```
+
+You can use [actions](buttons/actions.md) that will always be performed when executing the order.
 
 ***
 
@@ -113,13 +141,25 @@ Allows you to add arguments to your commands. You can use the arguments with the
 commands:
   punish:
     command: punish
+    permission: "admin.punish"
     aliases:
       - sanction
     inventory: example_punish
     arguments:
-      - target
-      - reason
+      - name: target
+      - name: reason
+        auto-completion:
+          - cheat
+          - chat
+          - skin
+          - other
+        actions:
+          - type: message
+            messages:
+              - "&7You will put a punishment to the player &f&n%target%&r &7with the reason&8: &f%reason%"
 ```
+
+You can define an [action](buttons/actions.md) and auto-completion list for each action.
 
 Here you have the command **`/punish <target> <reason`**> . So you can run the command this way: `/punish Maxlego08 Cheat (fly)`.
 
