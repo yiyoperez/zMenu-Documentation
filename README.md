@@ -20,8 +20,8 @@ Download here: [https://www.spigotmc.org/resources/zmenu.110402/](https://www.sp
 * Ability to create an infinite number of GUI Menu and commands.
 * Possibility to create several pages in the same inventory.
 * Arguments for your commands.
-* A marketplace to download configurations (WIP)
-* An online inventory editor (WIP)
+* A marketplace to download configurations https://minecraft-inventory-builder.com/resources
+* An online inventory editor https://minecraft-inventory-builder.com/
 * Open Source: [https://github.com/Maxlego08/zMenu](https://github.com/Maxlego08/zMenu).
 * Advanced API.
 * Ability to create an infinite number of buttons for each of your actions.
