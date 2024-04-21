@@ -1,21 +1,21 @@
 ---
-description: Player data system
+Descrizione: Sistema dati del giocatore
 ---
 
-# Player data
+# Dati del giocatore
 
-With zMenu you can store data for the player and use it with placeholders. This way you can create counters, cooldowns and much more !
+Con zMenu puoi memorizzare i dati per il giocatore e utilizzarli con i placeholders. In questo modo puoi creare contatori, cooldown e molto altro!
 
-Each data contains a key, a value and an expiration date. If you put **0** then the data will never expire. The expiration date is a timestamp.
+Ogni dato contiene una chiave, un valore e una data di scadenza. Se inserisci **0** i dati non scadranno mai. La data di scadenza è un timestamp.
 
-## Commands
+## Comandi
 
-The permission to use these commands is: `zmenu.players`
+Il pwermesso per utilizzare questi comandi è: `zmenu.players`
 
-<table><thead><tr><th width="410">Command</th><th>Description</th></tr></thead><tbody><tr><td>/zm players</td><td>Displays the list of commands for the players' data.</td></tr><tr><td>/zm players set &#x3C;player> &#x3C;key> &#x3C;expiration> &#x3C;value></td><td>Set new player data. You must set the expiration time in seconds. Put 0 to have no expiration.</td></tr><tr><td>/zm players remove &#x3C;player> &#x3C;key></td><td>Remove player data.</td></tr><tr><td>/zm players get &#x3C;player> &#x3C;key></td><td>Get player data.</td></tr><tr><td>/zm players kets &#x3C;player></td><td>Returns the list of keys of a player.</td></tr><tr><td>/zm players clear &#x3C;player></td><td>Clear player's data.</td></tr><tr><td>/zm players clearall</td><td>Clear all player's data.</td></tr><tr><td>/zm players add &#x3C;player> &#x3C;key> &#x3C;value></td><td>Add a number to a value, works only for numbers.</td></tr><tr><td>/zm players subtract &#x3C;player> &#x3C;key> &#x3C;value></td><td>Subtract a number to a value, works only for numbers.</td></tr></tbody></table>
+<table><thead><tr><th width="410">Comandi</th><th>Descrizionen</th></tr></thead><tbody><tr><td>/zm players</td><td>Mostra la lista dei comandi per i dati dei giocatori.</td></tr><tr><td>/zm players set &#x3C;player> &#x3C;key> &#x3C;expiration> &#x3C;value></td><td>Imposta dei dati nuovi. Devi impostare il tempo in secondi. Immettere 0 per non aavere una scadenza.</td></tr><tr><td>/zm players remove &#x3C;player> &#x3C;key></td><td>Togliere dati.</td></tr><tr><td>/zm players get &#x3C;player> &#x3C;key></td><td>Ottenere dati.</td></tr><tr><td>/zm players kets &#x3C;player></td><td>Da in dietro la lista delle chiavi di un giocatoe.</td></tr><tr><td>/zm players clear &#x3C;player></td><td>Elimina i dati di un giocatore.</td></tr><tr><td>/zm players clearall</td><td>Elimina i dati di tutti i giocatori.</td></tr><tr><td>/zm players add &#x3C;player> &#x3C;key> &#x3C;value></td><td>Aggiunge un numero al valore, funziona solo per i numeri.</td></tr><tr><td>/zm players subtract &#x3C;player> &#x3C;key> &#x3C;value></td><td>Sottrae un numero da un valore, funziona solo per i numeri.</td></tr></tbody></table>
 
 ## Placeholders
 
-Placeholders can be used in an inventory for displaying an item or for a permission. You can block access to a button with a placeholder. You can see an example [here](../plugins-files.md).
+Placeholders Possono essere utilizzati in un inventario per visualizzare un item o per ottenere un permesso. Puoi bloccare l'accesso a un pulsante con un placeholder. Puoi vedere un esempio [qui](../plugins-files.md).
 
-<table><thead><tr><th width="426.56591923371104">Placeholder</th><th>Description</th></tr></thead><tbody><tr><td><code>%zmenu_player_value_&#x3C;key>%</code></td><td>Returns the value contained in a key. </td></tr><tr><td><code>%zmenu_player_expire_format_&#x3C;key>%</code></td><td>Returns the expiration time formatted according to a key.</td></tr><tr><td><code>%zmenu_player_expire_&#x3C;key>%</code></td><td>Returns the expiration time according to a key.</td></tr><tr><td><code>%zmenu_player_key_exist_&#x3C;key>%</code></td><td>Returns true or false. Allows to know if a key exists.</td></tr></tbody></table>
+<table><thead><tr><th width="426.56591923371104">Placeholder</th><th>Descrizione</th></tr></thead><tbody><tr><td><code>%zmenu_player_value_&#x3C;key>%</code></td><td>Da in dietro il valore contenuto in una chiave. </td></tr><tr><td><code>%zmenu_player_expire_format_&#x3C;key>%</code></td><td>Da in dietro la data di scadenza formattata secondo una chiave.</td></tr><tr><td><code>%zmenu_player_expire_&#x3C;key>%</code></td><td>Da in dietro la data di scadenza secondo una chiave.</td></tr><tr><td><code>%zmenu_player_key_exist_&#x3C;key>%</code></td><td>Da in dietro true o false. Ti permette di sapere se una chiave esiste.</td></tr></tbody></table>
