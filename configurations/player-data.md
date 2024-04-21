@@ -16,6 +16,6 @@ Il pwermesso per utilizzare questi comandi è: `zmenu.players`
 
 ## Placeholders
 
-Placeholders Possono essere utilizzati in un inventario per visualizzare un item o per ottenere un permesso. Puoi bloccare l'accesso a un pulsante con un placeholder. Puoi vedere un esempio [qui](../plugins-files.md).
+I placeholders possono essere utilizzati in un inventario per visualizzare un item o per ottenere un permesso. Puoi bloccare l'accesso a un pulsante con un placeholder. Puoi vedere un esempio [qui](../plugins-files.md).
 
 <table><thead><tr><th width="426.56591923371104">Placeholder</th><th>Descrizione</th></tr></thead><tbody><tr><td><code>%zmenu_player_value_&#x3C;key>%</code></td><td>Da in dietro il valore contenuto in una chiave. </td></tr><tr><td><code>%zmenu_player_expire_format_&#x3C;key>%</code></td><td>Da in dietro la data di scadenza formattata secondo una chiave.</td></tr><tr><td><code>%zmenu_player_expire_&#x3C;key>%</code></td><td>Da in dietro la data di scadenza secondo una chiave.</td></tr><tr><td><code>%zmenu_player_key_exist_&#x3C;key>%</code></td><td>Da in dietro true o false. Ti permette di sapere se una chiave esiste.</td></tr></tbody></table>
