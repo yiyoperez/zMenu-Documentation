@@ -168,6 +168,7 @@ click_requirement:
 </code></pre></td><td><p>Checks if the regex matches the input. The input can be a placeholder.</p><p>Visit <a href="https://regexr.com/">regexr.com</a> for create your regex.</p></td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: item
   material: &#x3C;material>
   amount: &#x3C;amount of item>
+  modelId: &#x3C;model id> # default 0
 </code></pre></td><td>Check if the player has an item in his inventory.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: job
   job: &#x3C;job name>
 </code></pre></td><td>Allows to check if the player has the job. Works with <a href="https://www.spigotmc.org/resources/jobs-reborn.4216/">JobReborn</a> plugin.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: luckperm
