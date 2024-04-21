@@ -30,5 +30,5 @@ Scarica qui: [https://www.spigotmc.org/resources/zmenu.110402/](https://www.spig
 * Kyori Adventure [Mini Message Format](https://docs.adventure.kyori.net/minimessage/format.html) support.
 * Supporto [Folia](https://papermc.io/software/folia).
 * Converti i menu da altri plugins | esempio: (DeluxeMenu)
-* Formati, finiscila di copiare e incollare la stessa configurazione
+* Schemi, finiscila di copiare e incollare la stessa configurazione
 * Sistema anti duplicazione. Con il plugin la duplicazione sarà impossibile.
