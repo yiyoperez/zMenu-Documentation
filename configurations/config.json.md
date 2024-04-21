@@ -1,5 +1,5 @@
 ---
-description: Informazioni sui valori nel file config.json
+descrizione: Informazioni sui valori nel file config.json
 ---
 
 # Config.json
