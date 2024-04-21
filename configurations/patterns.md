@@ -51,7 +51,7 @@ Una variabile può avere prefissi per modificarne l'uso.
 
 
 
-<table data-full-width="true"><thead><tr><th>Prefix</th><th>Definition</th></tr></thead><tbody><tr><td>%upper_&#x3C;key>%</td><td>Displays the text in uppercase</td></tr><tr><td>%lower_&#x3C;key>%</td><td>Displays the text in lowercase</td></tr><tr><td>%capitalize_&#x3C;key>%</td><td>Display the text in capital</td></tr><tr><td>%add_one_&#x3C;key>%</td><td>Allows to add one to the value, attention the value must be a number.</td></tr><tr><td>%remove_one_&#x3C;key>%</td><td>Allows to remove one has the value, attention the value must be mandatory a number.</td></tr></tbody></table>
+<table data-full-width="true"><thead><tr><th>Prefix</th><th>Definition</th></tr></thead><tbody><tr><td>%upper_&#x3C;key>%</td><td>Mostra il testo in maiuscolo</td></tr><tr><td>%lower_&#x3C;key>%</td><td>Mostra il testo in minuscolo</td></tr><tr><td>%capitalize_&#x3C;key>%</td><td>Mostra il testo con la prima lettera in maiuscolo</td></tr><tr><td>%add_one_&#x3C;key>%</td><td>Aggiunge 1 al valore, il valore deve essere numerico.</td></tr><tr><td>%remove_one_&#x3C;key>%</td><td>Rimuove 1 dal valore, il valore deve essere numerico.</td></tr></tbody></table>
 
 ### Come usare uno schema
 
