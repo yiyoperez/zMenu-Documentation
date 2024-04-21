@@ -1,9 +1,8 @@
 # Items
 
-Before you start configuring the plugin itemstack make sure you are using the correct material for your version of the game.
+Prima che cominci a configurare l'itemstack del plugin assicurati di utilizzare il materiale corretto per la tua versione del gioco.
 
-Each button must be accompanied by an itemstack (except in certain specific cases).
-
+Ogni pulsante deve essere accompagnato da un itemstack (tranne in alcuni casi specifici).
 ```yaml
 item:
   material: <material>
@@ -27,25 +26,24 @@ item:
   color: <leather armor color>
 ```
 
-## Material
+## Materiale
 
 ```yaml
 material: <material>
 ```
 
-The material of the item. You can use a placeholder to display a material.
-
+Il materiale dell'item. È possibile utilizzare un placeholder per visualizzare un materiale.
 > **Supported material values:**
 >
-> * [Material](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html) - Example: `material: STONE`
-> * [Placeholder](https://www.spigotmc.org/resources/placeholderapi.6245/) value - Example: `material: %your_placeholder_material%`
-> * FREE - [zHead](https://www.spigotmc.org/resources/zhead-database.115717/) **RECOMMENDED** (zhd:\<id>) Example: `material: zhd:<id>`
-> * PAID - [HeadDatabase](https://www.spigotmc.org/resources/head-database.14280/) (hdb:\<id>) Example: `material: hdb:<id>`
-> * PAID - [Oraxen](https://www.spigotmc.org/resources/%E2%98%84%EF%B8%8F-oraxen-add-items-blocks-armors-hats-food-furnitures-plants-and-gui-1-18-1-20-1.72448/) (oraxen:\<item name>) Example: `material: oraxen:<item name>`
-> * PAID - [ItemAdder](https://www.spigotmc.org/resources/%E2%9C%A8itemsadder%E2%AD%90emotes-mobs-items-armors-hud-gui-emojis-blocks-wings-hats-liquids.73355/) (itemsadder:\<item name>) Example: `material:` itemsadder`:<item name>`
-> * FREE - [SlimeFun](https://github.com/Slimefun/Slimefun4) (slimefun:\<item name>) Example: `material:` slimefun`:<item name>`
-> * FREE - [Nova](https://github.com/xenondevs/Nova) (nova:\<item/block name>) Example: `material: nova:<item/block name>`
-> * Base64 (base64:\<item in base64) Retrieve this value in base64 with the command `/zm save <item name> base64`
+> * [Materiali](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html) - Esempio: `material: STONE`
+> * [Placeholder](https://www.spigotmc.org/resources/placeholderapi.6245/) valore - Esempio: `material: %your_placeholder_material%`
+> * GRATUITO - [zHead](https://www.spigotmc.org/resources/zhead-database.115717/) **RACCOMANDATO** (zhd:\<id>) Esempio: `material: zhd:<id>`
+> * A PAGAMENTO - [HeadDatabase](https://www.spigotmc.org/resources/head-database.14280/) (hdb:\<id>) Esempio: `material: hdb:<id>`
+> * A PAGAMENTO - [Oraxen](https://www.spigotmc.org/resources/%E2%98%84%EF%B8%8F-oraxen-add-items-blocks-armors-hats-food-furnitures-plants-and-gui-1-18-1-20-1.72448/) (oraxen:\<item name>) Esempio: `material: oraxen:<item name>`
+> * A PAGAMENTO - [ItemAdder](https://www.spigotmc.org/resources/%E2%9C%A8itemsadder%E2%AD%90emotes-mobs-items-armors-hud-gui-emojis-blocks-wings-hats-liquids.73355/) (itemsadder:\<item name>) Esempio: `material:` itemsadder`:<item name>`
+> * GRATUITO - [SlimeFun](https://github.com/Slimefun/Slimefun4) (slimefun:\<item name>) Esempio: `material:` slimefun`:<item name>`
+> * GRATUITO - [Nova](https://github.com/xenondevs/Nova) (nova:\<item/block name>) Esempio: `material: nova:<item/block name>`
+> * Base64 (base64:\<item in base64) Ritrova questo valore in base64 con il comando `/zm save <item name> base64`
 
 ***
 
@@ -55,7 +53,7 @@ The material of the item. You can use a placeholder to display a material.
 amount: <amount>
 ```
 
-The amount of the itemstack. You can use a placeholder to have a dynamic amount.
+La quantità dell'item. Puoi usare un placeholder per un valore dinamico.
 
 ***
 
@@ -65,17 +63,17 @@ The amount of the itemstack. You can use a placeholder to have a dynamic amount.
 data: <data, only avaible between 1.8 and 1.12>
 ```
 
-The material data, only available for versions between **1.8** and **1.12**. By default its 0
+Il material data, disponibile solo per versioni tra la **1.8** e la **1.12**. Il valore predefinito è 0
 
 ***
 
-## Durability
+## Durabilità
 
 ```yaml
 durability: <durability>
 ```
 
-The durability of the item, by default it is 0.
+La durabilità dell'item, il valore predefinito è 0.
 
 ***
 
@@ -85,13 +83,12 @@ The durability of the item, by default it is 0.
 url: <player skin in base64>
 ```
 
-Allows to display a head with a url in base64. You can find the values of the heads on the site [minecraft-head.com](https://minecraft-heads.com/).
-
-You must take the content in "Value" of the category "Other":
+Permette di visualizzare una testa con un URL in base64. Puoi trovare i valori delle teste sul sito [minecraft-head.com](https://minecraft-heads.com/).
+Devi prendere il valore in "Value" nella categoria "For Developers":
 
 ![minecraft-head.com example of value](../.gitbook/assets/base64.png)
 
-Example
+Esempio
 
 ```yaml
 url: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvNjM3YjhhMzk4MzdiYzNkNThmMDljOGM2ZTUzOTYyZDMzZjlmYTBiNjUzOThhNzc5MzUzYWRlMWUxNDcxM2VmZiJ9fX0="
@@ -99,21 +96,21 @@ url: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubm
 
 ***
 
-## Name
+## Nome
 
 ```yaml
 name: <display name>
 ```
 
-The name that will be displayed on the item. Works with PlaceholderAPI.
+Il nome dell'item. Funziona con PlaceholderAPI.
 
 {% hint style="info" %}
-If your server has Kyori Adventure, you can use the [mini message format](https://docs.adventure.kyori.net/minimessage/format.html).
+Se il tuo server ha Kyori Adventure, puoi usare [MiniMessage](https://docs.adventure.kyori.net/minimessage/format.html).
 {% endhint %}
 
 ***
 
-## Lore
+## Lore (descrizione)
 
 ```yaml
 lore:
@@ -123,11 +120,11 @@ lore:
   - ...
 ```
 
-Allows to display the lore of the item. Works with PlaceholderAPI.
+La descrizione dell'item. Funziona PlaceholderAPI.
 
 ***
 
-## Potion
+## Pozione
 
 ```yaml
   potion: <potion effect type>
@@ -136,10 +133,10 @@ Allows to display the lore of the item. Works with PlaceholderAPI.
   extended: <potion extended true of flase>
 ```
 
-Allows you to create a potion. Check potion effect type [here](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionType.html).
+Ti permette di creare una pozione. Controlla l'effetto della pozione [qui](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionType.html).
 
 {% hint style="danger" %}
-Warning, a potion cannot be extended and with a level 2
+Attenzione, la durate della pozione non può essere allungata e il livello massimo è 2
 {% endhint %}
 
 {% hint style="info" %}
@@ -152,13 +149,13 @@ durability: 16454
 
 ***
 
-## Glow
+## Luminosità
 
 ```yaml
 glow: <true of false>
 ```
 
-Allows the item to shine. Add random enchant and HIDE\_ENCHANT itemflag.
+Permette all'item di brillare. Aggiunge un incantesimo casuale e il flag HIDE\_ENCHANT.
 
 ***
 
@@ -168,19 +165,18 @@ Allows the item to shine. Add random enchant and HIDE\_ENCHANT itemflag.
 modelID: <custom model id>
 ```
 
-Allows you to put a custom model id on the item
+Ti permette di aggiungere la Custom Model Data all'item
 
 ***
 
-## Enchantments
+## Incantesimi
 
 ```yaml
 enchants:
   - <enchantment name>,<enchantment level>
 ```
 
-Allows you to add enchantments, you have to put the name of the enchantment then the level of the enchantment, like this: `ENCHANT,ENCHANT_LEVEL` List of enchantments available: [https://hub.spigotmc.org/javadocs/spigot/org/bukkit/enchantments/Enchantment.html](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/enchantments/Enchantment.html)
-
+Ti permette di aggiungere incantesimi, devi inserire il nome dell'incantesimo quindi il livello dell'incantesimo, in questo modo: `ENCHANT,ENCHANT_LEVEL` Elenco degli incantesimi disponibili: [https://hub.spigotmc.org/javadocs/spigot/ org/bukkit/enchantments/Enchantment.html](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/enchantments/Enchantment.html)
 ***
 
 ## Flags
@@ -192,11 +188,11 @@ flags:
   - ...
 ```
 
-List of flags: [https://hub.spigotmc.org/javadocs/spigot/org/bukkit/inventory/ItemFlag.html](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/inventory/ItemFlag.html)
+Lista delle flags: [https://hub.spigotmc.org/javadocs/spigot/org/bukkit/inventory/ItemFlag.html](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/inventory/ItemFlag.html)
 
 ***
 
-## Color
+## Colore
 
 ```yaml
 type: LEATHER_CHESTPLATE
@@ -206,12 +202,12 @@ color: 40,150,40 # RGB color
 color: 1,40,150,40 # ARGB color, Alpha, RED, GREEN, BLUE
 ```
 
-Set the RGB color (Red, Green, Blue) for leather armorers. The format is as follows:
+Seleziona il colore RGB (Red, Green, Blue) per le armature in pelle. Formato:
 
 <pre class="language-yaml"><code class="lang-yaml"><strong>color: &#x3C;red>,&#x3C;green>,&#x3C;blue>
 </strong></code></pre>
 
-You can also add an alpha in the color to have ARGB
+Puoi anche aggiungere un colore alpha per avere il formato ARGB
 
 <pre class="language-yaml"><code class="lang-yaml"><strong>color: &#x3C;alpha>,&#x3C;red>,&#x3C;green>,blue>
 </strong></code></pre>
@@ -238,7 +234,7 @@ firework:
     - 250,10,250 # RGB and ARGB
 ```
 
-Firework type: [https://hub.spigotmc.org/javadocs/spigot/org/bukkit/FireworkEffect.Type.html](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/FireworkEffect.Type.html)
+Tipi di Firework: [https://hub.spigotmc.org/javadocs/spigot/org/bukkit/FireworkEffect.Type.html](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/FireworkEffect.Type.html)
 
 ***
 
@@ -252,5 +248,5 @@ patterns: # Banner pattern: <color>:<pattern>
   - GREEN:STRIPE_LEFT
 ```
 
-Allows you to create a banner. Pattern list: [https://hub.spigotmc.org/javadocs/spigot/org/bukkit/block/banner/PatternType.html](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/block/banner/PatternType.html)
+Ti permette di creare un banner. Lista degli schemi: [https://hub.spigotmc.org/javadocs/spigot/org/bukkit/block/banner/PatternType.html](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/block/banner/PatternType.html)
 
