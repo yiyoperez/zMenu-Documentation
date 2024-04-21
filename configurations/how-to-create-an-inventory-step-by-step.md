@@ -1,7 +1,6 @@
 ---
-description: Let’s see how to create a new inventory step by step
+descrizione: Vediamo come creare un inventario passo passo
 ---
 
-# How to create an inventory step by step
-
-Soon
+# Come creare un inventario passo passo
+Prossimamente
