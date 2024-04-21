@@ -1,5 +1,5 @@
 ---
-description: Information about the values in the config.json file
+description: Informazioni sui valori nel file config.json
 ---
 
 # Config.json
@@ -117,4 +117,4 @@ Carica menu specifici
 generateDefaultFile: true/false
 ```
 
-Generate default configuration
+Genera configurazione predefinita
