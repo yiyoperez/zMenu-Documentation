@@ -12,7 +12,7 @@ Lista di comandi per i dati dei giocatori [qui](player-data.md).
 
 ### Comando per aprire menu (con arguments)
 
-You can use the/zm open command with arguments (like [here](commands.md#informations)).
+Puoi usare /zm open command con arguments (come mostrato [qui](commands.md#informations)).
 
 Per esempio, con l'inventario predefinito `example_punish`. Potrai definire 2 arguments che potrai usare. Puoi farlo in 2 modi:
 
@@ -20,7 +20,7 @@ Per esempio, con l'inventario predefinito `example_punish`. Potrai definire 2 ar
   Esempio: `/zm open zmenu:example_punish Maxlego08 false target:Maxlego09 reason:test`\
   Risultato: `%zmenu_argument_target%` and `%zmenu_argument_reason%`\
   Puoi anche aggiungere più arguments: `/zm open zmenu:example_punish Maxlego08 false target:Maxlego09 reason:"this is a really long reason"`
-* The second is to directly use the value, so the argument name will be 0 for the first value, 1 for the second etc...\
+* 2. Usare direttamente il valore, quindi se il nome del argument è 0 per il primo valore, 1 darà per il secondo e cosi via...\
   Esempio: `/zm open zmenu:example_punish Maxlego08 false Maxlego09 test`\
   Risultato: `%zmenu_argument_0%` and `%zmenu_argument_1%`
 
@@ -30,8 +30,8 @@ Per convertire i tuoi menu da DeluxeMenu a zMenu devi usare **zMenuConvert**
 
 Download link: [https://groupez.dev/resources/zmenuconvert.266](https://groupez.dev/resources/zmenuconvert.266)
 
-After installing the plugin you need to run the command **/zm convert**. Your menus and commands will be created in the `inventories/convert` and `commands/convert` folders.
+Dopo aver installato il plugin devi eseguire il comando **/zm convert**. I tuoi menus e comandi saranno creati nelle cartelle `inventories/convert` e `commands/convert`.
 
-Be careful, the conversion may contain errors, you must check your files to make sure there are no problems.&#x20;
+Fai attenzione, la conversione potrebbe contenere errori, controlla i tuoi files e assicurati che non ci siano errori.&#x20;
 
-Github: [https://github.com/Maxlego08/zMenuConvert](https://github.com/Maxlego08/zMenuConvert)
+[Github](https://github.com/Maxlego08/zMenuConvert)
