@@ -8,7 +8,7 @@ description: Information about the values in the config.json file
 enableDebug: true/false
 ```
 
-Enable debug, allows you to display errors in the console that would normally be hidden.
+Abilita il debug, ti permette di mostrare errori nella console che normalmente sarebbero nascosti.
 
 
 
@@ -16,31 +16,28 @@ Enable debug, allows you to display errors in the console that would normally be
 enableDebugTime: true/false
 ```
 
-Enable debug time, allows you to display the code execution time in nano second, perfect for testing the effectiveness of the plugin.
-
+Abilita il tempo di debug, consente di visualizzare il tempo di esecuzione del codice in nano secondi, perfetto per testare l'efficacia del plugin.
 
 
 ```
 enableLogStorageFile: true/false
 ```
 
-Enable save or load file log in console
-
+Abilita il salvataggio o il caricamento del registro dei file nella console
 
 
 ```
 enableInformationMessage: true/false
 ```
 
-Enable information message, allows you to view messages that tell you about an inventory or that an order has been successfully loaded.
-
+Abilita i messaggi informativi, ti consente di visualizzare i messaggi che ti informano su un inventario o che un ordine è stato caricato con successo.
 
 
 ```
 enableOpenMessage: true/false
 ```
 
-Enable open message, default value for the command `/zm open <inventory name> <player> <display message>`
+Abilita la notifica di quando apri un menu, valore predefinito per il comando `/zm open <inventory name> <player> <display message>`
 
 
 
@@ -48,7 +45,7 @@ Enable open message, default value for the command `/zm open <inventory name> <p
 enableMiniMessageFormat: true/false
 ```
 
-Enable mini message format, allows you to activate the mini message format, available from 1.17 onwards, more information here: [https://docs.advntr.dev/minimessage/index.html](https://docs.advntr.dev/minimessage/index.html)
+Abilita il formato minimessage, permette di attivare il formato mini message, disponibile dalla 1.17 in poi, maggiori informazioni qui: [https://docs.advntr.dev/minimessage/index.html](https://docs.advntr.dev/minimessage/index.html)
 
 
 
@@ -56,7 +53,7 @@ Enable mini message format, allows you to activate the mini message format, avai
 enablePlayerCommandInChat: true/false
 ```
 
-Enable player command in chat, Allows you to ensure that when a player executes a command, they execute it from the chat and not from the console. If you have "fake" command, which are not saved in spigot you need to enable this option.
+Abilita il comando del giocatore in chat, Ti permette di assicurarti che quando un giocatore esegue un comando, lo esegua dalla chat e non dalla console. Se hai comandi "fake", che non vengono salvati in spigot, devi abilitare questa opzione.
 
 
 
@@ -64,15 +61,14 @@ Enable player command in chat, Allows you to ensure that when a player executes 
 secondsSavePlayerData: Int
 ```
 
-Seconds save player data: The time in seconds for automatic backup of player data.
-
+Secondi necessari per il salvataggio dati: il tempo in secondi per il backup automatico dei dati del giocatore.
 
 
 ```
 secondsSavePlayerInventories: Int
 ```
 
-Seconds save player data: The time in seconds for automatic backup of inventories data.
+Secondi necessari per il salvataggio dati: il tempo in secondi per il backup automatico dei menu.
 
 
 
@@ -80,15 +76,14 @@ Seconds save player data: The time in seconds for automatic backup of inventorie
 autoSaveFileInventoryOnUpdate: true/false
 ```
 
-Auto save file inventory on update: allows you to save the file of jouueurs inventories automatically.
-
+Salvataggio automatico dell'inventario dei file all'aggiornamento: consente di salvare automaticamente il file degli inventari dei giocatori.
 
 
 ```
 mainMenu: "example"
 ```
 
-Default menu name
+Nome predefinito dei menu
 
 
 
@@ -96,7 +91,7 @@ Default menu name
 useSwapItemOffHandKeyToOpenMainMenu: true
 ```
 
-Open main menu when f key is press
+Apri il menu principale quando il tasto f è premuto
 
 
 
@@ -104,7 +99,7 @@ Open main menu when f key is press
 useSwapItemOffHandKeyToOpenMainMenuNeedsShift: true
 ```
 
-Open main menu when swap item offhand key is press and sneak key
+Apri il menu principale quando il tasto f e shift sono premuti
 
 
 
@@ -114,7 +109,7 @@ specifyPathMenus: [
 ]
 ```
 
-Load specific inventories
+Carica menu specifici
 
 
 
