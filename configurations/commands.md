@@ -2,8 +2,8 @@
 
 ## Informations
 
-The plugin has an `commands` folder that will contain all your commands. You can create an infinite number of commands. A command will contain the name of the command, its aliases, its permission and the name of the inventory to open.\
-You can put several commands per file and create an unlimited number of files.
+Il plugin ha una cartella `commands` che conterrà tutti i tuoi comandi. Puoi creare un numero infinito di comandi. Un comando conterrà il nome del comando, i suoi alias, i suoi permessi e il nome dell'inventario da aprire.\
+Puoi inserire diversi comandi per file e creare un numero illimitato di file.
 
 ```
 |- commands
@@ -14,7 +14,7 @@ You can put several commands per file and create an unlimited number of files.
   - commands.yml
 ```
 
-## Syntax
+## Sintassi
 
 ```yaml
 commands:
@@ -64,17 +64,17 @@ commands:
 
 ***
 
-### Command
+### Comandi
 
 ```yaml
 command: <command>
 ```
 
-Main command
+Comando principaale
 
 ***
 
-### Aliases
+### Alias
 
 ```yaml
 aliases:
@@ -83,40 +83,40 @@ aliases:
   - ...
 ```
 
-The aliases of the command.
+Gli alias del comando
 
 ***
 
-### Action
+### Azioni
 
 ```yaml
 actions:
   - ...  
 ```
 
-You can use [actions](buttons/actions.md) that will always be performed when executing the order.
+Puoi utilizzare [azioni](buttons/actions.md) che verranno sempre eseguite durante l'esecuzione dell'ordine..
 
 ***
 
-### Permission
+### Permessi
 
 ```yaml
 permission: <permission>
 ```
 
-The permission the player must have to open the inventory.
+Il permesso che il giocatore deve avere per aprire il menu.
 
 ***
 
-### Inventory
+### Inventario
 
 ```yaml
 inventory: <inventory name>
 ```
 
-Name of the inventory that will be opened.
+Nome dell'inventario che verrà aperto.
 
-You can also specify the name of the plugin this way:
+Puoi anche specificare il nome del plugin in questo modo:
 
 ```yaml
 inventory: "<plugin name>:<inventory name>"
@@ -133,9 +133,9 @@ arguments:
   - ...
 ```
 
-Allows you to add arguments to your commands. You can use the arguments with the following placeholder: `%zmenu_argument_<argument name>%`&#x20;
+Ti permette di aggiungere arguments per i tuoi comandi. Puoi usare i arguments con questo placeholder: `%zmenu_argument_<argument name>%`&#x20;
 
-#### Example
+#### Esempio
 
 ```yaml
 commands:
@@ -159,28 +159,27 @@ commands:
               - "&7You will put a punishment to the player &f&n%target%&r &7with the reason&8: &f%reason%"
 ```
 
-You can define an [action](buttons/actions.md) and auto-completion list for each action.
-
-Here you have the command **`/punish <target> <reason`**> . So you can run the command this way: `/punish Maxlego08 Cheat (fly)`.
+È possibile definire un'[azione](buttons/actions.md) e un elenco di completamento automatico per ciascuna azione.
+Qui hai il comando **`/punish <target> <reason`**> . Quindi puoi eseguire il comando in questo modo: `/punish Maxlego08 Cheat (fly)`.
 
 With the placeholders you will be able to retrieve the arguments:
 
-| Placeholder               | Result        |
+| Placeholder               | Risultato     |
 | ------------------------- | ------------- |
 | `%zmenu_argument_target%` | `Maxlego08`   |
 | `%zmenu_argument_reason%` | `Cheat (fly)` |
 
-You can define whether the argument is optional and whether the argument has a specific inventory.
+È possibile definire se il argument è facoltativo e se ha un inventario specifico.
 
-#### **Example**
+#### **Esempio**
 
 ```yaml
 arguments: # argument name, true or false, plugin name : inventory name
   - name,false,zmenu:example2
 ```
 
-You have:
+Hai:
 
-* argument name
-* true or false, set argument required or not
-* inventory name. You can set the inventory name and plugin name
+* nome del argument
+* true o false, scegli se il argument è obbligatorio o no
+* nome dell'inventario. Puoi impostare il nome dell'inventario e del plugin

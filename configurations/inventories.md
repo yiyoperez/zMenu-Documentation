@@ -1,14 +1,14 @@
 ---
-description: All information on inventories.
+descrizione: Tutte le informazioni sugli inventari.
 ---
 
-# Inventories
+# Inventari
 
-## Informations
+## Informazioni
 
-The plugin has an `inventories` folder that will contain all your inventories. Each inventory will be represented by a file. You can create as many inventories as you want as well as subfolders to sort your inventories.
+Il plugin ha una cartella `inventories` che contiene tutti i tuoi inventari. Ogni inventario è rappresentato da un file. Puoi creare tutti gli inventari che desideri e le sottocartelle per ordinare i tuoi inventari.
 
-In the default configuration, you have this:
+Nella configurazione predefinita, hai questo:
 
 ```
 |- inventories
@@ -23,7 +23,7 @@ In the default configuration, you have this:
 
 ***
 
-## Syntax
+## Sintassi
 
 ```yaml
 name: "<inventory name>"
@@ -37,28 +37,25 @@ open_requirement: <requirement>
 
 ***
 
-### Name
+### Nome
 
 ```yaml
 name: "<inventory name>"
 ```
 
-The name of the inventory that will be displayed. Please note that depending on your version you have a character limit. You can use color and placeholders.
-
-If your inventory has multiple pages, you can view the current page and the last page with the following placeholders: \
-`%page%` - Current max \
+Il nome dell'inventario che verrà visualizzato. Tieni presente che a seconda della versione hai un limite di caratteri. Puoi utilizzare colori e segnaposto.
+Se il tuo inventario ha più pagine, puoi visualizzare la pagina corrente e l'ultima pagina con i seguenti placeholders: \`%page%` - Current max \
 `%maxPage%` - Last page
 
 ***
 
-### Size
+### Grandezza
 
 ```yaml
 size: <inventory size>
 ```
 
-Sets the inventory size. By default the value will be `54`. The size of the inventory must be a multiple of `9` between **9** and **54**. So the following values:
-
+Imposta la dimensione dell'inventario. Per impostazione predefinita il valore sarà `54`. La dimensione dell'inventario deve essere un multiplo di `9` compreso tra **9** e **54**. Quindi i seguenti valori:
 * 9
 * 18
 * 27
@@ -74,34 +71,30 @@ Sets the inventory size. By default the value will be `54`. The size of the inve
 fillItem: <itemstack>
 ```
 
-Allows to fill all the slots of the same itemstack. See item information [here](https://zmenu.groupez.dev/configurations/items).
-
+Permette di riempire tutti gli slot dello stesso stack di oggetti. Vedi le informazioni necessarie [qui](https://zmenu.groupez.dev/configurations/items).
 ***
 
-### Update Interval
+### Intervallo di Aggiornamento
 
 ```yaml
 updateInterval: <update interval>
 ```
 
-Allows you to define the time in milliseconds for the refresh of the buttons in the inventory. For the buttons to be updated you must have the update option enabled. More information [here](https://zmenu.groupez.dev/configurations/buttons).
-
+Permette di definire il tempo in millisecondi per l'aggiornamento dei pulsanti nell'inventario. Per aggiornare i pulsanti è necessario che l'opzione di aggiornamento sia abilitata. Maggiori informazioni [qui](https://zmenu.groupez.dev/configurations/buttons).
 ***
 
-### Clear Inventory
+### Elimina l'inventario (temporaneamente)
 
 ```yaml
 clearInventory: <true/false>
 ```
 
-Allows you to delete the player's inventory on opening and restore it on closing. Allows for example to use an image on your inventory without being hindered by the players' items.
-
+Permette di eliminare l'inventario del giocatore all'apertura e di ripristinarlo alla chiusura. Permette ad esempio di utilizzare un'immagine nel tuo inventario senza essere ostacolato dagli oggetti dei giocatori.
 ***
 
 ### Matrix
 
-The matrix configuration in a YAML file allows for intuitive organization of items within a Minecraft inventory by providing a visual representation of slot arrangements. In the given example, a 54-slot inventory named "&8Test" uses a matrix of characters, where 'A' represents slots filled with diamonds, to create a bordered layout. This method enhances clarity and design efficiency, as each character in the matrix corresponds to an item defined under the `items` section, allowing for easy customization of inventory layouts. The use of a matrix simplifies the creation of complex inventory designs by visually mapping out item placements.
-
+La configurazione matrix in un file YAML consente l'organizzazione intuitiva degli oggetti all'interno di un inventario di Minecraft fornendo una rappresentazione visiva della disposizione degli slot. Nell'esempio fornito, un inventario da 54 slot denominato "&8Test" utilizza una matrice di caratteri, dove "A" rappresenta gli slot pieni di diamanti, per creare un layout delimitato. Questo metodo migliora la chiarezza e l'efficienza del design, poiché ogni carattere nella matrice corrisponde a un elemento definito sotto la sezione `items`, consentendo una facile personalizzazione dei layout di inventario. L'uso di una matrix semplifica la creazione di progetti di inventario complessi mappando visivamente il posizionamento degli items.
 ```yaml
 name: "&8Test"
 size: 54
@@ -126,14 +119,12 @@ items:
 items: <buttons>
 ```
 
-List of buttons, all information [here](https://zmenu.groupez.dev/configurations/buttons).
-
+Elenco dei pulsanti, tutte le informazioni [qui](https://zmenu.groupez.dev/configurations/buttons).
 ***
 
-### OpenWithItem
+### ApriConItem
 
-Opens the inventory with the interaction of an item. You must define the information of the item that will be used, the actions to be performed (full list [here](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/block/Action.html)) and the type of verification.
-
+Apre l'inventario con l'interazione di un oggetto. È necessario definire le informazioni dell'item che verrà utilizzato, le azioni da eseguire (elenco completo [qui](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/block/Action.html )) e il tipo di verifica.
 ```yaml
 # Open this menu by clicking a specific item
 # You can use /zm giveopenitem <inventory> <player> to retrieve the item to use
@@ -163,4 +154,4 @@ openWithItem:
 
 ### Open Requirement
 
-More information [here](buttons/requirements.md#open-requirement).
+Più informazioni [qui](buttons/requirements.md#open-requirement).

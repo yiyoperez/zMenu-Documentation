@@ -7,28 +7,28 @@ description: A complete plugin for GUI menu with an advanced API.
 ## Description
 
 **zMenus** is a complete inventory plugin.\
-You can create your inventories and link them to custom commands. With the button system you will be able to push to the maximum the customization of your inventories.\
-You need to create an inventory per file, and you can sort your files into folders.\
-The plugin has an advanced API to allow other developers to use the same inventory configuration system. You can link inventories of several plugins together without any worries! The goal of this API is to have a uniform configuration for a better user experience.
+Puoi creare i tuoi inventari e collegarli a comandi personalizzati. Con il sistema a pulsanti potrai spingere al massimo la personalizzazione dei tuoi inventari.\
+Devi creare un inventario per ogni file e puoi mettere i file in cartelle.\
+Il plugin ha un'API avanzata per consentire ad altri sviluppatori di utilizzare lo stesso sistema di configurazione dell'inventario. Puoi collegare insieme gli inventari di diversi plugin senza preoccupazioni! L'obiettivo di questa API è avere una configurazione uniforme per una migliore esperienza utente.
 
 
 
-Download here: [https://www.spigotmc.org/resources/zmenu.110402/](https://www.spigotmc.org/resources/zmenu.110402/)
+Scarica qui: [https://www.spigotmc.org/resources/zmenu.110402/](https://www.spigotmc.org/resources/zmenu.110402/)
 
 ## Features
 
-* Ability to create an infinite number of GUI Menu and commands.
-* Possibility to create several pages in the same inventory.
-* Arguments for your commands.
-* A marketplace to download configurations (WIP)
-* An online inventory editor (WIP)
+* Possibilità di creare un numero infinito di menu e comandi GUI.
+* Possibilità di creare più pagine nello stesso inventario.
+* Arguments per i tuoi comandi.
+* Un marketplace per scaricare le configurazioni: https://minecraft-inventory-builder.com/resources
+* Un editor online: https://minecraft-inventory-builder.com/
 * Open Source: [https://github.com/Maxlego08/zMenu](https://github.com/Maxlego08/zMenu).
-* Advanced API.
-* Ability to create an infinite number of buttons for each of your actions.
-* Highly customizable.
-* [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/) support.
+* API Avanzata.
+* Possibilità di creare un numero infinito di pulsanti per ciascuna delle tue azioni.
+* Personalizzabile.
+* Supporto [PlaceholderAPI](https://www.spigotmc.org/resources/placeholderapi.6245/).
 * Kyori Adventure [Mini Message Format](https://docs.adventure.kyori.net/minimessage/format.html) support.
-* [Folia](https://papermc.io/software/folia) support.
-* Convert from other plugins (DeluxeMenu)
-* Patterns, finished copying pasted several times the same configuration
-* Anti duplication system. With the plugin the duplication will be completely impossible.
+* Supporto [Folia](https://papermc.io/software/folia).
+* Converti i menu da altri plugins | esempio: (DeluxeMenu)
+* Schemi, finiscila di copiare e incollare la stessa configurazione
+* Sistema anti duplicazione. Con il plugin la duplicazione sarà impossibile.
