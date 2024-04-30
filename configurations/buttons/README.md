@@ -712,3 +712,5 @@ items:
           - "&7Please choose a number between &b0&f and &a100&8:"
       - type: close
 ```
+
+<figure><img src="../../.gitbook/assets/input.gif" alt=""><figcaption></figcaption></figure>
