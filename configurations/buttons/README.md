@@ -655,3 +655,60 @@ items:
 ```
 
 <figure><img src="../../.gitbook/assets/dynamic_pagination.gif" alt=""><figcaption></figcaption></figure>
+
+## INPUT ([zMenu+](https://minecraft-inventory-builder.com/resources/zmenu.4))
+
+Allows you to let the player write a message in the chat and perform actions in case of success or error.
+
+Input type:
+
+* `NUMBER` - Allows to check a number, you can set a minimum and maximum
+* `TEXT` - Allows to check a text, you can set regex
+* `ONLINE_PLAYER` - Allows to check the nickname of a player online
+
+You can add conditions. For type NUMBER it is a minimum and maximum. For type TEXT it is a regex.
+
+
+
+In this example the button allows to check if the chosen number is between 0 and 100
+
+```yaml
+name: "&8Input Inventory"
+size: 27
+items:
+  chooseAmount:
+    slot: 13
+    type: INPUT
+    item:
+      material: DIAMOND_SWORD
+      name: '&fChoose a number'
+      lore:
+        - ''
+        - '&7Please choose a number between &b0&f and &a100'
+    # Type of input to check
+    # NUMBER - Allows to check a number, you can set a minimum and maximum
+    # TEXT - Allows to check a text, you can set regex
+    # ONLINE_PLAYER - Allows to check the nickname of a player online
+    inputType: NUMBER
+    # Conditions has checked, works with PlaceholderAPI
+    conditions:
+      min: 0
+      max: 100
+      # regex: "^[a-zA-Z0-9]+$"
+    # Action performed in case of successful conditions
+    success_actions:
+      - type: console_command
+        commands:
+          - "bc %player% has just chosen the number %input% !" # or placeholder: %zmenu_input%
+    # Action performed in case conditions failed
+    error_actions:
+      - type: message
+        messages:
+          - "&cYou must choose a number between 0 and 100."
+    # Action performed when clicking, by default the inventory will not close, you must close it, then send a message or perform other action at the same time
+    actions:
+      - type: message
+        messages:
+          - "&7Please choose a number between &b0&f and &a100&8:"
+      - type: close
+```
