@@ -93,5 +93,8 @@ success_actions:
       - ''
       - ''
       - '&#x3C;hover:show_text:"#34eba8Open an url !">&#x3C;click:open_url:"https://minecraft-inventory-builder.com/">#f0af24Open URL&#x3C;reset>'
-</code></pre></td><td>Open a book</td></tr></tbody></table>
+</code></pre></td><td>Open a book</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: actionbar
+  message: "my message"
+  minimessage: true # true by default
+</code></pre></td><td>Allows to send a message in the action bar of the player</td></tr></tbody></table>
 
