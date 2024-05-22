@@ -557,7 +557,7 @@ size: 45
 # Color code and placeholders are supported.
 # If you are on Paper, Purpur or PufferFish you have access to the color code of MiniMessage (https://docs.advntr.dev/minimessage/format.html)
 #
-name: "&7Shop"
+name: "#454545sʜᴏᴘ"
 
 # View Requirement (https://docs.zmenu.dev/configurations/requirements#view-requirement)
 #
@@ -597,8 +597,7 @@ items:
     # Specifies whether the button should appear on all pages (https://docs.zmenu.dev/configurations/buttons#ispermanent)
     isPermanent: true
     item:
-      material: STAINED_GLASS_PANE
-      data: 15
+      material: GRAY_STAINED_GLASS_PANE
       name: "&e"
     slots:
       - 0-9 # slot 0 to 9
@@ -631,10 +630,7 @@ items:
     click_requirement:
       purchase:
         clicks:
-          - RIGHT
-          - LEFT
-          - SHIFT_LEFT
-          - SHIFT_RIGHT
+          - ANY # or ALL for all clicks type
         requirements:
           - type: placeholder
             placeholder: "%vault_eco_balance%"
@@ -676,6 +672,28 @@ items:
         lore:
           - "&cYou dont have enough money to buy this."
 
+# Open this menu by clicking a specific item
+# You can use /zm giveopenitem <inventory> <player> to retrieve the item to use
+#
+#openWithItem:
+#  # Define the item that will be clicked
+#  item:
+#    material: compass
+#    name: "&eOpen Basic Inventory"
+#    lore:
+#      - "&7Click on me !"
+#  # Look at https://hub.spigotmc.org/javadocs/spigot/org/bukkit/event/block/Action.html
+#  actions:
+#    - LEFT_CLICK_BLOCK
+#    - LEFT_CLICK_AIR
+#  # Define the type of verification.
+#  # Depending on your configuration and need you will define a certain type of verification. Here are all the types that exist:
+#  # - full -> Allows to check the itemStack in full, will use the ItemStack#isSimilar method.
+#  # - material -> Allows to check only the material
+#  # - name -> Allows to check only the display name
+#  # - lore -> Allows to check only the lore
+#  # - modelid -> Allows to check only the Custom Model Id
+#  type: full
 ```
 
 ### Example\_punish.yml
