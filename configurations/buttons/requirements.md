@@ -175,5 +175,7 @@ click_requirement:
   group: &#x3C;group name>
 </code></pre></td><td>Allows to check if the player is in a group. Works with <a href="https://www.spigotmc.org/resources/luckperms.28140/">LuckPerms</a> plugin.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: playername
   playerName: &#x3C;placeholder>
-</code></pre></td><td>Allows to check if a placeholder returns a text that can be a player nickname.</td></tr></tbody></table>
+</code></pre></td><td>Allows to check if a placeholder returns a text that can be a player nickname.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: money
+  amount: &#x3C;amount>
+</code></pre></td><td>Check if the player has enough money in their account. This only works with <a href="https://www.spigotmc.org/resources/vault.34315/">Vault</a>.</td></tr></tbody></table>
 
