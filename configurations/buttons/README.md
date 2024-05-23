@@ -363,55 +363,79 @@ Enables the automatic update of the item's name and lore. o configure the update
 
 ***
 
-### updateOnClick
+### UpdateMasterButton
+
+```yaml
+updateMasterButton: <true or false>
+```
+
+Allows you to completely update the button. You need to enable the `update` option for this feature to be activated. Instead of just updating the name and lore, this option refreshes the entire button. This includes rechecking permissions, requirements, and the else button.
+
+***
+
+### UpdateOnClick
 
 ```yaml
 updateOnClick: <true of false>
 ```
 
-Allows you to update the button when a player clicks on any other button in the inventory
+Allows your button to be updated whenever a player clicks in the inventory, regardless of the slot.
 
 ***
 
 ### Commands
 
 ```yaml
-commands: <list of text>
+commands: 
+  - "<your command>"
 ```
 
-Allows the player to execute a list of commands.
+Allows the player to execute a list of commands. You can use the placeholder `%player%` to retrieve the username of the player executing the commands.
 
 ***
 
 ### Console Commands
 
 ```yaml
-consoleCommands: <list of text>
-consoleRightCommands: <list of text>
-consoleLeftCommands: <list of text>
-consolePermissionCommands: <list of text>
-consolePermission: <permissions>
+consoleCommands: # Commands to be executed by the console no matter the click
+  - "<your command>"
+consoleRightCommands: # Commands to be executed by the console when right-click
+  - "<your command>"
+consoleLeftCommands: # Commands to be executed by the console when left-click
+  - "<your command>"
+consolePermissionCommands: # Commands to be executed by the console if the player has permission
+  - "<your command>"
+consolePermission: "<permission>
 ```
 
-You can execute commands from the console based on the player's click. Also commands if the player has the permissions.
+You can execute commands from the console based on the player's click. Also commands if the player has the permissions. You can use the placeholder `%player%` to retrieve the username of the player executing the commands.
 
 ***
 
 ### View Requirement
 
-Sets the requirements the player should have to see the button. More information [here](requirements.md#view-requirement).
+```yaml
+view_requirement:
+  requirements: # In this example the player must have a balance greater than or equal to 5000
+    - type: placeholder
+      placeholder: "%vault_eco_balance%"
+      value: "5000"
+      action: "SUPERIOR_OR_EQUAL"
+```
+
+Sets the conditions the player must meet to see the button. This can include permissions, placeholders, and other criteria. For more information, refer to [this section](requirements.md#view-requirement).
 
 ***
 
 ### Click Requirement
 
-Sets the requirements the player should have to click on the button. More information [here](requirements.md#click-requirement).
+Defines the conditions the player must meet to click on the button. These requirements are checked upon the player's click, and actions can be executed based on the success or failure of these conditions. For more information, refer to [this section](requirements.md#click-requirement).
 
 ***
 
 ### Actions
 
-You can define a list of actions to perform when clicking. More information [here](actions.md).
+You can define a list of actions to perform when clicking. These actions can include sending messages, executing commands, opening a book, and more. For more information, refer to [this section](actions.md).
 
 ```yaml
 actions:
