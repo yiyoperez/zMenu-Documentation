@@ -96,5 +96,9 @@ success_actions:
 </code></pre></td><td>Open a book</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: actionbar
   message: "my message"
   minimessage: true # true by default
-</code></pre></td><td>Allows to send a message in the action bar of the player</td></tr></tbody></table>
+</code></pre></td><td>Allows to send a message in the action bar of the player</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: withdraw
+  amount: &#x3C;amount>
+</code></pre></td><td>Allows you to withdraw money from the player’s account. Works with the <a href="https://www.spigotmc.org/resources/vault.34315/">Vault</a>.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: deposit
+  amount: &#x3C;amount>
+</code></pre></td><td>Allows you to deposit money from the player’s account. Works with the <a href="https://www.spigotmc.org/resources/vault.34315/">Vault</a>.</td></tr></tbody></table>
 
