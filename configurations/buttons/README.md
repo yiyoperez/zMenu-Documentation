@@ -359,7 +359,7 @@ placeholders:
 update: <true or false>
 ```
 
-Allows to set the name and the lore of the item automatically. To set the interval you must do it from [here](../inventories.md#update-interval).
+Enables the automatic update of the item's name and lore. o configure the update interval, please refer to [this section](../inventories.md#update-interval).
 
 ***
 
