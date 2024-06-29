@@ -13,7 +13,7 @@ view_requirement:
 
   # Set the minimum number of requirements to be able to say this is a success.
   # By default the value will be the same as the number of requirements.
-  miniumRequirement: <number>
+  minimumRequirement: <number>
   
   # List of requirements, all information about each type below
   requirements:
