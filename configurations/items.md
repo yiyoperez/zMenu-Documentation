@@ -8,14 +8,14 @@ Each button must be accompanied by an itemstack (except in certain specific case
 item:
   material: <material>
   amount: <amount>
-  data: <data, only avaible between 1.8 and 1.12>
+  data: <data, only available between 1.8 and 1.12>
   durability: <durability>
   url: <player skin in base64>
   name: <display name>
   lore: <list of text>
   potion: <potion effect type>
   level: <potion level>
-  sphash: <potion splash true or false>
+  splash: <potion splash true or false>
   extended: <potion extended true of flase>
   glow: <add glow effect>
   modelID: <custom model id>
@@ -23,7 +23,7 @@ item:
   flags: <list of itemflag>
   firework: <firework meta>
   banner: <banner color>
-  patterns: <banner pattern>
+  patterns: <banner patterns>
   color: <leather armor color>
 ```
 
