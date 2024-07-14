@@ -164,3 +164,26 @@ openWithItem:
 ### Open Requirement
 
 More information [here](buttons/requirements.md#open-requirement).
+
+## Translated Name
+
+Allows you to translate the name of the player’s inventory
+
+```yaml
+# Inventory name (https://docs.zmenu.dev/configurations/inventories#name)
+#
+# This is the title of your inventory. You can put anything in it.
+# Color code and placeholders are supported.
+# If you are on Paper, Purpur or PufferFish you have access to the color code of MiniMessage (https://docs.advntr.dev/minimessage/format.html)
+#
+name: "&7Basics Inventory"
+
+# Translate the inventory name into multiple languages
+# You must define the language and the country used
+# The vanilla Minecraft client will use lowercase language / country pairs separated by an underscore, but custom resource packs may use any format they wish.
+translatedName:
+  - locale: "fr_fr" # Allows to define the language in French
+    name: "&aInventaire Basique"
+  - locale: "es_es" # Allows to define the language in Spanish
+    name: "&aInventario Básico"
+```

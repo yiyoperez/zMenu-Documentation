@@ -255,3 +255,62 @@ patterns: # Banner pattern: <color>:<pattern>
 
 Allows you to create a banner. Pattern list: [https://hub.spigotmc.org/javadocs/spigot/org/bukkit/block/banner/PatternType.html](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/block/banner/PatternType.html)
 
+## Translated Name
+
+Allows to translate the name of the item in several languages
+
+```yaml
+items:
+  example:
+    item:
+      material: GRASS_BLOCK
+      name: "&aThis is a very nice grass block"
+      lore:
+        - "" 
+        - "&eMy first button with &fzMenu"
+        - "&7Congratulations, you will now discover"
+        - "&7all the possibilities of zMenu."
+
+      # Translate the item name into multiple languages
+      # You must define the language and the country used
+      # The vanilla Minecraft client will use lowercase language / country pairs separated by an underscore, but custom resource packs may use any format they wish.
+      translatedName:
+        - locale: "fr_fr" # Allows to define the language in French
+          name: "&aC’est un très beau bloc d’herbe !"
+        - locale: "es_es" # Allows to define the language in Spanish
+          name: "&a¡Es un hermoso bloque de hierba!"
+```
+
+## Translated Lore
+
+Allows to translate the lore of the item in several languages
+
+```yaml
+items:
+  example:
+    item:
+      material: GRASS_BLOCK
+      name: "&aThis is a very nice grass block"
+      lore:
+        - "" 
+        - "&eMy first button with &fzMenu"
+        - "&7Congratulations, you will now discover"
+        - "&7all the possibilities of zMenu."
+
+      # Translate the item lore into multiple languages
+      # You must define the language and the country used
+      # The vanilla Minecraft client will use lowercase language / country pairs separated by an underscore, but custom resource packs may use any format they wish.
+      translatedLore:
+        - locale: "fr_fr" # Allows to define the language in French
+          lore:
+            - "" # empty line to put space between name and lore
+            - "&eMon premier bouton avec &fzMenu"
+            - "&7Félicitations, vous allez maintenant découvrir"
+            - "&7toutes les possibilités de zMenu."
+        - locale: "es_es" # Allows to define the language in Spanish
+          lore:
+            - "" # empty line to put space between name and lore
+            - "&eMi primer botón con &fzMenu"
+            - "&7Felicidades, ahora vas a descubrir"
+            - "&7todas las posibilidades de zMenu."
+```
