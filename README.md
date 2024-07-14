@@ -11,8 +11,6 @@ You can create your inventories and link them to custom commands. With the butto
 You need to create an inventory per file, and you can sort your files into folders.\
 The plugin has an advanced API to allow other developers to use the same inventory configuration system. You can link inventories of several plugins together without any worries! The goal of this API is to have a uniform configuration for a better user experience.
 
-
-
 Download here: [https://www.spigotmc.org/resources/zmenu.110402/](https://www.spigotmc.org/resources/zmenu.110402/)
 
 ## Features
@@ -32,3 +30,4 @@ Download here: [https://www.spigotmc.org/resources/zmenu.110402/](https://www.sp
 * Convert from other plugins (DeluxeMenu)
 * Patterns, finished copying pasted several times the same configuration
 * Anti duplication system. With the plugin the duplication will be completely impossible.
+* Possibility to translate your items in several languages, the plugin is responsible for displaying the right translation to the player !

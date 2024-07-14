@@ -161,6 +161,10 @@ commands:
 
 You can define an [action](buttons/actions.md) and auto-completion list for each action.
 
+You can define whether an argument and required or not with the value `isRequired`, I’ll show you that in the example below.
+
+You can not execute the actions of the main command with the value `performMainAction`
+
 Here you have the command **`/punish <target> <reason`**> . So you can run the command this way: `/punish Maxlego08 Cheat (fly)`.
 
 With the placeholders you will be able to retrieve the arguments:
@@ -172,15 +176,32 @@ With the placeholders you will be able to retrieve the arguments:
 
 You can define whether the argument is optional and whether the argument has a specific inventory.
 
-#### **Example**
+#### Example with no required argument:
 
 ```yaml
-arguments: # argument name, true or false, plugin name : inventory name
-  - name,false,zmenu:example2
+commands:
+  warp:
+    command: warp
+    aliases:
+      - warps
+    inventory: warp
+    arguments:
+      - name: warp
+        isRequired: false # Set the argument as optional
+        performMainAction: false # Does not open inventory
+        auto-completion:
+          - minapvp
+          - cajas
+          - dungeon
+          - encantamientos
+          - jugadores
+          - mercado
+          - minas
+          - rankup
+        actions:
+          - type: player_command
+            commands:
+              - "essentials:warp %zmenu_argument_warp% %player%"
 ```
 
-You have:
-
-* argument name
-* true or false, set argument required or not
-* inventory name. You can set the inventory name and plugin name
+This example opens a warp inventory, then with an argument to teleport the player to the desired warp using an aliase of essentials.
