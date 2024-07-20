@@ -187,3 +187,47 @@ translatedName:
   - locale: "es_es" # Allows to define the language in Spanish
     name: "&aInventario Básico"
 ```
+
+## Patterns
+
+After creating your [patterns](patterns.md), you can add them to your inventory this way:
+
+```yaml
+size: 54
+name: "&4Advanced &cInventory &7%page%&8/&7%maxPage%"
+patterns:
+  - "pattern_example"
+```
+
+You must put the name of your file in the folder patterns. You can add as many patterns as you want.
+
+Example from zAuctionHouseV3:
+
+```yaml
+name: '&8ᴀᴜᴄᴛɪᴏɴ &8(&f%page%&8/&f%maxPage%&8)'  # Title of the menu, supports color codes and placeholders
+
+size: 54  # Size of the Minecraft inventory menu, must be a multiple of 9
+
+patterns:  # List of pattern identifiers used in the menu
+  - "zauctionhouse_decoration"  # Pattern for decorative elements
+  - "zauctionhouse_pagination"  # Pattern for navigation between menu pages
+  - "zauctionhouse_auction"  # Pattern related to auction items or functionalities
+
+items:
+  displayItems:
+    type: ZAUCTIONHOUSE_AUCTION  # Type of items to display, specific to auction house items
+    isPermanent: true  # Indicates these items will always be displayed and not dynamically updated
+    slots:  # Specifies the slots in the menu for the items
+      - 10-16  # Items occupy slots 10 through 16
+      - 19-25  # Items occupy slots 19 through 25
+      - 28-34  # Items occupy slots 28 through 34
+      - 37-43  # Items occupy slots 37 through 43
+    else:
+      slots:
+        - 22
+      item:
+        material: BARRIER
+        name: '&c&nNo Items Found'
+```
+
+The auction inventory will use three patterns, one for decoration, one to manage pagination and one to display the main buttons (purchased items, expired items, categories, etc). There is only the button to define the list of items for sale in this inventory. The patterns will allow to reduce the size of the configuration and to be able to use it in several inventories.
