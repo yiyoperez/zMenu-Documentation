@@ -330,9 +330,10 @@ Allows you to define a permission using a placeholder. You must specify the plac
 **Action:**
 
 * `BOOLEAN` (aliase: `b=`): Check if a value is true or false
-* `EQUALS_STRING` (aliase: `s=`): Allows to check if the text is strictly equal to the text
-* `EQUALSIGNORECASE_STRING` (aliase: `s==`): Allows to check if the text is equal by ignoring the case to the text
+* `EQUALS_STRING` (aliase: `s=`): Allows to check if the text is strictly equal to the value
+* `EQUALSIGNORECASE_STRING` (aliase: `s==`): Allows to check if the text is equal by ignoring the case to the value
 * `CONTAINS_STRING` (aliase: `sc`): Allows to check if the text is contained in the value
+* `DIFFERENT_STRING` (amoases: `s!=`)! Allows to check if the text is different to the value
 * `SUPERIOR` (aliase: `>`): Used to check if a number is strictly superior than the value
 * `LOWER` (aliase: `<`): Used to check if a number is strictly lower than the value
 * `SUPERIOR_OR_EQUAL` (aliase: `>=`): Allows you to check if a number is superior than or equal to the value
