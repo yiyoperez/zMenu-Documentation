@@ -2,9 +2,25 @@
 
 ## Inventory
 
-The patterns allow you to have a list of buttons that can be used in several inventories. Perfect to manage the decoraction of your inventories without having to copy the same thing dozens of times.
+**Patterns** allow you to create reusable button configurations that can be applied across multiple inventories. This approach helps manage the decoration of your inventories efficiently, avoiding the need to replicate the same configurations multiple times.
 
-The patterns can be found in the patterns folder and you can create as many as you want.
+#### How to Use Patterns
+
+1. **Create Patterns**: Place your pattern files in the `patterns` folder. You can create as many patterns as you need to manage different decorative elements or layouts.
+2. **Define Patterns**: Each pattern file will define a set of buttons and their configurations. Use these patterns to standardize and streamline the design of your inventories.
+3. **Apply Patterns**: In your inventory configuration files, you can reference these patterns to apply them. This allows you to maintain consistency and easily update or modify the design elements across multiple inventories.
+
+#### Example
+
+For instance, if you have a pattern for a pagination button or a decorative border, you can define it in a pattern file and then include that pattern in various inventory configurations. This way, any changes to the pattern will automatically reflect in all inventories that use it.
+
+#### Benefits
+
+* **Efficiency**: Avoid duplicating button configurations.
+* **Consistency**: Maintain a uniform look across different inventories.
+* **Ease of Management**: Update design elements in one place and see the changes applied everywhere.
+
+By leveraging patterns, you can effectively manage and customize the appearance of your inventories without redundant configuration efforts.
 
 [Example](../plugins-files.md#pattern1):
 

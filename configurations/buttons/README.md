@@ -6,13 +6,13 @@ description: All information about the buttons
 
 ## Informations
 
-Buttons allow you to customize the actions of your inventory. You have to specify the type of the button each time and configure the elements specific to the type of button. Here you find the buttons that are integrated by default in the plugin, other plugins can also add new types of buttons.
+Buttons allow you to <mark style="color:green;">customize</mark> the actions in your inventory. You need to specify the type of each button and configure the elements specific to that button type. Below, you'll find the buttons that are integrated by default in the plugin; other plugins can also add new types of buttons.
 
-For each button you will have to specify an ItemStack, to know how to configure an itemstack go [here](https://zmenu.groupez.dev/configurations/items).
+For each button, you must specify an `Item`. To learn how to configure an `Item`, go [here](../items.md).
 
-## Default
+## Configuration
 
-Here are the configuration elements that are common to all types of buttons. You can use these elements everywhere.
+Here are the configuration elements that are common to all types of buttons. You can use these elements universally across different button types.
 
 ```yaml
 example: 
@@ -86,7 +86,7 @@ example:
 type: <button type>
 ```
 
-The type of the button, by default the type will be NONE.
+The type of the button. By default, the type will be set to `NONE`. It is important to set the button type if you want to perform specific actions.
 
 ***
 
@@ -100,17 +100,17 @@ slot: <number between 0 and inventory limit>
 slot: <page>-<slot>
 ```
 
-Position the slot on which your item will be displayed.&#x20;
+Specify the slot where your item will be displayed.
 
 {% hint style="info" %}
-* Slots start at **0**.
-* You can specify the page number directly in the slot. You should do it like this: `<page>-<slot>`. So for example for a button on page **2** and slot **8** we have: **2-8**.
-* To have multiple items on the same slot you must use the **else** button.
+* Slots start at 0.
+* You can specify the page number directly in the slot. The format should be: `<page>-<slot>`. For example, for a button on page 2 and slot 8, you would use: `2-8`.
+* To place multiple items in the same slot, you must use the `else` button.
 {% endhint %}
 
 <figure><img src="../../.gitbook/assets/slot.png" alt=""><figcaption><p>Double chest slots</p></figcaption></figure>
 
-To display a button on several slots you can do like this:
+To display a button on multiple slots, you can do it like this:
 
 ```yaml
 slots:
@@ -122,7 +122,7 @@ slots:
   ...
 ```
 
-You can also create slot ranges this way: `<startslot>-<end slot>`
+You can also create slot ranges using this format: `<startslot>-<endslot>`.
 
 ```yaml
 slots:
@@ -144,7 +144,7 @@ slots:
 page: <page numer>
 ```
 
-Allows you to specify the page where the button will be displayed. By default the page will be number **1**.
+Allows you to specify the page where the button will be displayed. By default, the page will be set to 1.
 
 ***
 
@@ -154,7 +154,7 @@ Allows you to specify the page where the button will be displayed. By default th
 isPermanent: <true of false>
 ```
 
-Allows you to specify if the button should be displayed on all pages of the inventory. If your inventory has only one page then you don’t need to use it.
+Allows you to specify if the button should be displayed on all pages of the inventory. If your inventory has only one page, you don’t need to use this option.
 
 ***
 
@@ -164,7 +164,7 @@ Allows you to specify if the button should be displayed on all pages of the inve
 useCache: <true of false>
 ```
 
-Allows to enable or not the cache on the item, by default it will always be used if the button item does not contain a placeholder.
+Allows you to enable or disable caching on the item. By default, caching will always be used if the button item does not contain a placeholder.
 
 ***
 
@@ -174,7 +174,7 @@ Allows to enable or not the cache on the item, by default it will always be used
 item: <itemstack>
 ```
 
-Allows you to specify the item that will be displayed, more information [here](https://zmenu.groupez.dev/configurations/items).
+Allows you to specify the item that will be displayed. For more information, click [here](https://zmenu.groupez.dev/configurations/items).
 
 ***
 
@@ -186,7 +186,7 @@ pitch: 1.5
 volume: 0.5
 ```
 
-Allows to send a sound to the player when clicking. You must use the sounds present in [XSound](https://github.com/CryptoMorin/XSeries/blob/master/src/main/java/com/cryptomorin/xseries/XSound.java). You can then adjust the **pitch** and **volume** of the sound.
+Allows you to play a sound for the player when they click. You must use the sounds available in [XSound](./). You can also adjust the pitch and volume of the sound.
 
 ***
 
@@ -199,7 +199,7 @@ messages:
   ...
 ```
 
-Allows you to send a list of messages to the player when clicking.
+Allows you to send a list of messages to the player upon clicking. You can use the [MiniMessage](https://docs.advntr.dev/minimessage/format.html) format to send messages with click or hover actions.
 
 ***
 
@@ -215,9 +215,11 @@ hover:
   ...
 ```
 
-Allows you to send a clickable message to the player. You have to put in your message list a text that will be replaced by the clickable link. You have an example below.&#x20;
+Allows you to send a clickable message to the player. You need to include in your message list a text that will be replaced by the clickable link. An example is provided below.
 
-**ToDo:** Make sure you can choose the type of action between SHOW\_LINK, SUGGEST\_COMMAND and PERFORM\_COMMAND
+{% hint style="warning" %}
+Please use this only if your server is running an older version of Minecraft. Otherwise, use the [MiniMessage](https://docs.advntr.dev/minimessage/format.html) format, which is much easier to work with.
+{% endhint %}
 
 > Example:
 
@@ -251,7 +253,7 @@ Allows you to close the inventory after clicking.
 refreshOnClick: <true or false>
 ```
 
-Allows to refresh the button after a click. For example you can use this to make a shop, an example is provided in the default configuration.
+Allows the button to refresh after a click. You can use this feature to create a shop, for example. An example is provided in the default configuration.
 
 ***
 
@@ -261,8 +263,9 @@ Allows to refresh the button after a click. For example you can use this to make
 playerHead: <placeholder>
 ```
 
-Allows to display a player's head according to a placeholder. You can put the placeholder `%player%` to get the player who opens the inventory.\
-A cache system allows a direct display of the skin for the heads.
+Allows you to display a player's head based on a placeholder. You can use the placeholder `%player%` to display the head of the player who opens the inventory.
+
+A caching system ensures the direct display of the skin for the heads.
 
 ***
 
@@ -272,7 +275,8 @@ A cache system allows a direct display of the skin for the heads.
 permission: <permission>
 ```
 
-Allows to define a permission that the player must have to display the item. You can reverse the permission by adding **`!`** in front of the permission. Thereby the plugin will check that the player does not have the permission.\
+Allows you to define a permission that the player must have to display the item. You can reverse the permission by adding `!` in front of the permission, which will cause the plugin to check that the player does **not** have the permission.
+
 You can also define a list of permissions the player must have:
 
 ```yaml
@@ -285,7 +289,7 @@ permission:
 
 ### Or Permission
 
-Allows you to define a permission list, but the player should only have one of his permissions.
+Allows you to define a list of permissions, where the player only needs to have one of them.
 
 ```yaml
 orPermission:
@@ -301,7 +305,7 @@ orPermission:
 else: <else button>
 ```
 
-Allows to display an else button if the player doesn't have permission. You can put several else button in a row without problem. You have an example of use in the default configuration.
+Allows you to display an `else` button if the player doesn't have the required permission. You can place multiple `else` buttons in a row without any issues. An example of this usage can be found in the default configuration.
 
 Example:
 
@@ -327,18 +331,18 @@ items:
 
 Allows you to define a permission using a placeholder. You must specify the placeholder, the action to be performed with the value, and the value that will be checked.
 
-**Action:**
+**Actions:**
 
-* `BOOLEAN` (aliase: `b=`): Check if a value is true or false
-* `EQUALS_STRING` (aliase: `s=`): Allows to check if the text is strictly equal to the value
-* `EQUALSIGNORECASE_STRING` (aliase: `s==`): Allows to check if the text is equal by ignoring the case to the value
-* `CONTAINS_STRING` (aliase: `sc`): Allows to check if the text is contained in the value
-* `DIFFERENT_STRING` (amoases: `s!=`)! Allows to check if the text is different to the value
-* `SUPERIOR` (aliase: `>`): Used to check if a number is strictly superior than the value
-* `LOWER` (aliase: `<`): Used to check if a number is strictly lower than the value
-* `SUPERIOR_OR_EQUAL` (aliase: `>=`): Allows you to check if a number is superior than or equal to the value
-* `LOWER_OR_EQUAL` (aliase: `<=`): Allows you to check if a number is lower than or equal to the value
-* `EQUAL_TO` (aliase: `==`): Allows to verify that two numbers are identical
+* **`BOOLEAN`** (alias: `b=`): Checks if a value is true or false.
+* **`EQUALS_STRING`** (alias: `s=`): Checks if the text is strictly equal to the value.
+* **`EQUALSIGNORECASE_STRING`** (alias: `s==`): Checks if the text is equal to the value, ignoring case.
+* **`CONTAINS_STRING`** (alias: `sc`): Checks if the text is contained within the value.
+* **`DIFFERENT_STRING`** (alias: `s!=`): Checks if the text is different from the value.
+* **`SUPERIOR`** (alias: `>`): Checks if a number is strictly greater than the value.
+* **`LOWER`** (alias: `<`): Checks if a number is strictly less than the value.
+* **`SUPERIOR_OR_EQUAL`** (alias: `>=`): Checks if a number is greater than or equal to the value.
+* **`LOWER_OR_EQUAL`** (alias: `<=`): Checks if a number is less than or equal to the value.
+* **`EQUAL_TO`** (alias: `==`): Verifies that two numbers are identical.
 
 You can check multiple placeholders like this:
 
@@ -360,7 +364,7 @@ placeholders:
 update: <true or false>
 ```
 
-Enables the automatic update of the item's name and lore. o configure the update interval, please refer to [this section](../inventories.md#update-interval).
+Enables the automatic update of the item's name and lore. To configure the update interval, please refer to [this section](../inventories.md#update-interval).
 
 ***
 
@@ -370,7 +374,7 @@ Enables the automatic update of the item's name and lore. o configure the update
 updateMasterButton: <true or false>
 ```
 
-Allows you to completely update the button. You need to enable the `update` option for this feature to be activated. Instead of just updating the name and lore, this option refreshes the entire button. This includes rechecking permissions, requirements, and the else button.
+Allows you to completely update the button. You need to enable the update option for this feature to be activated. Instead of just updating the name and lore, this option refreshes the entire button. This includes rechecking permissions, requirements, and the `else` button.
 
 ***
 
@@ -380,7 +384,7 @@ Allows you to completely update the button. You need to enable the `update` opti
 updateOnClick: <true of false>
 ```
 
-Allows your button to be updated whenever a player clicks in the inventory, regardless of the slot.
+Allows your button to be updated whenever a player clicks anywhere in the inventory, regardless of the slot.
 
 ***
 
@@ -409,7 +413,7 @@ consolePermissionCommands: # Commands to be executed by the console if the playe
 consolePermission: "<permission>
 ```
 
-You can execute commands from the console based on the player's click. Also commands if the player has the permissions. You can use the placeholder `%player%` to retrieve the username of the player executing the commands.
+You can execute commands from the console based on the player's click, as well as commands that require specific player permissions. You can use the placeholder `%player%` to retrieve the username of the player executing the commands.
 
 ***
 
@@ -430,7 +434,7 @@ Sets the conditions the player must meet to see the button. This can include per
 
 ### Click Requirement
 
-Defines the conditions the player must meet to click on the button. These requirements are checked upon the player's click, and actions can be executed based on the success or failure of these conditions. For more information, refer to [this section](requirements.md#click-requirement).
+Defines the conditions the player must meet to click on the button. These requirements are checked when the player clicks, and actions can be executed based on the success or failure of these conditions. For more information, refer to [this section](requirements.md#click-requirement).
 
 ***
 
@@ -449,7 +453,9 @@ actions:
 
 ### Error item ([zMenu+](https://minecraft-inventory-builder.com/resources/zmenu.4))
 
-Example of inventory with Fail Item. In this example, if the player is not creative a barrier with the name error will be displayed for 10 ticks
+**Example of Inventory with Fail Item:**
+
+In this example, if the player is not in creative mode, a barrier with the name "Error" will be displayed for 10 ticks.
 
 ```yaml
 name: "&8Test"
@@ -481,7 +487,7 @@ items:
 
 ## NONE
 
-The `NONE` type is the default type, it allows to display a button. You don't have to specify it, it will be automatically chosen if the plugin doesn't find a type.
+The `NONE` type is the default type; it simply displays a button. You don't need to specify it, as it will be automatically selected if the plugin doesn't detect a different type.
 
 ## INVENTORY
 
@@ -496,15 +502,12 @@ arguments:
   - <argument 2>
 ```
 
-`inventory` is the name of the inventory you want to open. The name of the inventory will be the name of the inventory file.
+* **`inventory`**: The name of the inventory you want to open. This should match the name of the inventory file.
+* **`plugin`**: The name of the plugin from which the inventory originates. It's advisable to specify the plugin name to avoid opening a different inventory with the same name.
+* **`toPage`**: The page number you want to open. The default is page 1.
+* **`arguments`**: A list of arguments you can add. Each argument can include a name in the following format: `<name>:<value>`.
 
-`plugin` is the name of the plugin from where the inventory comes from. It is advisable to specify the plugin name to avoid opening another inventory with the same name.
-
-`toPage` is the number of the page you want to open. Default will be 1.
-
-`arguments` is the list of arguments you can add. An argument can contain a name in the following format: `<name>:<value>`
-
-You must specify the name of the inventory. The name of the inventory will be the name of the file where the inventory is located. We also advise you to specify the name of the plugin where the inventory comes from to avoid confusion if two inventories have the same name.
+You must specify the inventory's name, which corresponds to the file name where the inventory is stored. Additionally, it's recommended to specify the plugin name to avoid confusion if two inventories share the same name.
 
 ## BACK
 
@@ -512,11 +515,11 @@ The `BACK` type allows you to return to the previous inventory.
 
 ## HOME
 
-The `HOME` type allows you to return to the main inventory, the one that was opened first.
+The `HOME` type allows you to return to the main inventory, which is the first one that was opened.
 
 ## NEXT
 
-The `NEXT` type allows you to go to the next page if it exists. You can use the `else` element to display another button if there is no next page.
+The `NEXT` type allows you to go to the next page, if it exists. You can use the `else` element to display another button if there is no next page.
 
 Example:
 
@@ -535,7 +538,7 @@ next:
 
 ## PREVIOUS
 
-The `PREVIOUS` type allows you to go to the previous page if it exists. You can use the `else` element to display another button if there is no previous page.
+The `PREVIOUS` type allows you to go to the previous page, if it exists. You can use the `else` element to display another button if there is no previous page.
 
 ```yaml
 previous:
@@ -552,11 +555,11 @@ previous:
 
 ## MAINMENU
 
-The `MAINMENU` allows you to returns to the main inventory you chose in the config.json
+The `MAINMENU` type allows you to return to the main inventory specified in the `config.json`.
 
 ## JUMP
 
-The `JUMP` type allows to change page, to a predefined page.
+The `JUMP` type allows you to change to a predefined page.
 
 ```yaml
 jumpButton:
@@ -566,13 +569,19 @@ jumpButton:
 
 ## PAGINATION ([zMenu+](https://minecraft-inventory-builder.com/resources/zmenu.4))
 
-Example of inventory with the Pagination button. In this example the items will be displayed on slot 21, 22 and 23 and on several pages.\
-The list of items contains the material and the name. You can put anything you want in the list. To use the value you must use the placeholder key. In this example the keys will be `%material%` and `%name%`.\
-You can also apply changes to the value like this:
+**Example of Inventory with Pagination Button:**
 
-* `%lower_<key>%` - Displays the value in lower case.
-* `%upper_<key>%` - Displays the value in upper case.
-* `%capitalize_<key>%` - Display the value in capital You can use placeholders everywhere. For your requirements, commands, placeholders etc.
+In this example, the items will be displayed in slots 21, 22, and 23 across multiple pages.
+
+The list of items includes the material and the name. You can put anything you want in the list. To use the values, you must reference them with the placeholder keys. In this example, the keys will be `%material%` and `%name%`.
+
+You can also modify the values like this:
+
+* `%lower_<key>%` - Displays the value in lowercase.
+* `%upper_<key>%` - Displays the value in uppercase.
+* `%capitalize_<key>%` - Displays the value with the first letter capitalized.
+
+You can use placeholders everywhere, including in your requirements, commands, and other placeholders.
 
 ```yaml
 name: "&8&lPagination &r&7%page%&8/&7%maxPage%"
@@ -625,23 +634,22 @@ items:
 
 ## DYNAMIC PAGINATION ([zMenu+](https://minecraft-inventory-builder.com/resources/zmenu.4))
 
-Lets you create a dynamic inventory with placeholders. You can use this to create a ranking for example. The only limit is your imagination.
+This feature allows you to create a dynamic inventory using placeholders, offering limitless possibilities such as creating a ranking system. The only limit is your imagination.
 
-In the example if below you have placeholders generates by zMenu+ as an example.
+In the example below, placeholders are generated by zMenu+ as an example:
 
-`%zmenu+_pagination_size%` Returns the size of your list. This value will change when loading the plugin.
+* `%zmenu+_pagination_size%` - Returns the size of your list. This value will change when the plugin is loaded.
+* `%zmenu+_pagination_name_<index>%` - Returns text based on the index. The text is generated automatically when the plugin is loaded.
 
-`%zmenu+_pagination_name_<index>%` Returns text based on the index. The text is generated automatically when loading the plugin.
+You must specify the start and end of the pagination using `start` and `end`, which work with PlaceholderAPI.
 
-You must then specify the start and end of the pagination. For this you have the `start` and `end`, which works with PlaceholderAPI.&#x20;
+Additionally, you have three internal placeholders to help you identify the button number that is displayed:
 
-Then have 3 internal placeholders to help you get the button number that is displayed.
+* `%index%` - Returns the index of the button, starting at 0.
+* `%current%` - Returns the index of the button plus 1, starting at 1.
+* `%value%` - Returns the value of the button.
 
-`%index%` - Returns the index of the button, starts at 0.
-
-`%current%` - Returns the index of the button + 1, starts at 1.
-
-`%value%` - Returns the value of the button. If your pagination does not start with 0 you must use se placeholder to retrieve the index of the button.
+If your pagination does not start with 0, you must use this placeholder to retrieve the correct index of the button.
 
 ```yaml
 name: "&8Dynamic Pagination &7%page%/%maxPage%"
@@ -683,19 +691,20 @@ items:
 
 ## INPUT ([zMenu+](https://minecraft-inventory-builder.com/resources/zmenu.4))
 
-Allows you to let the player write a message in the chat and perform actions in case of success or error.
+This feature allows the player to input a message in the chat and triggers actions based on success or error.
 
-Input type:
+**Input Types:**
 
-* `NUMBER` - Allows to check a number, you can set a minimum and maximum
-* `TEXT` - Allows to check a text, you can set regex
-* `ONLINE_PLAYER` - Allows to check the nickname of a player online
+* **NUMBER** - Checks a number; you can set a minimum and maximum value.
+* **TEXT** - Checks a text input; you can set a regex pattern for validation.
+* **ONLINE\_PLAYER** - Checks if the input matches the nickname of an online player.
 
-You can add conditions. For type NUMBER it is a minimum and maximum. For type TEXT it is a regex.
+You can add conditions based on the input type:
 
+* For **NUMBER**, you can specify a minimum and maximum value.
+* For **TEXT**, you can use a regex pattern for validation.
 
-
-In this example the button allows to check if the chosen number is between 0 and 100
+**Example:** In this example, the button checks if the chosen number is between 0 and 100.
 
 ```yaml
 name: "&8Input Inventory"

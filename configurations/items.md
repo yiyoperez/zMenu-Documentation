@@ -1,8 +1,6 @@
 # 🪁 Items
 
-Before you start configuring the plugin itemstack make sure you are using the correct material for your version of the game.
-
-Each button must be accompanied by an itemstack (except in certain specific cases).
+Before you start configuring the plugin itemstack, make sure you are using the correct material for your version of the game. Each button must be accompanied by an itemstack (except in certain specific cases).
 
 ```yaml
 item:
@@ -66,7 +64,7 @@ The amount of the itemstack. You can use a placeholder to have a dynamic amount.
 data: <data, only avaible between 1.8 and 1.12>
 ```
 
-The material data, only available for versions between **1.8** and **1.12**. By default its 0
+The material data, only available for versions between 1.8 and 1.12. By default, it's 0.
 
 ***
 
@@ -76,7 +74,7 @@ The material data, only available for versions between **1.8** and **1.12**. By 
 durability: <durability>
 ```
 
-The durability of the item, by default it is 0.
+The durability of the item, by default, is 0.
 
 ***
 
@@ -86,9 +84,9 @@ The durability of the item, by default it is 0.
 url: <player skin in base64>
 ```
 
-Allows to display a head with a url in base64. You can find the values of the heads on the site [minecraft-head.com](https://minecraft-heads.com/).
+Allows you to display a head with a URL in base64. You can find the values of the heads on the site [minecraft-head.com](https://minecraft-head.com).
 
-You must take the content in "Value" of the category "Other":
+You must take the content in the "Value" field under the "Other" category.
 
 ![minecraft-head.com example of value](../.gitbook/assets/base64.png)
 
@@ -106,7 +104,7 @@ url: "eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubm
 name: <display name>
 ```
 
-The name that will be displayed on the item. Works with PlaceholderAPI.
+The name that will be displayed on the item. You can use PlaceholderAPI to make the name dynamic.
 
 {% hint style="info" %}
 If your server has Kyori Adventure, you can use the [mini message format](https://docs.adventure.kyori.net/minimessage/format.html).
@@ -124,7 +122,7 @@ lore:
   - ...
 ```
 
-Allows to display the lore of the item. Works with PlaceholderAPI.
+Allows you to display the lore of the item. You can use PlaceholderAPI to make the lore dynamic.
 
 ***
 
@@ -137,10 +135,10 @@ Allows to display the lore of the item. Works with PlaceholderAPI.
   extended: <potion extended true of flase>
 ```
 
-Allows you to create a potion. Check potion effect type [here](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionType.html).
+Allows you to create a potion. Check potion effect types [here](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/potion/PotionType.html) for more details.
 
 {% hint style="danger" %}
-Warning, a potion cannot be extended and with a level 2
+Warning: A potion cannot be extended and have a level 2 at the same time.
 {% endhint %}
 
 {% hint style="info" %}
@@ -169,7 +167,7 @@ Allows the item to shine. Add random enchant and HIDE\_ENCHANT itemflag.
 modelID: <custom model id>
 ```
 
-Allows you to put a custom model id on the item
+Allows you to put a custom model id on the item.
 
 ***
 
@@ -180,7 +178,9 @@ enchants:
   - <enchantment name>,<enchantment level>
 ```
 
-Allows you to add enchantments, you have to put the name of the enchantment then the level of the enchantment, like this: `ENCHANT,ENCHANT_LEVEL` List of enchantments available: [https://hub.spigotmc.org/javadocs/spigot/org/bukkit/enchantments/Enchantment.html](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/enchantments/Enchantment.html)
+Allows you to add enchantments. You need to specify the name of the enchantment followed by the level of the enchantment, in the format: `ENCHANT,ENCHANT_LEVEL`.
+
+List of available enchantments:[https://hub.spigotmc.org/javadocs/spigot/org/bukkit/enchantments/Enchantment.html](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/enchantments/Enchantment.html)
 
 ***
 
@@ -207,19 +207,40 @@ color: 40,150,40 # RGB color
 color: 1,40,150,40 # ARGB color, Alpha, RED, GREEN, BLUE
 ```
 
-Set the RGB color (Red, Green, Blue) for leather armorers. The format is as follows:
+Set the RGB color (Red, Green, Blue) for leather armor. The format is as follows:
+
+`<Red>,<Green>,<Blue>`
+
+For example, to set a color with 255 red, 100 green, and 50 blue, you would use:
+
+`255,100,50`
 
 <pre class="language-yaml"><code class="lang-yaml"><strong>color: &#x3C;red>,&#x3C;green>,&#x3C;blue>
 </strong></code></pre>
 
-You can also add an alpha in the color to have ARGB
+You can also add an alpha value in the color to have ARGB (Alpha, Red, Green, Blue). The format is as follows:
+
+`<Alpha>,<Red>,<Green>,<Blue>`
+
+For example, to set a color with 128 alpha (semi-transparent), 255 red, 100 green, and 50 blue, you would use:
+
+`128,255,100,50`
 
 <pre class="language-yaml"><code class="lang-yaml"><strong>color: &#x3C;alpha>,&#x3C;red>,&#x3C;green>,blue>
 </strong></code></pre>
 
 {% hint style="info" %}
-The color format is the same for fireworks, banner and potion. \
-Javadocs for Color [here](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Color.html#fromARGB\(int,int,int,int\)).
+The color format for fireworks, banners, and potions follows the same ARGB format:
+
+`<Alpha>,<Red>,<Green>,<Blue>`
+
+For example:
+
+* **Fireworks**: To set a color with 255 alpha (fully opaque), 200 red, 150 green, and 100 blue, you would use: `255,200,150,100`.
+* **Banners**: To set a color with 255 alpha, 100 red, 200 green, and 50 blue, you would use: `255,100,200,50`.
+* **Potions**: To set a color with 128 alpha (semi-transparent), 255 red, 50 green, and 50 blue, you would use: `128,255,50,50`.
+
+For further details, check the Javadocs for Color [here](https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Color.html#fromARGB\(int,int,int,int\)).
 {% endhint %}
 
 ***

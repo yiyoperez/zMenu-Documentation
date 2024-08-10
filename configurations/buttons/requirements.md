@@ -1,6 +1,10 @@
-# 🏁 Requirements
+---
+description: >-
+  The requirements feature allows you to perform actions based on a permission
+  check.
+---
 
-The requirements will allow you to perform actions based on a permission check.
+# 🏁 Requirements
 
 ## Requirements
 
@@ -52,11 +56,11 @@ view_requirement:
         - "&cYou doesn't have an item in your hand."
 ```
 
-In addition to deny and global success actions, you can define deny and success actions for each requirement.
+In addition to global deny and success actions, you can define specific deny and success actions for each requirement.
 
 ### View Requirement
 
-Define the requirements to see a button in the inventory.
+Defines the requirements a player must meet to see a button in the inventory.
 
 #### Example:
 
@@ -80,7 +84,7 @@ view_requirement:
 
 ### Open Requirement
 
-Define the requirements to open the inventory.
+Defines the requirements a player must meet to open the inventory.
 
 #### Example
 
@@ -96,20 +100,20 @@ open_requirement:
         - "&cYou doesn't have an item in your hand."
 ```
 
-In the example if below, you have a check of the item in the player’s hand. If the item matches the regex then it can open the inventory, otherwise it will receive a message and the inventory will not open.
+In the example below, there is a check for the item in the player's hand. If the item matches the regex pattern, the player can open the inventory. Otherwise, they will receive a message, and the inventory will not open.
 
 ### Click Requirement
 
-Define multiple requirements to click on the button. You need to define several requirements and specify clicks.
+Defines multiple requirements for clicking the button. You need to specify several requirements and the corresponding clicks.
 
-You can directly use all the clicks by doing this:
+You can apply all clicks directly by using the following format:
 
 ```yaml
 clicks:
   - ALL # or ANY
 ```
 
-You can put `ALL` or `ANY` in the type of clicks to directly put all the clicks. You can manage the list of clicks that will be added in the config.json file
+You can set the click type to `ALL` or `ANY` to apply the actions to all clicks. The list of clicks that will be included can be managed in the `config.json` file.
 
 #### Example:
 
@@ -157,19 +161,19 @@ click_requirement:
 
 <table data-full-width="true"><thead><tr><th width="519">Permissible</th><th>Description</th></tr></thead><tbody><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: permission
   permission: &#x3C;permission>
-</code></pre></td><td>Check if the player has permission. To reverse the need, you must put a <code>!</code> in front of the permission, like this: <code>!&#x3C;permission></code></td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: placeholder
+</code></pre></td><td>Checks if the player has the specified permission. To reverse the condition, add an exclamation mark <code>!</code> in front of the permission, like this: <code>!&#x3C;permission></code>.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: placeholder
   placeholder: &#x3C;placeholder>
   value: &#x3C;placeholder value>
   action: &#x3C;placeholder action>
   target: &#x3C;player / placeholder with player name>
-</code></pre></td><td>Allows you to define a permission using a placeholder. You must specify the placeholder, the action to be performed with the value, and the value that will be checked. More information <a href="./#placeholder">here</a>.<br>You can specify a player, otherwise the player who opens the inventory will be used.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: regex
+</code></pre></td><td><p>Allows you to define a permission using a placeholder. You must specify the placeholder, the action to be performed with the value, and the value that will be checked. For more information, click here.</p><p>You can specify a player; otherwise, the player who opens the inventory will be used by default.</p></td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: regex
   regex: &#x3C;regex>
   input: &#x3C;placeholder>
-</code></pre></td><td><p>Checks if the regex matches the input. The input can be a placeholder.</p><p>Visit <a href="https://regexr.com/">regexr.com</a> for create your regex.</p></td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: item
+</code></pre></td><td><p>Checks if the input matches the specified regex pattern. The input can be a placeholder.</p><p>Visit <a href="https://regexr.com">regexr.com</a> to create your regex pattern.</p></td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: item
   material: &#x3C;material>
   amount: &#x3C;amount of item>
   modelId: &#x3C;model id> # default 0
-</code></pre></td><td>Check if the player has an item in his inventory.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: job
+</code></pre></td><td>Checks if the player has a specific item in their inventory.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: job
   job: &#x3C;job name>
 </code></pre></td><td>Allows to check if the player has the job. Works with <a href="https://www.spigotmc.org/resources/jobs-reborn.4216/">JobReborn</a> plugin.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: luckperm
   group: &#x3C;group name>

@@ -6,15 +6,15 @@ description: All the information to configure the plugin
 
 ### Links
 
-Before you start configuring the plugin, please check that you are using the material name for your version.&#x20;
+Before you start configuring the plugin, please ensure that you are using the correct material names for your version.
 
-\-> We invite you to check the names of the materials with the following links:
+👉 We invite you to check the material names using the following links:
 
 * [1.8.8](https://helpch.at/docs/1.8.8/org/bukkit/Material.html)
 * [1.12.2](https://helpch.at/docs/1.12.2/org/bukkit/Material.html)
 * [1.13.2](https://helpch.at/docs/1.13.2/org/bukkit/Material.html)
 * [1.14.4](https://helpch.at/docs/1.14.4/org/bukkit/Material.html)
-* [Latest](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) (1.20)
+* [Latest](https://hub.spigotmc.org/javadocs/spigot/org/bukkit/Material.html) (1.21)
 
 \-> For the configuration of the sounds you must use the values of [XSound](https://github.com/CryptoMorin/XSeries/blob/master/src/main/java/com/cryptomorin/xseries/XSound.java).
 
@@ -26,14 +26,14 @@ Before you start configuring the plugin, please check that you are using the mat
 
 \-> [Minecraft-heads](https://minecraft-heads.com/) (Minecraft head will allow you to get the base64 value to display a head)
 
-\-> For the colors you can use the code of minecraft with a `&<code>`. For versions higher than 1.16 you can use [hexadecimal colors](https://www.google.com/search?q=hex+color) like this `#<color>` (`#ff55ff` for example).
+\-> For colors, you can use Minecraft color codes with `&<code>`. For versions higher than 1.16, you can use hexadecimal colors, like this: `#<color>` (for example, `#ff55ff`).
 
 {% hint style="info" %}
-If your server has Kyori Adventure, you can use the [mini message format](https://docs.adventure.kyori.net/minimessage/format.html).
+If your server has Kyori Adventure (with Paper or any Paper fork), you can use the [Mini message format](https://docs.adventure.kyori.net/minimessage/format.html).
 {% endhint %}
 
 ### Informations
 
-The plugin will work differently from other menu plugins. Here we have a "Button" system that will allow to perform some action. This system allows other developers to easily add features to the plugin configurations. We will see together what are the different types of default buttons and their configuration elements.
+The plugin operates differently from other menu plugins. Here, we have a `Button` system that allows you to perform various actions. This system also enables other developers to easily add features to the plugin's configurations.
 
-But first let's see the structure of an inventory file.
+We will explore the different types of default buttons and their configuration elements. But first, let's take a look at the structure of an inventory file.

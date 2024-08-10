@@ -4,11 +4,9 @@ description: Actions that can be performed after a requirement
 
 # ☢️ Actions
 
-With a requirement you can define actions on success or failure. Here are the actions that can be performed.
+With a requirement, you can define actions for both success and failure. Here are the actions that can be performed.
 
-## Example
-
-You will have to put an action list like this:
+**Example:** You will need to create an action list like this:
 
 ```yaml
 success_actions:
@@ -26,7 +24,7 @@ success_actions:
       - "seconds commands %player%"   
 ```
 
-You can add a delay, in tick, for each item if below. Do like this:
+You can add a delay, in ticks, for each item in the list below. Do it like this:
 
 ```yaml
 success_actions:
@@ -42,25 +40,25 @@ success_actions:
     - "firstcommand"
     - "seconds commands %player%"
   commandInChat: false # false by default
-</code></pre></td><td>Execute commands as the player. You can send the command in the player tchat.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: console_command
+</code></pre></td><td>Executes commands as the player. You can also send the command in the player's chat.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: console_command
   commands:
     - "firstcommand"
     - "seconds commands %player%"
-</code></pre></td><td>Execute commands as the console.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: message
+</code></pre></td><td>Executes commands as the console.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: message
   messages:
     - "my message"
     - "my second messages"
   minimessage: true # true by default
-</code></pre></td><td>Send a message to the player. You can use placeholders and color/format codes here. Mini message format is enable by default if your server support it.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: broadcast
+</code></pre></td><td>Sends a message to the player. You can use placeholders, color codes, and format codes. The MiniMessage format is enabled by default if your server supports it.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: broadcast
   messages:
     - "my message"
     - "my second message to %player%"
   minimessage: true # true by default
-</code></pre></td><td>Send a message to the online players. You can use placeholders and color/format codes here. Mini message format is enable by default if your server support it.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: chat
+</code></pre></td><td>Sends a message to all online players. You can use placeholders, color codes, and format codes. The MiniMessage format is enabled by default if your server supports it.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: chat
   messages:
     - "my message"
-</code></pre></td><td>Sends messages instead of the player.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: close
-</code></pre></td><td>Closes the player’s inventory.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: inventory
+</code></pre></td><td>Sends messages on behalf of the player. You can use placeholders, color codes, and format codes. MiniMessage format is enabled by default if your server supports it.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: close
+</code></pre></td><td>Closes the player's inventory.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: inventory
   inventory: &#x3C;inventory name>
   plugin: &#x3C;plugin name>
   page: &#x3C;page>
@@ -81,7 +79,7 @@ success_actions:
   value: &#x3C;data value>
   seconds: &#x3C;expire seconds> # 0 by default
 </code></pre></td><td>Update <a href="../player-data.md">player data</a>.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: refresh  
-</code></pre><p></p></td><td>Refresh current button. Work only in click requirement</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: back
+</code></pre><p></p></td><td>Refresh current button. Works only in click requirement.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: back
 </code></pre></td><td>Return to previous inventory.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: shopkeeper
   name: &#x3C;shopkeeper name>
 </code></pre></td><td>Open a <a href="https://www.spigotmc.org/threads/shopkeepers.447969/">Shopkeeper</a> trading inventory</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: book
@@ -93,10 +91,10 @@ success_actions:
       - ''
       - ''
       - '&#x3C;hover:show_text:"#34eba8Open an url !">&#x3C;click:open_url:"https://minecraft-inventory-builder.com/">#f0af24Open URL&#x3C;reset>'
-</code></pre></td><td>Open a book</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: actionbar
+</code></pre></td><td>Opens a book for the player. You can specify the title, author, and pages of the book.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: actionbar
   message: "my message"
   minimessage: true # true by default
-</code></pre></td><td>Allows to send a message in the action bar of the player</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: withdraw
+</code></pre></td><td>Allows you to send a message in the action bar of the player. You can use placeholders and color/format codes here. MiniMessage format is enabled by default if your server supports it.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: withdraw
   amount: &#x3C;amount>
 </code></pre></td><td>Allows you to withdraw money from the player’s account. Works with the <a href="https://www.spigotmc.org/resources/vault.34315/">Vault</a>.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: deposit
   amount: &#x3C;amount>

@@ -6,10 +6,13 @@ description: A complete plugin for GUI menu with an advanced API.
 
 ## Description
 
-**zMenus** is a complete inventory plugin.\
-You can create your inventories and link them to custom commands. With the button system you will be able to push to the maximum the customization of your inventories.\
-You need to create an inventory per file, and you can sort your files into folders.\
-The plugin has an advanced API to allow other developers to use the same inventory configuration system. You can link inventories of several plugins together without any worries! The goal of this API is to have a uniform configuration for a better user experience.
+zMenus is a comprehensive inventory plugin.
+
+You can create custom inventories and link them to custom commands. With the button system, you can fully customize your inventories to the highest degree.
+
+Each inventory needs to be created in its own file, and you can organize these files into folders.
+
+The plugin also features an advanced API that allows other developers to use the same inventory configuration system. You can seamlessly link inventories from multiple plugins without any issues. The goal of this API is to provide a uniform configuration for a better user experience.
 
 Download here: [https://www.spigotmc.org/resources/zmenu.110402/](https://www.spigotmc.org/resources/zmenu.110402/)
 
