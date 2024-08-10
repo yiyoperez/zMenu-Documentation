@@ -2,7 +2,7 @@
 description: A complete plugin for GUI menu with an advanced API.
 ---
 
-# Getting started
+# 🍾 Getting started
 
 ## Description
 

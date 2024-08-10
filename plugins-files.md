@@ -2,7 +2,7 @@
 description: The plugin's configuration files
 ---
 
-# Plugin's files
+# 🗃️ Plugin's files
 
 ### Config.json
 

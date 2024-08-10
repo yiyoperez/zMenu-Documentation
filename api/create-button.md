@@ -1,5 +1,6 @@
 ---
 description: How to create a button
+icon: hexagon-check
 ---
 
 # Create Button

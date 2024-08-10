@@ -1,4 +1,4 @@
-# Items
+# 🪁 Items
 
 Before you start configuring the plugin itemstack make sure you are using the correct material for your version of the game.
 

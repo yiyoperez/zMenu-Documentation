@@ -2,7 +2,7 @@
 description: Player data system
 ---
 
-# Player data
+# 🛝 Player data
 
 With zMenu you can store data for the player and use it with placeholders. This way you can create counters, cooldowns and much more !
 

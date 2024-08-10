@@ -2,7 +2,7 @@
 description: Information about the values in the config.json file
 ---
 
-# Config.json
+# 🦬 Config.json
 
 ```
 enableDebug: true/false

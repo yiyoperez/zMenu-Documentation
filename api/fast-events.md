@@ -1,3 +1,7 @@
+---
+icon: gauge-max
+---
+
 # Fast Events
 
 In the default configuration, you have FastEvents enabled by default. Instead of using the bukkit API for events, you can save an interface named FastEvent with methods for each plugin event. Or you can disable this option in config.json and use bukkit events normally.

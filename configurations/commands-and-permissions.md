@@ -2,7 +2,7 @@
 description: List of the commands and their permissions
 ---
 
-# Commands and Permissions
+# 📜 Commands and Permissions
 
 ## Commands
 

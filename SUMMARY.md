@@ -1,27 +1,27 @@
 # Table of contents
 
-* [Getting started](README.md)
-* [Supported Plugins](supported-plugins.md)
+* [🍾 Getting started](README.md)
+* [➕ Supported Plugins](supported-plugins.md)
 
-## Configurations
+## ⛰️ Configurations
 
-* [Informations](configurations/informations.md)
-* [Commands and Permissions](configurations/commands-and-permissions.md)
-* [PlaceHolder](configurations/placeholder.md)
+* [ℹ️ Informations](configurations/informations.md)
+* [📜 Commands and Permissions](configurations/commands-and-permissions.md)
+* [🪧 PlaceHolder](configurations/placeholder.md)
 * [How to create an inventory step by step](configurations/how-to-create-an-inventory-step-by-step.md)
-* [Inventories](configurations/inventories.md)
-* [Buttons](configurations/buttons/README.md)
-  * [Requirements](configurations/buttons/requirements.md)
-  * [Actions](configurations/buttons/actions.md)
-* [Items](configurations/items.md)
-* [Patterns](configurations/patterns.md)
+* [👨‍💻 Inventories](configurations/inventories.md)
+* [⏹️ Buttons](configurations/buttons/README.md)
+  * [🏁 Requirements](configurations/buttons/requirements.md)
+  * [☢️ Actions](configurations/buttons/actions.md)
+* [🪁 Items](configurations/items.md)
+* [🔋 Patterns](configurations/patterns.md)
 * [Commands](configurations/commands.md)
-* [Player data](configurations/player-data.md)
-* [Config.json](configurations/config.json.md)
+* [🛝 Player data](configurations/player-data.md)
+* [🦬 Config.json](configurations/config.json.md)
 
 ## API
 
-* [Informations](api/informations.md)
+* [ℹ️ Informations](api/informations.md)
 * [Create Button](api/create-button.md)
 * [Create Material Loader](api/create-material-loader.md)
 * [Create ButtonOption](api/create-buttonoption.md)
@@ -30,5 +30,5 @@
 
 ***
 
-* [Plugin's files](plugins-files.md)
-* [Example GUI menus](example-gui-menus.md)
+* [🗃️ Plugin's files](plugins-files.md)
+* [🕍 Example GUI menus](example-gui-menus.md)

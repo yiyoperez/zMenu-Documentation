@@ -1,3 +1,7 @@
+---
+icon: loader
+---
+
 # Load Inventory
 
 To load an inventory you have many methods present in the `InventoryManager` interface. But I advise you to use the `loadInventoryOrSaveResource` method. It allows you to retrieve the file in the resources of your plugin and save it.

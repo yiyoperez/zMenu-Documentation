@@ -2,7 +2,7 @@
 description: Several examples of menu.
 ---
 
-# Example GUI menus
+# 🕍 Example GUI menus
 
 ## [Kit](https://github.com/Maxlego08/zMenuExample/blob/master/kits.yml)
 

@@ -2,7 +2,7 @@
 description: All information on inventories.
 ---
 
-# Inventories
+# 👨‍💻 Inventories
 
 ## Informations
 

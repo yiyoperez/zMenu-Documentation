@@ -2,7 +2,7 @@
 description: All information about the buttons
 ---
 
-# Buttons
+# ⏹️ Buttons
 
 ## Informations
 

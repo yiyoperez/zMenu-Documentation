@@ -2,7 +2,7 @@
 description: Actions that can be performed after a requirement
 ---
 
-# Actions
+# ☢️ Actions
 
 With a requirement you can define actions on success or failure. Here are the actions that can be performed.
 

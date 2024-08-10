@@ -1,3 +1,7 @@
+---
+icon: subtitles
+---
+
 # Create ButtonOption
 
 A `ButtonOption` allows adding elements to all buttons. To save a `ButtonOption` your plugin must load with zMenu. You must use the event `ButtonLoaderRegisterEvent`.

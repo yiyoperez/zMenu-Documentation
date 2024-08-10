@@ -1,3 +1,7 @@
+---
+icon: drone
+---
+
 # Create Material Loader
 
 You can create your own [MaterialLoader](https://javadocs.groupez.dev/zmenu/fr/maxlego08/menu/api/loader/MaterialLoader.html). A material loader will allow you to create an ItemStack from the configuration.

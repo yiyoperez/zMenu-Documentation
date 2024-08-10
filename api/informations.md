@@ -2,7 +2,7 @@
 description: API Information
 ---
 
-# Informations
+# ℹ️ Informations
 
 The zMenu API will allow you to create your own inventory and button. You can have the same configuration system for all your plugins.
 

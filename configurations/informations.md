@@ -2,7 +2,7 @@
 description: All the information to configure the plugin
 ---
 
-# Informations
+# ℹ️ Informations
 
 ### Links
 
