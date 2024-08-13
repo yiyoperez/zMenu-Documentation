@@ -79,7 +79,7 @@ success_actions:
   value: &#x3C;data value>
   seconds: &#x3C;expire seconds> # 0 by default
 </code></pre></td><td>Update <a href="../player-data.md">player data</a>.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: refresh  
-</code></pre><p></p></td><td>Refresh current button. Works only in click requirement.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: back
+</code></pre></td><td>Refresh current button. Works only in click requirement.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: back
 </code></pre></td><td>Return to previous inventory.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: shopkeeper
   name: &#x3C;shopkeeper name>
 </code></pre></td><td>Open a <a href="https://www.spigotmc.org/threads/shopkeepers.447969/">Shopkeeper</a> trading inventory</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: book
@@ -91,12 +91,19 @@ success_actions:
       - ''
       - ''
       - '&#x3C;hover:show_text:"#34eba8Open an url !">&#x3C;click:open_url:"https://minecraft-inventory-builder.com/">#f0af24Open URL&#x3C;reset>'
-</code></pre></td><td>Opens a book for the player. You can specify the title, author, and pages of the book.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: actionbar
-  message: "my message"
+</code></pre></td><td>Opens a book for the player. You can specify the title, author, and pages of the book.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: title
+  title: "My title"
+  subtitle: "And a sub title!"
+  start: &#x3C;time>
+  duration: &#x3C;time>
+  end: &#x3C;time>
+</code></pre></td><td><p>Allows you to send a title to the player. <br>Time must be in millis if using enableMiniMessageFormat, or else just use ticks.</p><pre><code>20 ticks = 1 second
+1000 millis = 1 second
+</code></pre></td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml"><strong>- type: actionbar
+</strong>  message: "my message"
   minimessage: true # true by default
 </code></pre></td><td>Allows you to send a message in the action bar of the player. You can use placeholders and color/format codes here. MiniMessage format is enabled by default if your server supports it.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: withdraw
   amount: &#x3C;amount>
 </code></pre></td><td>Allows you to withdraw money from the player’s account. Works with the <a href="https://www.spigotmc.org/resources/vault.34315/">Vault</a>.</td></tr><tr><td><pre class="language-yaml"><code class="lang-yaml">- type: deposit
   amount: &#x3C;amount>
 </code></pre></td><td>Allows you to deposit money from the player’s account. Works with the <a href="https://www.spigotmc.org/resources/vault.34315/">Vault</a>.</td></tr></tbody></table>
-
